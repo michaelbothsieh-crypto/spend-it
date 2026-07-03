@@ -4,12 +4,28 @@ import { writeFileSync, mkdirSync } from 'fs';
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36';
 
+// ptt.cc 會擋雲端 IP:先直連重試,不行走 r.jina.ai 代理
+async function getHtml(url) {
+  for (let i = 0; i < 3; i++) {
+    try {
+      const res = await fetch(url, { headers: { cookie: 'over18=1', 'user-agent': UA }, signal: AbortSignal.timeout(15000) });
+      if (res.ok) return await res.text();
+    } catch {}
+    await new Promise(r => setTimeout(r, 2000 * (i + 1)));
+  }
+  const res = await fetch('https://r.jina.ai/' + url, {
+    headers: { 'x-return-format': 'html', 'x-set-cookie': 'over18=1' },
+    signal: AbortSignal.timeout(30000),
+  });
+  if (!res.ok) throw new Error('proxy HTTP ' + res.status);
+  return await res.text();
+}
+
 async function ptt() {
   const items = [];
   let url = 'https://www.ptt.cc/bbs/Lifeismoney/index.html';
   for (let page = 0; page < 4; page++) {
-    const res = await fetch(url, { headers: { cookie: 'over18=1', 'user-agent': UA } });
-    const html = await res.text();
+    const html = await getHtml(url);
     for (const m of html.matchAll(/<div class="r-ent">[\s\S]*?<div class="nrec">(?:<span class="[^"]*">([^<]*)<\/span>)?<\/div>[\s\S]*?<div class="title">\s*<a href="([^"]+)">([^<]+)<\/a>/g)) {
       const [, rec, href, title] = m;
       if (/公告|水桶|檢舉|^\s*\[集中\]|置底/.test(title)) continue;
@@ -43,10 +59,20 @@ async function dcard() {
   }
 }
 
-const [p, d] = await Promise.all([ptt(), dcard()]);
+const results = await Promise.allSettled([ptt(), dcard()]);
+const p = results[0].status === 'fulfilled' ? results[0].value : [];
+const d = results[1].status === 'fulfilled' ? results[1].value : [];
+if (results[0].status === 'rejected') console.error('ptt 全掛:', results[0].reason.message);
+
 const top = [...p, ...d]
   .sort((a, b) => b.heat - a.heat)
   .slice(0, 30);
+
+if (!top.length) {
+  // 兩邊都掛就保留舊榜單,workflow 不炸
+  console.error('今天什麼都沒爬到,保留舊資料');
+  process.exit(0);
+}
 
 mkdirSync(new URL('../data/', import.meta.url), { recursive: true });
 writeFileSync(new URL('../data/hot.json', import.meta.url), JSON.stringify({
