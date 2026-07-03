@@ -622,7 +622,7 @@ const loadingLines = [
 ];
 
 const state = { tier: null, who: null, mood: null };
-let pool = [], shown = [];
+let pool = [], backup = [], shown = [], rerolls = 0;
 
 function go(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -652,12 +652,10 @@ function match(p) {
 
 function showResults() {
   pool = P.filter(match);
-  // ponytail: 組合太冷門時放寬 mood 條件,保底至少 3 張卡
-  if (pool.length < 3) {
-    const extra = P.filter(p => p[4] === state.tier && p[5].includes(state.who) && !pool.includes(p));
-    pool = pool.concat(extra);
-  }
+  // 同價位帶其他商品當備用池,重抽永遠有新卡可換
+  backup = P.filter(p => p[4] === state.tier && !pool.includes(p));
   shown = [];
+  rerolls = 0;
   document.getElementById('r-sub').textContent = subLines[state.mood];
   document.getElementById('r-recap').innerHTML =
     `<span>預算 <b>${labels.tier[state.tier]}</b></span>` +
@@ -669,9 +667,17 @@ function showResults() {
 }
 
 function draw() {
-  let candidates = pool.filter(p => !shown.includes(p));
-  if (candidates.length < 3) { shown = []; candidates = pool; }
-  const picked = candidates.sort(() => Math.random() - .5).slice(0, 6);
+  // 先抽沒看過的精準命中,不夠再從同價位備用池補,兩池都空了才重置
+  let candidates = pool.filter(p => !shown.includes(p)).sort(() => Math.random() - .5);
+  if (candidates.length < 6) {
+    candidates = candidates.concat(backup.filter(p => !shown.includes(p)).sort(() => Math.random() - .5));
+  }
+  if (candidates.length === 0) {
+    shown = [];
+    document.getElementById('r-sub').textContent = '整個價位帶都給你看完一輪了,錢是有多難花?再來。';
+    candidates = pool.concat(backup).sort(() => Math.random() - .5);
+  }
+  const picked = candidates.slice(0, 6);
   shown = shown.concat(picked);
   document.getElementById('r-cards').innerHTML = picked.map(p => `
     <div class="card">
@@ -686,10 +692,16 @@ function draw() {
     </div>`).join('');
 }
 
+const rerollLines = [
+  '好,這批不行,再抽。',
+  '挑成這樣,難怪錢存得下來。',
+  '第三批了,你是來逛的吧?',
+  '沒關係,猶豫也是一種省錢。',
+];
 function reroll() {
-  // 重抽時卡片重播進場動畫
-  const c = document.getElementById('r-cards');
-  c.style.animation = 'none';
+  rerolls++;
+  document.getElementById('r-sub').textContent =
+    rerollLines[Math.min(rerolls - 1, rerollLines.length - 1)];
   draw();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
