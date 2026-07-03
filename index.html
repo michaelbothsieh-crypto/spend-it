@@ -536,6 +536,85 @@ h2 .icon { font-size: .92em; color: var(--accent-hover); }
   to { transform: translateY(110vh) rotate(720deg); opacity: .3; }
 }
 
+/* ── 論壇熱燒榜 ── */
+.hotlink {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: color .15s, background .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.hotlink:hover { color: var(--text-primary); background: var(--surface); }
+.hotlist { display: flex; flex-direction: column; gap: 10px; }
+.hotrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform .15s, border-color .15s, background .15s;
+  animation: slidein .35s cubic-bezier(.2,.9,.3,1.1) backwards;
+  animation-delay: calc(var(--i) * .04s);
+}
+.hotrow:hover {
+  transform: translateX(5px);
+  border-color: #fb923c;
+  background: linear-gradient(90deg, rgba(251,146,60,.08), var(--surface) 70%);
+}
+.hotrow .rank {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-muted);
+  width: 26px;
+  text-align: center;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+.hotrow:nth-child(-n+3) .rank { color: #fb923c; }
+.hotrow .ht { font-size: 14.5px; font-weight: 600; line-height: 1.5; flex: 1; min-width: 0; }
+.hotrow .meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.hotrow .badge {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border-radius: 5px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.hotrow .heat {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #fb923c;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hot-updated {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 18px;
+}
+.hot-empty { text-align: center; color: var(--text-muted); padding: 40px 0; line-height: 2; }
+
 /* ── 名人全景背景（輪播場景）── */
 #bgcele {
   position: fixed;
@@ -652,6 +731,7 @@ footer {
   <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21M8.5 21h7"/></symbol>
   <symbol id="i-luggage" viewBox="0 0 24 24"><rect x="5.5" y="7" width="13" height="13" rx="2.5"/><path d="M9.5 7V4.5A1.5 1.5 0 0 1 11 3h2a1.5 1.5 0 0 1 1.5 1.5V7"/><path d="M9.5 11v5M14.5 11v5" stroke-width="1.3"/></symbol>
   <symbol id="i-espresso" viewBox="0 0 24 24"><path d="M4 3.5h16V7H4z"/><path d="M6 7v3.5h12V7M12 10.5v2"/><path d="M9.5 14.5h5V16a2.5 2.5 0 0 1-5 0v-1.5z"/><path d="M4 20.5h16"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3.5c1 3.5 3.5 5 5.5 8 1.8 2.8 1.5 6.5-1 8.8a7.4 7.4 0 0 1-9 .6c-2.8-2-3.8-5.8-2.2-8.9 1-2 2.7-3 3.7-5.2.5-1.1.8-2.2 1-3.3z"/><path d="M12 20.5c-2.4-1-3-3.6-1.6-5.4.8-1 1.4-1.6 1.6-3 1.4 1.6 3.2 3 3 5.2-.1 1.6-1.3 2.8-3 3.2z" stroke-width="1.4"/></symbol>
 </svg>
 
 <div id="bgcele" aria-hidden="true"></div>
@@ -676,6 +756,17 @@ footer {
     <div class="center">
       <button class="btn" onclick="go('q1')">開始放血 <svg class="icon"><use href="#i-drop"/></svg></button>
     </div>
+    <div class="center">
+      <button class="hotlink" onclick="openHot()"><svg class="icon h-orange"><use href="#i-flame"/></svg> 不想動腦？看論壇現在燒什麼</button>
+    </div>
+  </section>
+
+  <!-- 論壇熱燒中 -->
+  <section class="screen" id="s-hot">
+    <h2><svg class="icon h-orange"><use href="#i-flame"/></svg> 論壇熱燒中</h2>
+    <p class="sub" id="hot-sub">全民省錢運動實況轉播，看看別人搶什麼，你就知道自己錯過了什麼。</p>
+    <div id="hot-list" class="hotlist"></div>
+    <div class="center"><button class="back" onclick="go('intro')">← 回首頁</button></div>
   </section>
 
   <!-- q1: budget -->
@@ -1175,6 +1266,41 @@ function celebOfCite(cite) {
 setBg(rand(celebNames));
 // 每 10 秒輪播下一位
 setInterval(() => setBg(celebNames[(celebNames.indexOf(curBg) + 1) % celebNames.length]), 10000);
+
+// ── 論壇熱燒榜:GitHub Action 每天爬 PTT/Dcard 熱門文 → data/hot.json ──
+const hotSubs = [
+  '全民省錢運動實況轉播，看看別人搶什麼，你就知道自己錯過了什麼。',
+  '這些是論壇正在燒的東西。跟風不可恥，錯過才可恥。',
+  '別人幫你做完功課了，你只要負責出錢。',
+];
+let hotLoaded = false;
+async function openHot() {
+  go('hot');
+  document.getElementById('hot-sub').textContent = rand(hotSubs);
+  if (hotLoaded) return;
+  const list = document.getElementById('hot-list');
+  list.innerHTML = '<div class="hot-empty">正在偷看論壇……</div>';
+  try {
+    // raw.githubusercontent 永遠是 Action 最新 commit,不用等網站重新部署
+    let res = await fetch('https://raw.githubusercontent.com/michaelbothsieh-crypto/spend-it/main/data/hot.json', { cache: 'no-store' });
+    if (!res.ok) res = await fetch('data/hot.json');
+    const data = await res.json();
+    if (!data.items || !data.items.length) throw new Error('empty');
+    list.innerHTML = data.items.map((it, i) => `
+      <a class="hotrow" style="--i:${i}" href="${it.url}" target="_blank" rel="noopener">
+        <span class="rank">${i + 1}</span>
+        <span class="ht">${it.title.replace(/</g, '&lt;')}</span>
+        <span class="meta">
+          <span class="heat">${svg('flame')} ${it.heat}</span>
+          <span class="badge">${it.src}</span>
+        </span>
+      </a>`).join('') +
+      `<div class="hot-updated">更新於 ${new Date(data.updated).toLocaleString('zh-TW', { hour12: false })},每天早上自動去論壇上班。</div>`;
+    hotLoaded = true;
+  } catch (e) {
+    list.innerHTML = '<div class="hot-empty">論壇資料還在路上，或是爬蟲今天請假。<br>先回去做診斷吧，錢不會等你。</div>';
+  }
+}
 
 // 鍵盤 1/2/3 選選項,Esc 回上頁
 document.addEventListener('keydown', e => {

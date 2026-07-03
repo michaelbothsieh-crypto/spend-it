@@ -1,0 +1,26 @@
+name: 每日抓論壇熱門好物
+
+on:
+  schedule:
+    - cron: '0 22 * * *'   # 台灣早上 6 點
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/fetch-hot.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name 'hot-bot'
+          git config user.email 'bot@users.noreply.github.com'
+          git add data/hot.json
+          git diff --cached --quiet || git commit -m "更新論壇熱門榜 $(date +%F)"
+          git push
