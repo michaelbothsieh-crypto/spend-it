@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>錢包放血室 — 反正錢留著也會貶值</title>
 <meta name="description" content="剛領到獎金不知道花在哪?讓厭世小助手循序漸進幫你把錢燒掉。">
+<meta property="og:title" content="錢包放血室 💸">
+<meta property="og:description" content="回答三個問題,厭世小助手幫你決定這筆錢的歸宿。反正存著也買不起房。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#09090b">
 <style>
 :root {
   --bg: #09090b;
@@ -19,6 +23,7 @@
   --accent-hover: #60a5fa;
   --accent-dim: rgba(59, 130, 246, 0.12);
   --accent-glow: rgba(59, 130, 246, 0.25);
+  --gold: #fbbf24;
   --radius: 12px;
   --radius-sm: 8px;
   --radius-lg: 16px;
@@ -33,19 +38,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+}
+/* ambient glow */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(600px 400px at 15% -5%, rgba(59,130,246,.09), transparent 70%),
+    radial-gradient(500px 350px at 90% 10%, rgba(251,191,36,.05), transparent 70%);
+  z-index: 0;
 }
 ::selection { background: var(--accent-dim); }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--surface); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }
 
 .wrap {
   width: 100%;
   max-width: 720px;
-  padding: 48px 20px 80px;
+  padding: 40px 20px 60px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 /* ── header ── */
@@ -54,61 +74,111 @@ body {
   color: var(--text-muted);
   letter-spacing: 2px;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   cursor: pointer;
   user-select: none;
+  transition: color .2s;
 }
+.logo:hover { color: var(--text-secondary); }
 .logo b { color: var(--accent); }
 
 /* ── screens ── */
-.screen { display: none; animation: pop .35s cubic-bezier(.2,.9,.3,1.2); }
-.screen.active { display: block; }
+.screen { display: none; }
+.screen.active { display: block; animation: pop .4s cubic-bezier(.2,.9,.3,1.2); }
 @keyframes pop {
   from { opacity: 0; transform: translateY(16px) scale(.98); }
   to { opacity: 1; transform: none; }
 }
 
 h1 {
-  font-size: clamp(28px, 6vw, 44px);
+  font-size: clamp(30px, 6.5vw, 48px);
   text-align: center;
-  margin: 40px 0 12px;
-  line-height: 1.3;
+  margin: 28px 0 14px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #f4f4f5 30%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 h2 {
-  font-size: clamp(22px, 5vw, 30px);
+  font-size: clamp(23px, 5vw, 32px);
   text-align: center;
-  margin: 32px 0 6px;
+  margin: 24px 0 8px;
   line-height: 1.4;
+  letter-spacing: -0.3px;
 }
 .sub {
   text-align: center;
   color: var(--text-secondary);
   font-size: 15px;
-  margin-bottom: 36px;
-  line-height: 1.7;
+  margin-bottom: 32px;
+  line-height: 1.8;
 }
-.sub small { color: var(--text-muted); }
+.sub small { color: var(--text-muted); font-size: 13px; }
 
-.big-emoji { font-size: 72px; text-align: center; display: block; margin-top: 24px; animation: float 3s ease-in-out infinite; }
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-10px) rotate(3deg); }
+.big-emoji {
+  font-size: 76px;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 12px 24px rgba(251,191,36,.15));
 }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-12px) rotate(4deg); }
+}
+
+/* inflation ticker */
+.ticker {
+  margin: 0 auto 32px;
+  width: fit-content;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ticker b {
+  color: #f87171;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.ticker .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #f87171;
+  animation: blink 1.2s ease-in-out infinite;
+}
+@keyframes blink { 50% { opacity: .2; } }
 
 /* ── progress ── */
 .progress {
   display: flex;
   gap: 6px;
   justify-content: center;
-  margin-top: 28px;
+  margin: 4px 0 24px;
 }
 .progress i {
-  width: 28px; height: 4px;
+  width: 34px; height: 4px;
   border-radius: 2px;
   background: var(--surface-2);
-  transition: background .3s;
+  transition: background .4s, box-shadow .4s;
 }
-.progress i.on { background: var(--accent); }
+.progress i.on { background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+
+.qtag {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
 
 /* ── option cards ── */
 .opts { display: flex; flex-direction: column; gap: 12px; }
@@ -125,17 +195,49 @@ h2 {
   width: 100%;
   color: var(--text-primary);
   font: inherit;
-  transition: transform .15s, border-color .15s, background .15s;
+  position: relative;
+  transition: transform .16s, border-color .16s, background .16s, box-shadow .16s;
+  animation: slidein .4s cubic-bezier(.2,.9,.3,1.1) backwards;
 }
-.opt:hover {
+.screen.active .opt:nth-child(1) { animation-delay: .05s; }
+.screen.active .opt:nth-child(2) { animation-delay: .12s; }
+.screen.active .opt:nth-child(3) { animation-delay: .19s; }
+@keyframes slidein {
+  from { opacity: 0; transform: translateX(-14px); }
+  to { opacity: 1; transform: none; }
+}
+.opt:hover, .opt:focus-visible {
   transform: translateX(6px);
   border-color: var(--accent);
-  background: var(--accent-dim);
+  background: linear-gradient(90deg, var(--accent-dim), var(--surface) 70%);
+  box-shadow: -4px 0 16px -6px var(--accent-glow);
 }
 .opt:active { transform: translateX(6px) scale(.98); }
-.opt .ico { font-size: 32px; flex-shrink: 0; }
-.opt .t { font-size: 17px; font-weight: 600; margin-bottom: 3px; }
-.opt .d { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.opt .ico {
+  font-size: 30px;
+  flex-shrink: 0;
+  width: 54px; height: 54px;
+  display: grid; place-items: center;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  transition: transform .2s;
+}
+.opt:hover .ico { transform: scale(1.12) rotate(-6deg); }
+.opt .t { font-size: 17px; font-weight: 700; margin-bottom: 3px; display: block; }
+.opt .d { font-size: 13px; color: var(--text-muted); line-height: 1.55; display: block; }
+.opt .key {
+  position: absolute;
+  right: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  width: 20px; height: 20px;
+  display: grid; place-items: center;
+  opacity: .5;
+}
+@media (hover: none) { .opt .key { display: none; } }
 
 .btn {
   display: inline-block;
@@ -145,13 +247,13 @@ h2 {
   font: inherit;
   font-size: 17px;
   font-weight: 700;
-  padding: 16px 40px;
+  padding: 16px 42px;
   border-radius: var(--radius);
   cursor: pointer;
   transition: transform .15s, background .15s, box-shadow .15s;
-  box-shadow: 0 0 0 0 var(--accent-glow);
+  box-shadow: 0 4px 20px -4px var(--accent-glow);
 }
-.btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+.btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 10px 28px -4px var(--accent-glow); }
 .btn:active { transform: scale(.97); }
 .btn.ghost {
   background: transparent;
@@ -160,58 +262,125 @@ h2 {
   box-shadow: none;
   font-weight: 500;
 }
-.btn.ghost:hover { color: var(--text-primary); border-color: var(--text-muted); }
+.btn.ghost:hover { color: var(--text-primary); border-color: var(--text-muted); background: var(--surface); }
 .center { text-align: center; }
 .back {
   background: none; border: none; color: var(--text-muted);
   font: inherit; font-size: 13px; cursor: pointer;
-  margin-top: 24px; padding: 8px;
+  margin-top: 22px; padding: 8px;
+  transition: color .15s;
 }
 .back:hover { color: var(--text-secondary); }
 
+/* ── diagnosing interstitial ── */
+#s-loading { text-align: center; }
+.spin-emoji {
+  font-size: 64px;
+  display: inline-block;
+  margin-top: 80px;
+  animation: coinflip 1s linear infinite;
+}
+@keyframes coinflip {
+  from { transform: rotateY(0); }
+  to { transform: rotateY(360deg); }
+}
+.loading-msg {
+  margin-top: 24px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  min-height: 26px;
+  animation: blink 1.4s ease-in-out infinite;
+}
+
 /* ── results ── */
+.recap {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+.recap span {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.recap span b { color: var(--accent-hover); font-weight: 600; }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 14px;
-  margin-top: 8px;
 }
 .card {
   background: var(--surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 22px 18px 18px;
+  padding: 22px 18px 16px;
   display: flex;
   flex-direction: column;
-  animation: pop .4s cubic-bezier(.2,.9,.3,1.2) backwards;
-  transition: transform .15s, border-color .15s;
+  position: relative;
+  overflow: hidden;
+  animation: cardin .45s cubic-bezier(.2,.9,.3,1.15) backwards;
+  transition: transform .18s, border-color .18s, box-shadow .18s;
 }
-.card:hover { transform: translateY(-4px); border-color: var(--border); }
-.card:nth-child(2) { animation-delay: .05s; }
-.card:nth-child(3) { animation-delay: .1s; }
-.card:nth-child(4) { animation-delay: .15s; }
-.card:nth-child(5) { animation-delay: .2s; }
-.card:nth-child(6) { animation-delay: .25s; }
-.card .pic { font-size: 46px; margin-bottom: 12px; }
-.card .name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-.card .desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 12px; }
-.card .price {
-  font-size: 15px; font-weight: 700; color: var(--accent-hover);
+@keyframes cardin {
+  from { opacity: 0; transform: translateY(20px) scale(.95); }
+  to { opacity: 1; transform: none; }
+}
+.card:nth-child(2) { animation-delay: .06s; }
+.card:nth-child(3) { animation-delay: .12s; }
+.card:nth-child(4) { animation-delay: .18s; }
+.card:nth-child(5) { animation-delay: .24s; }
+.card:nth-child(6) { animation-delay: .3s; }
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border);
+  box-shadow: 0 16px 32px -12px rgba(0,0,0,.5);
+}
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.035), transparent);
+  transform: skewX(-15deg);
+  transition: left .5s;
+  pointer-events: none;
+}
+.card:hover::after { left: 130%; }
+.card .pic {
+  font-size: 44px;
   margin-bottom: 12px;
+  transition: transform .25s cubic-bezier(.2,.9,.3,1.4);
 }
+.card:hover .pic { transform: scale(1.15) rotate(-5deg); }
+.card .name { font-size: 16px; font-weight: 700; margin-bottom: 5px; line-height: 1.4; }
+.card .desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; flex: 1; margin-bottom: 14px; }
+.card .price {
+  font-size: 14px; font-weight: 700; color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.card .price::before { content: '💳'; font-size: 12px; }
 .card .links { display: flex; gap: 8px; }
 .card .links a {
   flex: 1;
   text-align: center;
   font-size: 13px;
+  font-weight: 600;
   text-decoration: none;
   color: var(--text-secondary);
   background: var(--surface-2);
   border-radius: var(--radius-sm);
-  padding: 8px 0;
-  transition: background .15s, color .15s;
+  padding: 9px 0;
+  transition: background .15s, color .15s, transform .15s;
 }
-.card .links a:hover { background: var(--accent); color: #fff; }
+.card .links a:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
 
 .result-actions {
   display: flex;
@@ -221,18 +390,37 @@ h2 {
   flex-wrap: wrap;
 }
 
+/* confetti */
+.confetti {
+  position: fixed;
+  top: -40px;
+  font-size: 22px;
+  pointer-events: none;
+  z-index: 99;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: .3; }
+}
+
 footer {
   color: var(--text-muted);
   font-size: 12px;
   text-align: center;
   padding: 20px;
-  line-height: 1.8;
+  line-height: 1.9;
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="logo" onclick="go('intro')">💸 錢包<b>放血</b>室</div>
+  <div class="logo" onclick="go('intro')" role="button" tabindex="0">💸 錢包<b>放血</b>室</div>
 
   <!-- intro -->
   <section class="screen active" id="s-intro">
@@ -240,9 +428,13 @@ footer {
     <h1>喔?手頭有點閒錢?</h1>
     <p class="sub">
       獎金入帳、薪水剛發,錢躺在戶頭裡瑟瑟發抖。<br>
-      別擔心,回答幾個問題,我幫你找到它的歸宿。<br>
+      回答三個問題,我幫你找到它的歸宿。<br>
       <small>反正存著也買不起房,不如買點快樂。</small>
     </p>
+    <div class="ticker">
+      <span class="dot"></span>
+      你猶豫的這段時間,通膨吃掉了 <b id="inflation">NT$ 0.00</b>
+    </div>
     <div class="center">
       <button class="btn" onclick="go('q1')">開始放血 🩸</button>
     </div>
@@ -250,6 +442,7 @@ footer {
 
   <!-- q1: budget -->
   <section class="screen" id="s-q1">
+    <span class="qtag">QUESTION 1 / 3</span>
     <h2>💰 這筆錢多肥?</h2>
     <p class="sub">誠實面對,通膨不會因為你謙虛就放過你。</p>
     <div class="opts">
@@ -257,16 +450,19 @@ footer {
         <span class="ico">🪙</span>
         <span><span class="t">小確幸(500 以下)</span>
         <span class="d">零錢等級。買不了快樂,但買得起快樂的試用包。</span></span>
+        <span class="key">1</span>
       </button>
       <button class="opt" onclick="pick('tier','m')">
         <span class="ico">💵</span>
         <span><span class="t">有點爽(500 ~ 3,000)</span>
         <span class="d">可以認真揮霍一下,店員會對你稍微客氣的等級。</span></span>
+        <span class="key">2</span>
       </button>
       <button class="opt" onclick="pick('tier','l')">
         <span class="ico">💎</span>
         <span><span class="t">大手筆(3,000 以上)</span>
         <span class="d">哇,是有錢人。這種等級的錢放著只會養出罪惡感。</span></span>
+        <span class="key">3</span>
       </button>
     </div>
     <div class="progress"><i class="on"></i><i></i><i></i></div>
@@ -275,6 +471,7 @@ footer {
 
   <!-- q2: target -->
   <section class="screen" id="s-q2">
+    <span class="qtag">QUESTION 2 / 3</span>
     <h2>🎯 錢燒了要給誰爽?</h2>
     <p class="sub">花錢的境界有三種,你是哪一種?</p>
     <div class="opts">
@@ -282,16 +479,19 @@ footer {
         <span class="ico">😎</span>
         <span><span class="t">當然是我自己</span>
         <span class="d">辛苦賺的錢不花在自己身上,難道要留給老闆嗎?</span></span>
+        <span class="key">1</span>
       </button>
       <button class="opt" onclick="pick('who','home')">
         <span class="ico">🏠</span>
         <span><span class="t">升級我的窩</span>
         <span class="d">家是避風港,港口設施該更新了。</span></span>
+        <span class="key">2</span>
       </button>
       <button class="opt" onclick="pick('who','gift')">
         <span class="ico">🎁</span>
         <span><span class="t">送禮做人情</span>
         <span class="d">人情世故是一種投資,報酬率不明但不投會死。</span></span>
+        <span class="key">3</span>
       </button>
     </div>
     <div class="progress"><i class="on"></i><i class="on"></i><i></i></div>
@@ -300,6 +500,7 @@ footer {
 
   <!-- q3: mood -->
   <section class="screen" id="s-q3">
+    <span class="qtag">QUESTION 3 / 3</span>
     <h2>🧠 現在是什麼心情?</h2>
     <p class="sub">購物是心理治療,先掛號再拿藥。</p>
     <div class="opts">
@@ -307,26 +508,36 @@ footer {
         <span class="ico">😩</span>
         <span><span class="t">累爆,想耍廢</span>
         <span class="d">上班已經用光所有力氣,只想癱著當一灘泥。</span></span>
+        <span class="key">1</span>
       </button>
       <button class="opt" onclick="pick('mood','up')">
         <span class="ico">✨</span>
         <span><span class="t">想升級生活品質</span>
         <span class="d">覺得自己值得過得更好一點,哪怕只有 3%。</span></span>
+        <span class="key">2</span>
       </button>
       <button class="opt" onclick="pick('mood','dumb')">
         <span class="ico">🤪</span>
         <span><span class="t">想買蠢東西</span>
         <span class="d">實用性?不存在的。快樂就是要沒有理由。</span></span>
+        <span class="key">3</span>
       </button>
     </div>
     <div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i></div>
     <div class="center"><button class="back" onclick="go('q2')">← 回上一題</button></div>
   </section>
 
+  <!-- loading interstitial -->
+  <section class="screen" id="s-loading">
+    <span class="spin-emoji">🪙</span>
+    <div class="loading-msg" id="loading-msg">正在計算你的錢有多想離開你…</div>
+  </section>
+
   <!-- results -->
   <section class="screen" id="s-result">
     <h2 id="r-title">🎉 診斷完畢</h2>
     <p class="sub" id="r-sub"></p>
+    <div class="recap" id="r-recap"></div>
     <div class="cards" id="r-cards"></div>
     <div class="result-actions">
       <button class="btn ghost" onclick="reroll()">🎲 都不喜歡,重抽</button>
@@ -398,6 +609,17 @@ const subLines = {
   up: '診斷結果:生活品質缺乏症。以下藥物長期服用效果更佳。',
   dumb: '診斷結果:太理性太久了。以下純快樂製劑,不含任何實用成分。',
 };
+const labels = {
+  tier: { s: '🪙 小確幸', m: '💵 有點爽', l: '💎 大手筆' },
+  who:  { self: '😎 給自己', home: '🏠 給我的窩', gift: '🎁 送人情' },
+  mood: { chill: '😩 想耍廢', up: '✨ 要升級', dumb: '🤪 買蠢貨' },
+};
+const loadingLines = [
+  '正在計算你的錢有多想離開你…',
+  '正在說服你的理智閉嘴…',
+  '正在對照通膨曲線與你的快樂缺口…',
+  '正在假裝很認真地分析…',
+];
 
 const state = { tier: null, who: null, mood: null };
 let pool = [], shown = [];
@@ -412,7 +634,16 @@ function pick(key, val) {
   state[key] = val;
   if (key === 'tier') go('q2');
   else if (key === 'who') go('q3');
-  else showResults();
+  else diagnose();
+}
+
+function diagnose() {
+  go('loading');
+  const msgEl = document.getElementById('loading-msg');
+  const msgs = loadingLines.sort(() => Math.random() - .5);
+  msgEl.textContent = msgs[0];
+  setTimeout(() => { msgEl.textContent = msgs[1]; }, 700);
+  setTimeout(showResults, 1400);
 }
 
 function match(p) {
@@ -428,8 +659,13 @@ function showResults() {
   }
   shown = [];
   document.getElementById('r-sub').textContent = subLines[state.mood];
+  document.getElementById('r-recap').innerHTML =
+    `<span>預算 <b>${labels.tier[state.tier]}</b></span>` +
+    `<span>對象 <b>${labels.who[state.who]}</b></span>` +
+    `<span>心情 <b>${labels.mood[state.mood]}</b></span>`;
   draw();
   go('result');
+  confetti();
 }
 
 function draw() {
@@ -451,14 +687,57 @@ function draw() {
 }
 
 function reroll() {
+  // 重抽時卡片重播進場動畫
+  const c = document.getElementById('r-cards');
+  c.style.animation = 'none';
   draw();
-  window.scrollTo({ top: 0 });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function restart() {
   state.tier = state.who = state.mood = null;
   go('q1');
 }
+
+function confetti() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const glyphs = ['💸','🪙','✨','💵','🎉'];
+  for (let i = 0; i < 26; i++) {
+    const el = document.createElement('span');
+    el.className = 'confetti';
+    el.textContent = glyphs[i % glyphs.length];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = (16 + Math.random() * 14) + 'px';
+    el.style.animationDuration = (1.8 + Math.random() * 1.6) + 's';
+    el.style.animationDelay = (Math.random() * .5) + 's';
+    document.body.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
+  }
+}
+
+// 通膨計數器:台灣 CPI 年增率抓約 2%,以月薪 5 萬概算,每秒貶 ~0.03 元
+let burned = 0;
+setInterval(() => {
+  if (!document.getElementById('s-intro').classList.contains('active')) return;
+  burned += 0.0032;
+  document.getElementById('inflation').textContent = 'NT$ ' + burned.toFixed(2);
+}, 100);
+
+// 鍵盤 1/2/3 選選項,Esc 回上頁
+document.addEventListener('keydown', e => {
+  const active = document.querySelector('.screen.active');
+  if (!active) return;
+  if (['1','2','3'].includes(e.key)) {
+    const opts = active.querySelectorAll('.opt');
+    const target = opts[Number(e.key) - 1];
+    if (target) target.click();
+  } else if (e.key === 'Escape') {
+    const back = active.querySelector('.back');
+    if (back) back.click();
+  } else if (e.key === 'Enter' && active.id === 's-intro') {
+    go('q1');
+  }
+});
 </script>
 </body>
 </html>
