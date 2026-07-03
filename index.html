@@ -538,21 +538,29 @@ h2 .icon { font-size: .92em; color: var(--accent-hover); }
 
 /* ── 論壇熱燒榜 ── */
 .hotlink {
-  background: none;
-  border: none;
-  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
   font: inherit;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 18px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  transition: color .15s, background .15s;
+  margin-top: 14px;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  transition: color .15s, background .15s, border-color .15s, transform .15s, box-shadow .15s;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
-.hotlink:hover { color: var(--text-primary); background: var(--surface); }
+.hotlink:hover {
+  color: var(--text-primary);
+  border-color: #fb923c;
+  background: rgba(251, 146, 60, .08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(251, 146, 60, .35);
+}
+.hotlink:active { transform: scale(.97); }
 .hotlist { display: flex; flex-direction: column; gap: 10px; }
 .hotrow {
   display: flex;
@@ -757,7 +765,7 @@ footer {
       <button class="btn" onclick="go('q1')">開始放血 <svg class="icon"><use href="#i-drop"/></svg></button>
     </div>
     <div class="center">
-      <button class="hotlink" onclick="openHot()"><svg class="icon h-orange"><use href="#i-flame"/></svg> 不想動腦？看論壇現在燒什麼</button>
+      <button class="hotlink" onclick="openHot()"><svg class="icon h-orange"><use href="#i-flame"/></svg> 看論壇現在燒什麼</button>
     </div>
   </section>
 
