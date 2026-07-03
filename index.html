@@ -536,6 +536,28 @@ h2 .icon { font-size: .92em; color: var(--accent-hover); }
   to { transform: translateY(110vh) rotate(720deg); opacity: .3; }
 }
 
+/* ── 名人背景水印 ── */
+#bgcele {
+  position: fixed;
+  right: -3vw;
+  bottom: -4vh;
+  width: min(52vw, 460px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  animation: sway 7s ease-in-out infinite;
+}
+#bgcele.show { opacity: .14; }
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg) translateY(0); }
+  50% { transform: rotate(2deg) translateY(-10px); }
+}
+@media (max-width: 640px) {
+  #bgcele { width: 72vw; right: -12vw; }
+  #bgcele.show { opacity: .09; }
+}
+
 footer {
   color: var(--text-muted);
   font-size: 12px;
@@ -616,6 +638,8 @@ footer {
   <symbol id="i-luggage" viewBox="0 0 24 24"><rect x="5.5" y="7" width="13" height="13" rx="2.5"/><path d="M9.5 7V4.5A1.5 1.5 0 0 1 11 3h2a1.5 1.5 0 0 1 1.5 1.5V7"/><path d="M9.5 11v5M14.5 11v5" stroke-width="1.3"/></symbol>
   <symbol id="i-espresso" viewBox="0 0 24 24"><path d="M4 3.5h16V7H4z"/><path d="M6 7v3.5h12V7M12 10.5v2"/><path d="M9.5 14.5h5V16a2.5 2.5 0 0 1-5 0v-1.5z"/><path d="M4 20.5h16"/></symbol>
 </svg>
+
+<div id="bgcele" aria-hidden="true"></div>
 
 <div class="wrap">
   <div class="logo" onclick="go('intro')" role="button" tabindex="0"><svg class="icon"><use href="#i-wallet"/></svg> 錢包<b>放血</b>室</div>
@@ -909,6 +933,7 @@ function showResults() {
     `<span>${svg('brain')} 心情 <b>${labels.mood[state.mood]}</b></span>`;
   const q = rand(quotes);
   document.getElementById('r-quote').innerHTML = `${q[0]}<cite>— ${q[1]}</cite>`;
+  setBg(celebOfCite(q[1]) || rand(celebNames));
   draw();
   go('result');
   confetti();
@@ -960,6 +985,7 @@ function reroll() {
   document.getElementById('r-sub').textContent = rand(rerollLines);
   const q = rand(quotes);
   document.getElementById('r-quote').innerHTML = `${q[0]}<cite>— ${q[1]}</cite>`;
+  setBg(celebOfCite(q[1]) || rand(celebNames));
   // 卡片圖示先拉霸式狂轉,再開獎
   const pics = document.querySelectorAll('#r-cards .pic');
   pics.forEach(p => p.classList.add('rolling'));
@@ -1011,6 +1037,109 @@ const introSubs = [
   '錢放在戶頭裡不會長大,只會被通膨啃。<br>三個問題,幫你把它換成摸得到的快樂。<br><small>這叫資產配置,配置到你手上。</small>',
 ];
 document.querySelector('#s-intro .sub').innerHTML = rand(introSubs);
+
+// ── 俏皮名人背景水印(手繪 SVG,與語錄連動)──
+const CH = `xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
+const celebs = {
+  // 巴菲特(巷口那位):圓眼鏡+西裝+珍奶
+  buffett: `<svg ${CH}>
+    <path d="M35 230q0-60 65-60t65 60z" fill="#475569"/>
+    <path d="M100 172l-10 14 10 30 10-30z" fill="#f87171"/>
+    <circle cx="100" cy="105" r="48" fill="#ecc6a0"/>
+    <path d="M52 100q-6-38 20-52-4 18 4 18-2-14 12-22 0 12 8 12 4-12 22-10-4 8 2 10 14 2 20 16 6 12 8 28l-8 2q-2-26-14-32-30-8-56 2-12 10-10 30z" fill="#e5e7eb"/>
+    <circle cx="82" cy="103" r="15" stroke="#93c5fd" stroke-width="4"/>
+    <circle cx="120" cy="103" r="15" stroke="#93c5fd" stroke-width="4"/>
+    <path d="M97 103h6M67 100l-12-4M135 100l12-4" stroke="#93c5fd" stroke-width="4"/>
+    <circle cx="82" cy="105" r="3.5" fill="#27272a"/><circle cx="120" cy="105" r="3.5" fill="#27272a"/>
+    <path d="M86 132q14 10 30 0" stroke="#a16207" stroke-width="4"/>
+    <rect x="140" y="170" width="34" height="48" rx="8" fill="#fbbf24" opacity=".9"/>
+    <path d="M148 162l14-24" stroke="#f4f4f5" stroke-width="6"/>
+    <circle cx="150" cy="204" r="4" fill="#27272a"/><circle cx="163" cy="196" r="4" fill="#27272a"/><circle cx="156" cy="210" r="4" fill="#27272a"/>
+  </svg>`,
+  // 愛因斯坦(雞排攤的):爆炸白髮+鬍子+雞排
+  einstein: `<svg ${CH}>
+    <path d="M40 230q0-55 60-55t60 55z" fill="#78716c"/>
+    <path d="M100 60q-52-16-58 30-16 8-6 24 8 14 20 10l6-34q20-22 76 0l6 34q12 4 20-10 10-16-6-24-6-46-58-30z" fill="#f4f4f5"/>
+    <path d="M42 88q-18-2-14-20 4-16 22-12M158 88q18-2 14-20-4-16-22-12M60 52q-2-16 16-18M140 52q2-16-16-18M100 30q-8-12 0-14 8 2 0 14z" fill="#f4f4f5"/>
+    <circle cx="100" cy="110" r="45" fill="#ecc6a0"/>
+    <circle cx="84" cy="103" r="4" fill="#27272a"/><circle cx="116" cy="103" r="4" fill="#27272a"/>
+    <path d="M78 92q6-6 12 0M110 92q6-6 12 0" stroke="#e5e7eb" stroke-width="4"/>
+    <path d="M76 126q24-8 48 0-10 10-24 10t-24-10z" fill="#f4f4f5"/>
+    <path d="M94 138q6 8 12 0" stroke="#f472b6" stroke-width="5"/>
+    <path d="M152 160l18 40" stroke="#a16207" stroke-width="6"/>
+    <path d="M136 118q28-10 36 10 8 18-10 28t-34-2q-12-16 8-36z" fill="#fbbf24"/>
+    <circle cx="146" cy="132" r="3" fill="#a16207"/><circle cx="158" cy="140" r="3" fill="#a16207"/><circle cx="148" cy="146" r="3" fill="#a16207"/>
+  </svg>`,
+  // 莎士比亞(蝦皮賣家):皺領+山羊鬍+包裹
+  shakespeare: `<svg ${CH}>
+    <path d="M40 230q0-52 60-52t60 52z" fill="#7c2d12"/>
+    <g fill="#f4f4f5">
+      <circle cx="58" cy="168" r="13"/><circle cx="79" cy="176" r="13"/><circle cx="100" cy="179" r="13"/><circle cx="121" cy="176" r="13"/><circle cx="142" cy="168" r="13"/>
+    </g>
+    <circle cx="100" cy="106" r="44" fill="#ecc6a0"/>
+    <path d="M56 108q-6-30 12-44 12-10 32-10t32 10q18 14 12 44l-8-2q2-24-10-34v20l-6-24q-20-8-40 0l-6 24v-20q-12 10-10 34z" fill="#a16207"/>
+    <circle cx="85" cy="102" r="4" fill="#27272a"/><circle cx="115" cy="102" r="4" fill="#27272a"/>
+    <path d="M80 92q5-5 10 0M110 92q5-5 10 0" stroke="#a16207" stroke-width="3.5"/>
+    <path d="M84 124q16 6 32 0M96 130q4 14-2 20 12-4 12-20" fill="none" stroke="#a16207" stroke-width="4"/>
+    <rect x="138" y="178" width="42" height="34" rx="4" fill="#f59e0b"/>
+    <path d="M138 195h42M159 178v34" stroke="#fef3c7" stroke-width="4"/>
+    <path d="M28 200l16-44 6 2-14 44z" fill="#e5e7eb"/>
+    <path d="M44 156q10-8 6-16" stroke="#e5e7eb" stroke-width="4"/>
+  </svg>`,
+  // 蘇格拉底(菜市場門口的):大鬍子+托加袍+菜籃
+  socrates: `<svg ${CH}>
+    <path d="M38 230q0-56 62-56t62 56z" fill="#e5e7eb"/>
+    <path d="M38 230q10-40 34-50l-6 50z" fill="#a1a1aa"/>
+    <circle cx="100" cy="100" r="44" fill="#ecc6a0"/>
+    <path d="M58 96q-4-28 16-38-2 12 6 12-2-10 10-16 0 10 8 10 2-10 20-8-2 8 4 10 14 4 16 30z" fill="#d4d4d8"/>
+    <g fill="#f4f4f5">
+      <circle cx="70" cy="128" r="12"/><circle cx="84" cy="140" r="13"/><circle cx="100" cy="146" r="14"/><circle cx="116" cy="140" r="13"/><circle cx="130" cy="128" r="12"/><circle cx="92" cy="128" r="12"/><circle cx="108" cy="128" r="12"/>
+    </g>
+    <circle cx="84" cy="98" r="4" fill="#27272a"/><circle cx="116" cy="98" r="4" fill="#27272a"/>
+    <path d="M78 88q6-6 12 0M110 88q6-6 12 0" stroke="#d4d4d8" stroke-width="4"/>
+    <path d="M140 186h40l-6 34h-28z" fill="#a16207"/>
+    <path d="M146 186q14-12 28 0" stroke="#a16207" stroke-width="5"/>
+    <path d="M150 184l-4-28M160 184l2-30M170 184l6-26" stroke="#4ade80" stroke-width="5"/>
+    <path d="M146 156l-4-10M162 154l1-10M176 158l5-9" stroke="#f4f4f5" stroke-width="5"/>
+  </svg>`,
+  // 牛頓(第四運動定律):長捲髮+頭上蘋果
+  newton: `<svg ${CH}>
+    <path d="M42 230q0-52 58-52t58 52z" fill="#1e40af"/>
+    <path d="M92 178h16l-8 20z" fill="#f4f4f5"/>
+    <circle cx="100" cy="112" r="42" fill="#ecc6a0"/>
+    <path d="M60 112q-10-44 40-46 50 2 40 46 8 40-12 62 6-32-4-58l-4 18-6-26q-14-6-28 0l-6 26-4-18q-10 26-4 58-20-22-12-62z" fill="#d4d4d8"/>
+    <circle cx="86" cy="108" r="4" fill="#27272a"/><circle cx="114" cy="108" r="4" fill="#27272a"/>
+    <path d="M80 98q6-6 12 0M108 98q6-6 12 0" stroke="#a1a1aa" stroke-width="4"/>
+    <path d="M90 134q10 6 20 0" stroke="#a16207" stroke-width="4"/>
+    <circle cx="100" cy="46" r="16" fill="#f87171"/>
+    <path d="M100 32q2-8 10-10" stroke="#4ade80" stroke-width="5"/>
+    <path d="M104 26q8-4 12 2-8 6-12-2z" fill="#4ade80"/>
+    <path d="M70 30l-8-8M130 30l8-8M100 16v-10" stroke="#a1a1aa" stroke-width="4"/>
+  </svg>`,
+};
+const celebNames = Object.keys(celebs);
+let curBg = null;
+function setBg(name) {
+  if (name === curBg) return;
+  const el = document.getElementById('bgcele');
+  el.classList.remove('show');
+  setTimeout(() => {
+    el.innerHTML = celebs[name];
+    curBg = name;
+    el.classList.add('show');
+  }, 700);
+}
+function celebOfCite(cite) {
+  if (cite.includes('莎士比亞')) return 'shakespeare';
+  if (cite.includes('愛因斯坦')) return 'einstein';
+  if (cite.includes('巴菲特') || cite.includes('華倫')) return 'buffett';
+  if (cite.includes('蘇格拉底')) return 'socrates';
+  if (cite.includes('牛頓')) return 'newton';
+  return null;
+}
+setBg(rand(celebNames));
+// 每 10 秒輪播下一位
+setInterval(() => setBg(celebNames[(celebNames.indexOf(curBg) + 1) % celebNames.length]), 10000);
 
 // 鍵盤 1/2/3 選選項,Esc 回上頁
 document.addEventListener('keydown', e => {
