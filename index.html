@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>錢包放血室 — 反正錢留著也會貶值</title>
-<meta name="description" content="剛領到獎金不知道花在哪?讓厭世小助手循序漸進幫你把錢燒掉。">
+<meta name="description" content="剛領到獎金不知道花在哪？讓厭世小助手循序漸進幫你把錢燒掉。">
 <meta property="og:title" content="錢包放血室">
-<meta property="og:description" content="回答三個問題,厭世小助手幫你決定這筆錢的歸宿。反正存著也買不起房。">
+<meta property="og:description" content="回答三個問題，厭世小助手幫你決定這筆錢的歸宿。反正存著也買不起房。">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#09090b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round'%3E%3Crect x='3' y='6' width='18' height='13' rx='3'/%3E%3Cpath d='M3 10h18'/%3E%3Ccircle cx='16.5' cy='14.5' r='1.4' fill='%233b82f6'/%3E%3C/svg%3E">
@@ -536,26 +536,41 @@ h2 .icon { font-size: .92em; color: var(--accent-hover); }
   to { transform: translateY(110vh) rotate(720deg); opacity: .3; }
 }
 
-/* ── 名人背景水印 ── */
+/* ── 名人全景背景（輪播場景）── */
 #bgcele {
   position: fixed;
-  right: -3vw;
-  bottom: -4vh;
-  width: min(52vw, 460px);
+  inset: 0;
   pointer-events: none;
   z-index: 0;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1.4s ease;
+  overflow: hidden;
+}
+#bgcele.show { opacity: 1; }
+#bgcele .celeb {
+  position: absolute;
+  right: -3vw;
+  bottom: -4vh;
+  width: min(52vw, 460px);
+  opacity: .14;
   animation: sway 7s ease-in-out infinite;
 }
-#bgcele.show { opacity: .14; }
+#bgcele .scatter {
+  position: absolute;
+  opacity: .09;
+  animation: drift linear infinite;
+}
 @keyframes sway {
   0%, 100% { transform: rotate(-2deg) translateY(0); }
   50% { transform: rotate(2deg) translateY(-10px); }
 }
+@keyframes drift {
+  from { transform: translateY(-6vh) rotate(0deg); }
+  to { transform: translateY(106vh) rotate(360deg); }
+}
 @media (max-width: 640px) {
-  #bgcele { width: 72vw; right: -12vw; }
-  #bgcele.show { opacity: .09; }
+  #bgcele .celeb { width: 72vw; right: -12vw; opacity: .09; }
+  #bgcele .scatter { opacity: .06; }
 }
 
 footer {
@@ -574,7 +589,7 @@ footer {
 </style>
 </head>
 <body>
-<!-- ── 自製 icon sprite(24x24 stroke 線條風)── -->
+<!-- ── 自製 icon sprite(24x24 stroke 線條風）── -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18"/><circle cx="16.5" cy="14.5" r="1.3" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-bill" viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="19" height="11" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M5.5 9.5v.01M18.5 14.5v.01"/></symbol>
@@ -652,11 +667,11 @@ footer {
       <span class="bill" style="left:40%;top:22%"><svg class="icon"><use href="#i-coin"/></svg></span>
       <span class="bill" style="left:60%;top:45%"><svg class="icon"><use href="#i-bill"/></svg></span>
     </div>
-    <h1>喔?手頭有點閒錢?</h1>
+    <h1>喔？手頭有點閒錢？</h1>
     <p class="sub"></p>
     <div class="ticker">
       <span class="dot"></span>
-      你猶豫的這段時間,通膨吃掉了 <b id="inflation">NT$ 0.00</b>
+      你猶豫的這段時間，通膨吃掉了 <b id="inflation">NT$ 0.00</b>
     </div>
     <div class="center">
       <button class="btn" onclick="go('q1')">開始放血 <svg class="icon"><use href="#i-drop"/></svg></button>
@@ -666,54 +681,54 @@ footer {
   <!-- q1: budget -->
   <section class="screen" id="s-q1">
     <span class="qtag">QUESTION 1 / 3</span>
-    <h2><svg class="icon"><use href="#i-moneybag"/></svg> 這筆錢多肥?</h2>
-    <p class="sub">誠實面對,通膨不會因為你謙虛就放過你。</p>
+    <h2><svg class="icon"><use href="#i-moneybag"/></svg> 這筆錢多肥？</h2>
+    <p class="sub">誠實面對，通膨不會因為你謙虛就放過你。</p>
     <div class="opts">
       <button class="opt" onclick="pick('tier','s')">
         <span class="ico h-green"><svg class="icon"><use href="#i-coin"/></svg></span>
-        <span><span class="t">小確幸(500 以下)</span>
-        <span class="d">零錢等級。買不了快樂,但買得起快樂的試用包。</span></span>
+        <span><span class="t">小確幸（500 以下）</span>
+        <span class="d">零錢等級。買不了快樂，但買得起快樂的試用包。</span></span>
         <span class="key">1</span>
       </button>
       <button class="opt" onclick="pick('tier','m')">
         <span class="ico h-blue"><svg class="icon"><use href="#i-bill"/></svg></span>
-        <span><span class="t">有點爽(500 ~ 3,000)</span>
-        <span class="d">可以認真揮霍一下,店員會對你稍微客氣的等級。</span></span>
+        <span><span class="t">有點爽（500 ~ 3,000)</span>
+        <span class="d">可以認真揮霍一下，店員會對你稍微客氣的等級。</span></span>
         <span class="key">2</span>
       </button>
       <button class="opt" onclick="pick('tier','l')">
         <span class="ico h-purple"><svg class="icon"><use href="#i-gem"/></svg></span>
-        <span><span class="t">大手筆(3,000 以上)</span>
-        <span class="d">哇,是有錢人。這種等級的錢放著只會養出罪惡感。</span></span>
+        <span><span class="t">大手筆（3,000 以上）</span>
+        <span class="d">哇，是有錢人。這種等級的錢放著只會養出罪惡感。</span></span>
         <span class="key">3</span>
       </button>
     </div>
     <div class="progress"><i class="on"></i><i></i><i></i></div>
-    <div class="center"><button class="back" onclick="go('intro')">← 我再想想(不會的,你已經想買了)</button></div>
+    <div class="center"><button class="back" onclick="go('intro')">← 我再想想（不會的，你已經想買了）</button></div>
   </section>
 
   <!-- q2: target -->
   <section class="screen" id="s-q2">
     <span class="qtag">QUESTION 2 / 3</span>
-    <h2><svg class="icon"><use href="#i-target"/></svg> 錢燒了要給誰爽?</h2>
-    <p class="sub">花錢的境界有三種,你是哪一種?</p>
+    <h2><svg class="icon"><use href="#i-target"/></svg> 錢燒了要給誰爽？</h2>
+    <p class="sub">花錢的境界有三種，你是哪一種？</p>
     <div class="opts">
       <button class="opt" onclick="pick('who','self')">
         <span class="ico h-gold"><svg class="icon"><use href="#i-cool"/></svg></span>
         <span><span class="t">當然是我自己</span>
-        <span class="d">辛苦賺的錢不花在自己身上,難道要留給老闆嗎?</span></span>
+        <span class="d">辛苦賺的錢不花在自己身上，難道要留給老闆嗎？</span></span>
         <span class="key">1</span>
       </button>
       <button class="opt" onclick="pick('who','home')">
         <span class="ico h-green"><svg class="icon"><use href="#i-house"/></svg></span>
         <span><span class="t">升級我的窩</span>
-        <span class="d">家是避風港,港口設施該更新了。</span></span>
+        <span class="d">家是避風港，港口設施該更新了。</span></span>
         <span class="key">2</span>
       </button>
       <button class="opt" onclick="pick('who','gift')">
         <span class="ico h-pink"><svg class="icon"><use href="#i-gift"/></svg></span>
         <span><span class="t">送禮做人情</span>
-        <span class="d">人情世故是一種投資,報酬率不明但不投會死。</span></span>
+        <span class="d">人情世故是一種投資，報酬率不明但不投會死。</span></span>
         <span class="key">3</span>
       </button>
     </div>
@@ -724,25 +739,25 @@ footer {
   <!-- q3: mood -->
   <section class="screen" id="s-q3">
     <span class="qtag">QUESTION 3 / 3</span>
-    <h2><svg class="icon"><use href="#i-brain"/></svg> 現在是什麼心情?</h2>
-    <p class="sub">購物是心理治療,先掛號再拿藥。</p>
+    <h2><svg class="icon"><use href="#i-brain"/></svg> 現在是什麼心情？</h2>
+    <p class="sub">購物是心理治療，先掛號再拿藥。</p>
     <div class="opts">
       <button class="opt" onclick="pick('mood','chill')">
         <span class="ico h-blue"><svg class="icon"><use href="#i-tired"/></svg></span>
-        <span><span class="t">累爆,想耍廢</span>
-        <span class="d">上班已經用光所有力氣,只想癱著當一灘泥。</span></span>
+        <span><span class="t">累爆，想耍廢</span>
+        <span class="d">上班已經用光所有力氣，只想癱著當一灘泥。</span></span>
         <span class="key">1</span>
       </button>
       <button class="opt" onclick="pick('mood','up')">
         <span class="ico h-gold"><svg class="icon"><use href="#i-spark"/></svg></span>
         <span><span class="t">想升級生活品質</span>
-        <span class="d">覺得自己值得過得更好一點,哪怕只有 3%。</span></span>
+        <span class="d">覺得自己值得過得更好一點，哪怕只有 3%。</span></span>
         <span class="key">2</span>
       </button>
       <button class="opt" onclick="pick('mood','dumb')">
         <span class="ico h-pink"><svg class="icon"><use href="#i-silly"/></svg></span>
         <span><span class="t">想買蠢東西</span>
-        <span class="d">實用性?不存在的。快樂就是要沒有理由。</span></span>
+        <span class="d">實用性？不存在的。快樂就是要沒有理由。</span></span>
         <span class="key">3</span>
       </button>
     </div>
@@ -765,91 +780,91 @@ footer {
     <blockquote class="endorse" id="r-quote"></blockquote>
     <div class="cards" id="r-cards"></div>
     <div class="result-actions">
-      <button class="btn ghost" onclick="reroll()"><svg class="icon"><use href="#i-dice"/></svg> 都不喜歡,重抽</button>
+      <button class="btn ghost" onclick="reroll()"><svg class="icon"><use href="#i-dice"/></svg> 都不喜歡，重抽</button>
       <button class="btn" onclick="restart()"><svg class="icon"><use href="#i-refresh"/></svg> 重新診斷</button>
     </div>
   </section>
 </div>
 
 <footer>
-  價格為大概區間,實際以賣場為準。連結是搜尋頁,買貴了別怪我。<br>
-  本站不負責你的財務狀況,它本來就沒救了。名人語錄均屬虛構,如有雷同,他們也沒錢告你。
+  價格為大概區間，實際以賣場為準。連結是搜尋頁，買貴了別怪我。<br>
+  本站不負責你的財務狀況，它本來就沒救了。名人語錄均屬虛構，如有雷同，他們也沒錢告你。
 </footer>
 
 <script>
 const rand = arr => arr[Math.floor(Math.random() * arr.length)];
 const svg = (name, extra = '') => `<svg class="icon" ${extra}><use href="#i-${name}"/></svg>`;
 
-// [icon, 名稱, 厭世描述, 價格, tier(s/m/l), who(self/home/gift 可多), mood(chill/up/dumb 可多), 搜尋關鍵字, 主題色]
+// [icon, 名稱, 厭世描述, 價格, tier(s/m/l), who(self/home/gift 可多）, mood(chill/up/dumb 可多）, 搜尋關鍵字, 主題色]
 const P = [
 // ── tier s (<500) ──
-['noodle','高級泡麵禮盒','把「吃泡麵」升級成「品味泡麵」,窮得很有儀式感。','NT$ 150~400','s','self,gift','chill,dumb','泡麵 禮盒','h-orange'],
-['sock','發熱襪三入組','腳暖了,人生好像也沒那麼冷。好像。','NT$ 200~400','s','self,gift','chill,up','發熱襪','h-red'],
+['noodle','高級泡麵禮盒','把「吃泡麵」升級成「品味泡麵」，窮得很有儀式感。','NT$ 150~400','s','self,gift','chill,dumb','泡麵 禮盒','h-orange'],
+['sock','發熱襪三入組','腳暖了，人生好像也沒那麼冷。好像。','NT$ 200~400','s','self,gift','chill,up','發熱襪','h-red'],
 ['duck','桌上療癒小鴨','捏它。捏它。再捏它。專治老闆造成的內傷。','NT$ 100~300','s','self,gift','chill,dumb','紓壓 捏捏樂','h-gold'],
-['phone','懶人手機支架','躺著追劇不用手拿,人類科技的巔峰就該用在這。','NT$ 150~450','s','self','chill','懶人 手機支架','h-blue'],
-['candle','香氛蠟燭','點燃它,假裝自己住在北歐,而不是加班完的套房。','NT$ 250~500','s','self,home,gift','chill,up','香氛蠟燭','h-purple'],
-['boba','手搖飲料券一疊','直接預購十杯,把快樂變成定存,唯一不會虧的投資。','NT$ 300~500','s','self,gift','chill,dumb','飲料 提貨券','h-gold'],
-['plant','桌上小多肉','養一個不會跟你頂嘴的生命,死了也只會有點難過。','NT$ 100~350','s','self,home','up,chill','多肉植物 盆栽','h-green'],
-['gamepad','手機遊戲課金','別騙了,你本來就要課。至少這次是「規劃過的」課金。','NT$ 170~490','s','self','dumb','遊戲點數卡','h-purple'],
-['tape','貓咪造型紙膠帶組','沒有用途,但是貓。這個理由在法律上完全成立。','NT$ 100~300','s','self,gift','dumb','貓咪 紙膠帶','h-pink'],
-['coffee','濾掛咖啡補充包','把「活著」的必需品囤好囤滿,咖啡因就是安全感。','NT$ 200~500','s','self,home','up,chill','濾掛咖啡','h-orange'],
-['fizz','浴缸泡澡球','看它在水裡爆炸滋滋叫,比看股票綠掉療癒多了。','NT$ 100~400','s','self,gift','chill,dumb','泡澡球','h-blue'],
+['phone','懶人手機支架','躺著追劇不用手拿，人類科技的巔峰就該用在這。','NT$ 150~450','s','self','chill','懶人 手機支架','h-blue'],
+['candle','香氛蠟燭','點燃它，假裝自己住在北歐，而不是加班完的套房。','NT$ 250~500','s','self,home,gift','chill,up','香氛蠟燭','h-purple'],
+['boba','手搖飲料券一疊','直接預購十杯，把快樂變成定存，唯一不會虧的投資。','NT$ 300~500','s','self,gift','chill,dumb','飲料 提貨券','h-gold'],
+['plant','桌上小多肉','養一個不會跟你頂嘴的生命，死了也只會有點難過。','NT$ 100~350','s','self,home','up,chill','多肉植物 盆栽','h-green'],
+['gamepad','手機遊戲課金','別騙了，你本來就要課。至少這次是「規劃過的」課金。','NT$ 170~490','s','self','dumb','遊戲點數卡','h-purple'],
+['tape','貓咪造型紙膠帶組','沒有用途，但是貓。這個理由在法律上完全成立。','NT$ 100~300','s','self,gift','dumb','貓咪 紙膠帶','h-pink'],
+['coffee','濾掛咖啡補充包','把「活著」的必需品囤好囤滿，咖啡因就是安全感。','NT$ 200~500','s','self,home','up,chill','濾掛咖啡','h-orange'],
+['fizz','浴缸泡澡球','看它在水裡爆炸滋滋叫，比看股票綠掉療癒多了。','NT$ 100~400','s','self,gift','chill,dumb','泡澡球','h-blue'],
 ['lamp','迷你 LED 小夜燈','半夜起床不再踢到腳趾,500 元內最划算的人身保險。','NT$ 150~400','s','home','up','感應小夜燈','h-gold'],
-['choco','進口巧克力','血清素直接用買的,比等別人給你快樂有效率多了。','NT$ 150~500','s','self,gift','chill,dumb','進口巧克力','h-orange'],
-['pen','順到起飛的中性筆組','寫字順了,開會做筆記都像在寫書法。小錢大爽。','NT$ 100~300','s','self,gift','up','日本 中性筆','h-blue'],
+['choco','進口巧克力','血清素直接用買的，比等別人給你快樂有效率多了。','NT$ 150~500','s','self,gift','chill,dumb','進口巧克力','h-orange'],
+['pen','順到起飛的中性筆組','寫字順了，開會做筆記都像在寫書法。小錢大爽。','NT$ 100~300','s','self,gift','up','日本 中性筆','h-blue'],
 // ── tier m (500~3000) ──
-['earbud','入門藍牙耳機','戴上去,世界安靜了,同事的嘴巴變成默劇。','NT$ 800~2,500','m','self','chill,up','藍牙耳機','h-blue'],
-['cushion','人體工學靠墊','你的腰撐起整個家,給它一點尊重不過分吧。','NT$ 600~2,000','m','self,home','up,chill','人體工學 靠墊','h-green'],
-['pan','不沾平底鍋','煎蛋不破的那一刻,你會覺得自己是米其林主廚。','NT$ 700~2,500','m','home','up','不沾鍋','h-orange'],
-['massage','筋膜按摩槍','讓機器代替你不存在的另一半幫你按摩,還不會抱怨手痠。','NT$ 900~3,000','m','self,gift','chill','筋膜槍','h-red'],
-['play','串流平台年費','合法地在家躺一整年,平均一天不到十塊,躺著都賺。','NT$ 1,000~2,700','m','self,home','chill','Netflix 禮物卡','h-red'],
-['bear','巨型絨毛玩偶','一個永遠不會已讀不回的擁抱對象,比很多人類可靠。','NT$ 600~2,000','m','self,gift','dumb,chill','巨型 絨毛玩偶','h-pink'],
-['keyboard','機械鍵盤(入門)','喀噠喀噠,把打字變成演奏,老闆以為你很忙。','NT$ 1,500~3,000','m','self','up,dumb','機械鍵盤','h-purple'],
-['blanket','電熱毯','冬天離開被窩是酷刑,這是你的減刑申請書。','NT$ 800~2,500','m','self,home,gift','chill,up','電熱毯','h-red'],
-['bottle','質感保溫瓶','喝水這件事終於有了排面,開會拿出來就是低調炫耀。','NT$ 800~2,000','m','self,gift','up','保溫瓶','h-blue'],
-['dice','桌遊派對包','買回家逼朋友來玩,友情破裂機率 30%,快樂機率 100%。','NT$ 600~2,000','m','self,gift','dumb','桌遊','h-gold'],
-['bulb','智慧燈泡組','用手機關燈,懶惰終於有了科技感的包裝。','NT$ 500~1,500','m','home','up,dumb','智慧燈泡','h-gold'],
-['shower','高級沐浴組','洗澡洗出五星級飯店的錯覺,一天最爽的十分鐘。','NT$ 600~2,000','m','self,gift','chill,up','沐浴 禮盒','h-blue'],
-['book','一整套想看的書','買書的快樂在下單那刻就完成了,看不看是另一回事。','NT$ 500~2,000','m','self,gift','up','暢銷書 套書','h-green'],
-['fish','貓咪自動逗貓棒','貓在動,你不用動。雙方都得到了想要的生活。','NT$ 500~1,500','m','self,home','dumb,chill','自動逗貓棒','h-pink'],
+['earbud','入門藍牙耳機','戴上去，世界安靜了，同事的嘴巴變成默劇。','NT$ 800~2,500','m','self','chill,up','藍牙耳機','h-blue'],
+['cushion','人體工學靠墊','你的腰撐起整個家，給它一點尊重不過分吧。','NT$ 600~2,000','m','self,home','up,chill','人體工學 靠墊','h-green'],
+['pan','不沾平底鍋','煎蛋不破的那一刻，你會覺得自己是米其林主廚。','NT$ 700~2,500','m','home','up','不沾鍋','h-orange'],
+['massage','筋膜按摩槍','讓機器代替你不存在的另一半幫你按摩，還不會抱怨手痠。','NT$ 900~3,000','m','self,gift','chill','筋膜槍','h-red'],
+['play','串流平台年費','合法地在家躺一整年，平均一天不到十塊，躺著都賺。','NT$ 1,000~2,700','m','self,home','chill','Netflix 禮物卡','h-red'],
+['bear','巨型絨毛玩偶','一個永遠不會已讀不回的擁抱對象，比很多人類可靠。','NT$ 600~2,000','m','self,gift','dumb,chill','巨型 絨毛玩偶','h-pink'],
+['keyboard','機械鍵盤（入門）','喀噠喀噠，把打字變成演奏，老闆以為你很忙。','NT$ 1,500~3,000','m','self','up,dumb','機械鍵盤','h-purple'],
+['blanket','電熱毯','冬天離開被窩是酷刑，這是你的減刑申請書。','NT$ 800~2,500','m','self,home,gift','chill,up','電熱毯','h-red'],
+['bottle','質感保溫瓶','喝水這件事終於有了排面，開會拿出來就是低調炫耀。','NT$ 800~2,000','m','self,gift','up','保溫瓶','h-blue'],
+['dice','桌遊派對包','買回家逼朋友來玩，友情破裂機率 30%,快樂機率 100%。','NT$ 600~2,000','m','self,gift','dumb','桌遊','h-gold'],
+['bulb','智慧燈泡組','用手機關燈，懶惰終於有了科技感的包裝。','NT$ 500~1,500','m','home','up,dumb','智慧燈泡','h-gold'],
+['shower','高級沐浴組','洗澡洗出五星級飯店的錯覺，一天最爽的十分鐘。','NT$ 600~2,000','m','self,gift','chill,up','沐浴 禮盒','h-blue'],
+['book','一整套想看的書','買書的快樂在下單那刻就完成了，看不看是另一回事。','NT$ 500~2,000','m','self,gift','up','暢銷書 套書','h-green'],
+['fish','貓咪自動逗貓棒','貓在動，你不用動。雙方都得到了想要的生活。','NT$ 500~1,500','m','self,home','dumb,chill','自動逗貓棒','h-pink'],
 ['plug','延長線界的勞斯萊斯','獨立開關、USB 快充、防雷擊。插座多到可以開發電廠。','NT$ 500~1,500','m','home','up','快充延長線','h-green'],
-['palette','數字油畫','塗完一幅需要 20 小時,治好你的手機成癮,大概。','NT$ 500~1,200','m','self,gift','chill,dumb','數字油畫','h-purple'],
+['palette','數字油畫','塗完一幅需要 20 小時，治好你的手機成癮，大概。','NT$ 500~1,200','m','self,gift','chill,dumb','數字油畫','h-purple'],
 // ── tier l (3000+) ──
-['monitor','4K 螢幕','眼睛是靈魂之窗,窗戶該換雙層玻璃了。','NT$ 4,000~12,000','l','self','up','4K 螢幕 27吋','h-blue'],
-['headphone','降噪耳機(旗艦)','按下降噪鍵,全世界閉嘴。這錢買的是「靜音鍵」的權力。','NT$ 6,000~12,000','l','self,gift','up,chill','降噪耳機','h-purple'],
-['robot','掃地機器人','家裡多一個任勞任怨的成員,還不用給年終。','NT$ 6,000~20,000','l','home','up,chill','掃地機器人','h-green'],
-['chair','電競椅/人體工學椅','一天坐十小時的東西值得投資,你的椎間盤會寫感謝函。','NT$ 5,000~15,000','l','self,home','up','人體工學椅','h-red'],
-['cooker','高級電子鍋','白飯好吃到會發光,從此便當店的飯都是將就。','NT$ 4,000~15,000','l','home,gift','up','IH電子鍋','h-orange'],
-['camera','拍立得相機','把回憶印出來,雖然大部分會拍到手指,但那也是回憶。','NT$ 3,000~7,000','l','self,gift','dumb,up','拍立得','h-pink'],
-['console','遊戲主機','買了它,接下來三個月的週末行程全部自動排滿。','NT$ 9,000~18,000','l','self,home','dumb,chill','Switch 主機','h-red'],
-['spray','高壓清洗機','把陽台地板洗出原本的顏色,爽感堪比擠痘痘影片。','NT$ 3,000~8,000','l','home','dumb,up','高壓清洗機','h-blue'],
-['bed','記憶床墊/枕頭組','人生三分之一在床上,另外三分之二在想睡覺,值得。','NT$ 3,000~10,000','l','self,home,gift','chill,up','記憶枕 床墊','h-purple'],
-['whisky','威士忌/清酒禮盒','大人的飲料,送禮體面,自己喝更體面。','NT$ 3,000~8,000','l','self,gift','up,chill','威士忌 禮盒','h-gold'],
-['watch','智慧手錶','花五位數買一個提醒你「該站起來了」的錶,很合理。','NT$ 5,000~15,000','l','self,gift','up','智慧手錶','h-blue'],
-['cushion','按摩椅墊','把沙發升級成按摩椅,家裡最搶手的座位誕生了。','NT$ 3,000~10,000','l','home,gift','chill','按摩椅墊','h-red'],
-['mic','家用卡拉OK麥克風','在家開演唱會,鄰居的評價是唯一的差評來源。','NT$ 3,000~8,000','l','home,gift','dumb','卡拉OK 麥克風','h-pink'],
-['luggage','高質感行李箱','買了新行李箱,旅行的藉口就自己長出來了。','NT$ 3,000~10,000','l','self,gift','up','行李箱','h-green'],
-['espresso','義式咖啡機','在家開咖啡廳,回本要 300 杯,但夢想無價(自我催眠)。','NT$ 5,000~20,000','l','self,home','up,dumb','義式咖啡機','h-orange'],
+['monitor','4K 螢幕','眼睛是靈魂之窗，窗戶該換雙層玻璃了。','NT$ 4,000~12,000','l','self','up','4K 螢幕 27吋','h-blue'],
+['headphone','降噪耳機（旗艦）','按下降噪鍵，全世界閉嘴。這錢買的是「靜音鍵」的權力。','NT$ 6,000~12,000','l','self,gift','up,chill','降噪耳機','h-purple'],
+['robot','掃地機器人','家裡多一個任勞任怨的成員，還不用給年終。','NT$ 6,000~20,000','l','home','up,chill','掃地機器人','h-green'],
+['chair','電競椅/人體工學椅','一天坐十小時的東西值得投資，你的椎間盤會寫感謝函。','NT$ 5,000~15,000','l','self,home','up','人體工學椅','h-red'],
+['cooker','高級電子鍋','白飯好吃到會發光，從此便當店的飯都是將就。','NT$ 4,000~15,000','l','home,gift','up','IH電子鍋','h-orange'],
+['camera','拍立得相機','把回憶印出來，雖然大部分會拍到手指，但那也是回憶。','NT$ 3,000~7,000','l','self,gift','dumb,up','拍立得','h-pink'],
+['console','遊戲主機','買了它，接下來三個月的週末行程全部自動排滿。','NT$ 9,000~18,000','l','self,home','dumb,chill','Switch 主機','h-red'],
+['spray','高壓清洗機','把陽台地板洗出原本的顏色，爽感堪比擠痘痘影片。','NT$ 3,000~8,000','l','home','dumb,up','高壓清洗機','h-blue'],
+['bed','記憶床墊/枕頭組','人生三分之一在床上，另外三分之二在想睡覺，值得。','NT$ 3,000~10,000','l','self,home,gift','chill,up','記憶枕 床墊','h-purple'],
+['whisky','威士忌/清酒禮盒','大人的飲料，送禮體面，自己喝更體面。','NT$ 3,000~8,000','l','self,gift','up,chill','威士忌 禮盒','h-gold'],
+['watch','智慧手錶','花五位數買一個提醒你「該站起來了」的錶，很合理。','NT$ 5,000~15,000','l','self,gift','up','智慧手錶','h-blue'],
+['cushion','按摩椅墊','把沙發升級成按摩椅，家裡最搶手的座位誕生了。','NT$ 3,000~10,000','l','home,gift','chill','按摩椅墊','h-red'],
+['mic','家用卡拉OK麥克風','在家開演唱會，鄰居的評價是唯一的差評來源。','NT$ 3,000~8,000','l','home,gift','dumb','卡拉OK 麥克風','h-pink'],
+['luggage','高質感行李箱','買了新行李箱，旅行的藉口就自己長出來了。','NT$ 3,000~10,000','l','self,gift','up','行李箱','h-green'],
+['espresso','義式咖啡機','在家開咖啡廳，回本要 300 杯，但夢想無價（自我催眠）。','NT$ 5,000~20,000','l','self,home','up,dumb','義式咖啡機','h-orange'],
 ];
 
 const subLines = {
   chill: [
-    '診斷結果:過勞。處方箋如下,健保不給付,錢包自付。',
-    '診斷結果:電量剩 3%。以下是你的行動電源,插電方式是刷卡。',
-    '診斷結果:靈魂已下班,肉體還在加班。以下物品可協助你們團聚。',
-    '診斷結果:你需要的不是休息,是躺著花錢的正當理由。開好了。',
+    '診斷結果：過勞。處方箋如下，健保不給付，錢包自付。',
+    '診斷結果：電量剩 3%。以下是你的行動電源，插電方式是刷卡。',
+    '診斷結果：靈魂已下班，肉體還在加班。以下物品可協助你們團聚。',
+    '診斷結果：你需要的不是休息，是躺著花錢的正當理由。開好了。',
   ],
   up: [
-    '診斷結果:生活品質缺乏症。以下藥物長期服用效果更佳。',
-    '診斷結果:你的生活還在用免費版。以下是升級 Pro 的方案。',
-    '診斷結果:委屈自己太久,系統建議立即更新。更新包如下。',
-    '診斷結果:你值得更好的,雖然「更好的」都要錢,巧了。',
+    '診斷結果：生活品質缺乏症。以下藥物長期服用效果更佳。',
+    '診斷結果：你的生活還在用免費版。以下是升級 Pro 的方案。',
+    '診斷結果：委屈自己太久，系統建議立即更新。更新包如下。',
+    '診斷結果：你值得更好的，雖然「更好的」都要錢，巧了。',
   ],
   dumb: [
-    '診斷結果:太理性太久了。以下純快樂製劑,不含任何實用成分。',
-    '診斷結果:大腦皮質過度使用。以下商品可讓你直接用腦幹過活。',
-    '診斷結果:你上次沒理由地開心是什麼時候?以下是理由,用買的。',
-    '診斷結果:成熟大人裝太久了。以下商品保證讓你退化,有效。',
+    '診斷結果：太理性太久了。以下純快樂製劑，不含任何實用成分。',
+    '診斷結果：大腦皮質過度使用。以下商品可讓你直接用腦幹過活。',
+    '診斷結果：你上次沒理由地開心是什麼時候？以下是理由，用買的。',
+    '診斷結果：成熟大人裝太久了。以下商品保證讓你退化，有效。',
   ],
 };
 const labels = {
@@ -864,25 +879,25 @@ const loadingLines = [
   '正在假裝很認真地分析…',
   '正在幫你的錢規劃一場說走就走的旅行…',
   '正在通知你的存款打包行李…',
-  '正在計算這筆錢放定存能生多少利息(答案:笑死,別算了)…',
-  '正在連線宇宙,宇宙說:買。',
+  '正在計算這筆錢放定存能生多少利息（答案：笑死，別算了）…',
+  '正在連線宇宙，宇宙說：買。',
 ];
-// 名人背書(都是假的,跟你的財務規劃一樣)
+// 名人背書（都是假的，跟你的財務規劃一樣）
 const quotes = [
-  ['錢沒有不見,只是變成你喜歡的樣子。','理財專家(已破產)'],
-  ['我看過最勇敢的投資,就是發薪日的你。','巴菲特(住你家巷口那位)'],
-  ['先買,理由會自己長出來。','蘇格拉底(菜市場門口的)'],
-  ['人生苦短,運費全免。','莎士比亞(蝦皮賣家)'],
-  ['省下來的錢又不會自己變快樂。','愛因斯坦(雞排攤的)'],
-  ['你不買,別人也會買,那不如你買。','孫子(兵法沒收錄這段)'],
-  ['猶豫三秒,加購三件。','牛頓(第四運動定律)'],
-  ['戶頭的數字只是數字,快樂是真的。','佛陀(轉述,未經證實)'],
-  ['明天的你會感謝今天下單的你。','未來學家(昨天說的)'],
-  ['花錢一時爽,一直花錢一直爽。','匿名智者(可能就是你)'],
-  ['這不是消費,是自我投資。','你的內心(每次都這樣講)'],
-  ['購物車就是現代人的許願池。','心理學家(執照申請中)'],
-  ['我不理財,財也懶得理我,那就花掉吧。','華倫(不姓巴菲特)'],
-  ['刷下去的那一刻,你就是經濟學家說的「市場信心」。','央行總裁(夢裡的)'],
+  ['錢沒有不見，只是變成你喜歡的樣子。','理財專家（已破產）'],
+  ['我看過最勇敢的投資，就是發薪日的你。','巴菲特（住你家巷口那位）'],
+  ['先買，理由會自己長出來。','蘇格拉底（菜市場門口的）'],
+  ['人生苦短，運費全免。','莎士比亞（蝦皮賣家）'],
+  ['省下來的錢又不會自己變快樂。','愛因斯坦（雞排攤的）'],
+  ['你不買，別人也會買，那不如你買。','孫子（兵法沒收錄這段）'],
+  ['猶豫三秒，加購三件。','牛頓（第四運動定律）'],
+  ['戶頭的數字只是數字，快樂是真的。','佛陀（轉述，未經證實）'],
+  ['明天的你會感謝今天下單的你。','未來學家（昨天說的）'],
+  ['花錢一時爽，一直花錢一直爽。','匿名智者（可能就是你）'],
+  ['這不是消費，是自我投資。','你的內心（每次都這樣講）'],
+  ['購物車就是現代人的許願池。','心理學家（執照申請中）'],
+  ['我不理財，財也懶得理我，那就花掉吧。','華倫（不姓巴菲特）'],
+  ['刷下去的那一刻，你就是經濟學家說的「市場信心」。','央行總裁（夢裡的）'],
 ];
 
 const state = { tier: null, who: null, mood: null };
@@ -922,7 +937,7 @@ function match(p) {
 
 function showResults() {
   pool = P.filter(match);
-  // 同價位帶其他商品當備用池,重抽永遠有新卡可換
+  // 同價位帶其他商品當備用池，重抽永遠有新卡可換
   backup = P.filter(p => p[4] === state.tier && !pool.includes(p));
   shown = [];
   rerolls = 0;
@@ -941,15 +956,15 @@ function showResults() {
 
 const hueHex = { 'h-blue':'#60a5fa','h-gold':'#fbbf24','h-green':'#4ade80','h-pink':'#f472b6','h-purple':'#a78bfa','h-orange':'#fb923c','h-red':'#f87171' };
 function draw() {
-  // 抽卡優先序:精準命中 → 同價位帶 → 全目錄,通通只出沒看過的
-  // 45 個全看完才重置,重抽絕不洗同一批
+  // 抽卡優先序：精準命中 → 同價位帶 → 全目錄，通通只出沒看過的
+  // 45 個全看完才重置，重抽絕不洗同一批
   const unseen = list => list.filter(p => !shown.includes(p)).sort(() => Math.random() - .5);
   let candidates = unseen(pool);
   if (candidates.length < 6) candidates = candidates.concat(unseen(backup));
   if (candidates.length < 6) candidates = candidates.concat(unseen(P.filter(p => !pool.includes(p) && !backup.includes(p))));
   if (candidates.length === 0) {
     shown = [];
-    document.getElementById('r-sub').textContent = '全店 45 樣都給你看完了,錢是有多難花?好,再來一輪。';
+    document.getElementById('r-sub').textContent = '全店 45 樣都給你看完了，錢是有多難花？好，再來一輪。';
     candidates = pool.concat(backup).sort(() => Math.random() - .5);
   }
   const picked = candidates.slice(0, 6);
@@ -968,14 +983,14 @@ function draw() {
 }
 
 const rerollLines = [
-  '好,這批不行,再抽。',
-  '挑成這樣,難怪錢存得下來。',
-  '你是來逛的吧?錢包在旁邊看得很尷尬。',
-  '沒關係,猶豫也是一種省錢。爛的那種。',
-  '這麼難伺候,難怪購物車都長灰塵。',
-  '再抽啊,反正轉盤不用錢,跟你的決心一樣。',
-  '選擇障礙不是病,但發作起來很花時間。',
-  '你知道嗎,你剛剛滑掉的可能是真愛。',
+  '好，這批不行，再抽。',
+  '挑成這樣，難怪錢存得下來。',
+  '你是來逛的吧？錢包在旁邊看得很尷尬。',
+  '沒關係，猶豫也是一種省錢。爛的那種。',
+  '這麼難伺候，難怪購物車都長灰塵。',
+  '再抽啊，反正轉盤不用錢，跟你的決心一樣。',
+  '選擇障礙不是病，但發作起來很花時間。',
+  '你知道嗎，你剛剛滑掉的可能是真愛。',
 ];
 let rolling = false;
 function reroll() {
@@ -986,7 +1001,7 @@ function reroll() {
   const q = rand(quotes);
   document.getElementById('r-quote').innerHTML = `${q[0]}<cite>— ${q[1]}</cite>`;
   setBg(celebOfCite(q[1]) || rand(celebNames));
-  // 卡片圖示先拉霸式狂轉,再開獎
+  // 卡片圖示先拉霸式狂轉，再開獎
   const pics = document.querySelectorAll('#r-cards .pic');
   pics.forEach(p => p.classList.add('rolling'));
   const spin = setInterval(() => {
@@ -1022,7 +1037,7 @@ function confetti() {
   }
 }
 
-// 通膨計數器:台灣 CPI 年增率抓約 2%,以月薪 5 萬概算,每秒貶 ~0.03 元
+// 通膨計數器：台灣 CPI 年增率抓約 2%,以月薪 5 萬概算，每秒貶 ~0.03 元
 let burned = 0;
 setInterval(() => {
   if (!document.getElementById('s-intro').classList.contains('active')) return;
@@ -1032,16 +1047,16 @@ setInterval(() => {
 
 // 首頁副標隨機厭世
 const introSubs = [
-  '獎金入帳、薪水剛發,錢躺在戶頭裡瑟瑟發抖。<br>回答三個問題,我幫你找到它的歸宿。<br><small>反正存著也買不起房,不如買點快樂。</small>',
-  '恭喜入帳。存起來?醒醒,那點錢連頭期款的零頭都碰不到。<br>回答三個問題,我幫它找個好人家。<br><small>錢要嫁得開心,你也開心。</small>',
-  '錢放在戶頭裡不會長大,只會被通膨啃。<br>三個問題,幫你把它換成摸得到的快樂。<br><small>這叫資產配置,配置到你手上。</small>',
+  '獎金入帳、薪水剛發，錢躺在戶頭裡瑟瑟發抖。<br>回答三個問題，我幫你找到它的歸宿。<br><small>反正存著也買不起房，不如買點快樂。</small>',
+  '恭喜入帳。存起來？醒醒，那點錢連頭期款的零頭都碰不到。<br>回答三個問題，我幫它找個好人家。<br><small>錢要嫁得開心，你也開心。</small>',
+  '錢放在戶頭裡不會長大，只會被通膨啃。<br>三個問題，幫你把它換成摸得到的快樂。<br><small>這叫資產配置，配置到你手上。</small>',
 ];
 document.querySelector('#s-intro .sub').innerHTML = rand(introSubs);
 
-// ── 俏皮名人背景水印(手繪 SVG,與語錄連動)──
+// ── 俏皮名人背景水印（手繪 SVG,與語錄連動）──
 const CH = `xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
 const celebs = {
-  // 巴菲特(巷口那位):圓眼鏡+西裝+珍奶
+  // 巴菲特（巷口那位）：圓眼鏡+西裝+珍奶
   buffett: `<svg ${CH}>
     <path d="M35 230q0-60 65-60t65 60z" fill="#475569"/>
     <path d="M100 172l-10 14 10 30 10-30z" fill="#f87171"/>
@@ -1056,7 +1071,7 @@ const celebs = {
     <path d="M148 162l14-24" stroke="#f4f4f5" stroke-width="6"/>
     <circle cx="150" cy="204" r="4" fill="#27272a"/><circle cx="163" cy="196" r="4" fill="#27272a"/><circle cx="156" cy="210" r="4" fill="#27272a"/>
   </svg>`,
-  // 愛因斯坦(雞排攤的):爆炸白髮+鬍子+雞排
+  // 愛因斯坦（雞排攤的）：爆炸白髮+鬍子+雞排
   einstein: `<svg ${CH}>
     <path d="M40 230q0-55 60-55t60 55z" fill="#78716c"/>
     <path d="M100 60q-52-16-58 30-16 8-6 24 8 14 20 10l6-34q20-22 76 0l6 34q12 4 20-10 10-16-6-24-6-46-58-30z" fill="#f4f4f5"/>
@@ -1070,7 +1085,7 @@ const celebs = {
     <path d="M136 118q28-10 36 10 8 18-10 28t-34-2q-12-16 8-36z" fill="#fbbf24"/>
     <circle cx="146" cy="132" r="3" fill="#a16207"/><circle cx="158" cy="140" r="3" fill="#a16207"/><circle cx="148" cy="146" r="3" fill="#a16207"/>
   </svg>`,
-  // 莎士比亞(蝦皮賣家):皺領+山羊鬍+包裹
+  // 莎士比亞（蝦皮賣家）：皺領+山羊鬍+包裹
   shakespeare: `<svg ${CH}>
     <path d="M40 230q0-52 60-52t60 52z" fill="#7c2d12"/>
     <g fill="#f4f4f5">
@@ -1086,7 +1101,7 @@ const celebs = {
     <path d="M28 200l16-44 6 2-14 44z" fill="#e5e7eb"/>
     <path d="M44 156q10-8 6-16" stroke="#e5e7eb" stroke-width="4"/>
   </svg>`,
-  // 蘇格拉底(菜市場門口的):大鬍子+托加袍+菜籃
+  // 蘇格拉底（菜市場門口的）：大鬍子+托加袍+菜籃
   socrates: `<svg ${CH}>
     <path d="M38 230q0-56 62-56t62 56z" fill="#e5e7eb"/>
     <path d="M38 230q10-40 34-50l-6 50z" fill="#a1a1aa"/>
@@ -1102,7 +1117,7 @@ const celebs = {
     <path d="M150 184l-4-28M160 184l2-30M170 184l6-26" stroke="#4ade80" stroke-width="5"/>
     <path d="M146 156l-4-10M162 154l1-10M176 158l5-9" stroke="#f4f4f5" stroke-width="5"/>
   </svg>`,
-  // 牛頓(第四運動定律):長捲髮+頭上蘋果
+  // 牛頓（第四運動定律）：長捲髮+頭上蘋果
   newton: `<svg ${CH}>
     <path d="M42 230q0-52 58-52t58 52z" fill="#1e40af"/>
     <path d="M92 178h16l-8 20z" fill="#f4f4f5"/>
@@ -1118,13 +1133,33 @@ const celebs = {
   </svg>`,
 };
 const celebNames = Object.keys(celebs);
+// 每位名人的主題元素雨，鋪滿整個背景
+const sceneTheme = {
+  buffett: { icons: ['coin','bill','gem'], hues: ['h-gold','h-green','h-blue'] },
+  einstein: { icons: ['spark','bulb','noodle'], hues: ['h-gold','h-orange','h-purple'] },
+  shakespeare: { icons: ['pen','book','gift'], hues: ['h-purple','h-pink','h-gold'] },
+  socrates: { icons: ['plant','book','coffee'], hues: ['h-green','h-gold','h-orange'] },
+  newton: { icons: ['spark','watch','target'], hues: ['h-red','h-green','h-blue'] },
+};
 let curBg = null;
 function setBg(name) {
   if (name === curBg) return;
   const el = document.getElementById('bgcele');
   el.classList.remove('show');
   setTimeout(() => {
-    el.innerHTML = celebs[name];
+    const t = sceneTheme[name];
+    let html = '';
+    // 主題元素飄落鋪滿全畫面
+    for (let i = 0; i < 24; i++) {
+      const size = 18 + Math.random() * 30;
+      html += `<span class="scatter ${rand(t.hues)}" style="
+        left:${Math.random() * 100}vw;
+        font-size:${size}px;
+        animation-duration:${26 + Math.random() * 30}s;
+        animation-delay:-${Math.random() * 40}s;">${svg(rand(t.icons))}</span>`;
+    }
+    html += `<div class="celeb">${celebs[name]}</div>`;
+    el.innerHTML = html;
     curBg = name;
     el.classList.add('show');
   }, 700);
