@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>錢包放血室 — 反正錢留著也會貶值</title>
+<meta name="description" content="剛領到獎金不知道花在哪?讓厭世小助手循序漸進幫你把錢燒掉。">
+<style>
+:root {
+  --bg: #09090b;
+  --surface: #18181b;
+  --surface-2: #27272a;
+  --border: #3f3f46;
+  --border-subtle: rgba(63, 63, 70, 0.5);
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-dim: rgba(59, 130, 246, 0.12);
+  --accent-glow: rgba(59, 130, 246, 0.25);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "PingFang TC", "Noto Sans TC", sans-serif;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+::selection { background: var(--accent-dim); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.wrap {
+  width: 100%;
+  max-width: 720px;
+  padding: 48px 20px 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── header ── */
+.logo {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.logo b { color: var(--accent); }
+
+/* ── screens ── */
+.screen { display: none; animation: pop .35s cubic-bezier(.2,.9,.3,1.2); }
+.screen.active { display: block; }
+@keyframes pop {
+  from { opacity: 0; transform: translateY(16px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+
+h1 {
+  font-size: clamp(28px, 6vw, 44px);
+  text-align: center;
+  margin: 40px 0 12px;
+  line-height: 1.3;
+}
+h2 {
+  font-size: clamp(22px, 5vw, 30px);
+  text-align: center;
+  margin: 32px 0 6px;
+  line-height: 1.4;
+}
+.sub {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.sub small { color: var(--text-muted); }
+
+.big-emoji { font-size: 72px; text-align: center; display: block; margin-top: 24px; animation: float 3s ease-in-out infinite; }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+/* ── progress ── */
+.progress {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 28px;
+}
+.progress i {
+  width: 28px; height: 4px;
+  border-radius: 2px;
+  background: var(--surface-2);
+  transition: background .3s;
+}
+.progress i.on { background: var(--accent); }
+
+/* ── option cards ── */
+.opts { display: flex; flex-direction: column; gap: 12px; }
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  color: var(--text-primary);
+  font: inherit;
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.opt:hover {
+  transform: translateX(6px);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+.opt:active { transform: translateX(6px) scale(.98); }
+.opt .ico { font-size: 32px; flex-shrink: 0; }
+.opt .t { font-size: 17px; font-weight: 600; margin-bottom: 3px; }
+.opt .d { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform .15s, background .15s, box-shadow .15s;
+  box-shadow: 0 0 0 0 var(--accent-glow);
+}
+.btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+.btn:active { transform: scale(.97); }
+.btn.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  box-shadow: none;
+  font-weight: 500;
+}
+.btn.ghost:hover { color: var(--text-primary); border-color: var(--text-muted); }
+.center { text-align: center; }
+.back {
+  background: none; border: none; color: var(--text-muted);
+  font: inherit; font-size: 13px; cursor: pointer;
+  margin-top: 24px; padding: 8px;
+}
+.back:hover { color: var(--text-secondary); }
+
+/* ── results ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  animation: pop .4s cubic-bezier(.2,.9,.3,1.2) backwards;
+  transition: transform .15s, border-color .15s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--border); }
+.card:nth-child(2) { animation-delay: .05s; }
+.card:nth-child(3) { animation-delay: .1s; }
+.card:nth-child(4) { animation-delay: .15s; }
+.card:nth-child(5) { animation-delay: .2s; }
+.card:nth-child(6) { animation-delay: .25s; }
+.card .pic { font-size: 46px; margin-bottom: 12px; }
+.card .name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.card .desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 12px; }
+.card .price {
+  font-size: 15px; font-weight: 700; color: var(--accent-hover);
+  margin-bottom: 12px;
+}
+.card .links { display: flex; gap: 8px; }
+.card .links a {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 8px 0;
+  transition: background .15s, color .15s;
+}
+.card .links a:hover { background: var(--accent); color: #fff; }
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+footer {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 20px;
+  line-height: 1.8;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo" onclick="go('intro')">💸 錢包<b>放血</b>室</div>
+
+  <!-- intro -->
+  <section class="screen active" id="s-intro">
+    <span class="big-emoji">🤑</span>
+    <h1>喔?手頭有點閒錢?</h1>
+    <p class="sub">
+      獎金入帳、薪水剛發,錢躺在戶頭裡瑟瑟發抖。<br>
+      別擔心,回答幾個問題,我幫你找到它的歸宿。<br>
+      <small>反正存著也買不起房,不如買點快樂。</small>
+    </p>
+    <div class="center">
+      <button class="btn" onclick="go('q1')">開始放血 🩸</button>
+    </div>
+  </section>
+
+  <!-- q1: budget -->
+  <section class="screen" id="s-q1">
+    <h2>💰 這筆錢多肥?</h2>
+    <p class="sub">誠實面對,通膨不會因為你謙虛就放過你。</p>
+    <div class="opts">
+      <button class="opt" onclick="pick('tier','s')">
+        <span class="ico">🪙</span>
+        <span><span class="t">小確幸(500 以下)</span>
+        <span class="d">零錢等級。買不了快樂,但買得起快樂的試用包。</span></span>
+      </button>
+      <button class="opt" onclick="pick('tier','m')">
+        <span class="ico">💵</span>
+        <span><span class="t">有點爽(500 ~ 3,000)</span>
+        <span class="d">可以認真揮霍一下,店員會對你稍微客氣的等級。</span></span>
+      </button>
+      <button class="opt" onclick="pick('tier','l')">
+        <span class="ico">💎</span>
+        <span><span class="t">大手筆(3,000 以上)</span>
+        <span class="d">哇,是有錢人。這種等級的錢放著只會養出罪惡感。</span></span>
+      </button>
+    </div>
+    <div class="progress"><i class="on"></i><i></i><i></i></div>
+    <div class="center"><button class="back" onclick="go('intro')">← 我再想想(不會的,你已經想買了)</button></div>
+  </section>
+
+  <!-- q2: target -->
+  <section class="screen" id="s-q2">
+    <h2>🎯 錢燒了要給誰爽?</h2>
+    <p class="sub">花錢的境界有三種,你是哪一種?</p>
+    <div class="opts">
+      <button class="opt" onclick="pick('who','self')">
+        <span class="ico">😎</span>
+        <span><span class="t">當然是我自己</span>
+        <span class="d">辛苦賺的錢不花在自己身上,難道要留給老闆嗎?</span></span>
+      </button>
+      <button class="opt" onclick="pick('who','home')">
+        <span class="ico">🏠</span>
+        <span><span class="t">升級我的窩</span>
+        <span class="d">家是避風港,港口設施該更新了。</span></span>
+      </button>
+      <button class="opt" onclick="pick('who','gift')">
+        <span class="ico">🎁</span>
+        <span><span class="t">送禮做人情</span>
+        <span class="d">人情世故是一種投資,報酬率不明但不投會死。</span></span>
+      </button>
+    </div>
+    <div class="progress"><i class="on"></i><i class="on"></i><i></i></div>
+    <div class="center"><button class="back" onclick="go('q1')">← 回上一題</button></div>
+  </section>
+
+  <!-- q3: mood -->
+  <section class="screen" id="s-q3">
+    <h2>🧠 現在是什麼心情?</h2>
+    <p class="sub">購物是心理治療,先掛號再拿藥。</p>
+    <div class="opts">
+      <button class="opt" onclick="pick('mood','chill')">
+        <span class="ico">😩</span>
+        <span><span class="t">累爆,想耍廢</span>
+        <span class="d">上班已經用光所有力氣,只想癱著當一灘泥。</span></span>
+      </button>
+      <button class="opt" onclick="pick('mood','up')">
+        <span class="ico">✨</span>
+        <span><span class="t">想升級生活品質</span>
+        <span class="d">覺得自己值得過得更好一點,哪怕只有 3%。</span></span>
+      </button>
+      <button class="opt" onclick="pick('mood','dumb')">
+        <span class="ico">🤪</span>
+        <span><span class="t">想買蠢東西</span>
+        <span class="d">實用性?不存在的。快樂就是要沒有理由。</span></span>
+      </button>
+    </div>
+    <div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+    <div class="center"><button class="back" onclick="go('q2')">← 回上一題</button></div>
+  </section>
+
+  <!-- results -->
+  <section class="screen" id="s-result">
+    <h2 id="r-title">🎉 診斷完畢</h2>
+    <p class="sub" id="r-sub"></p>
+    <div class="cards" id="r-cards"></div>
+    <div class="result-actions">
+      <button class="btn ghost" onclick="reroll()">🎲 都不喜歡,重抽</button>
+      <button class="btn" onclick="restart()">🔄 重新診斷</button>
+    </div>
+  </section>
+</div>
+
+<footer>
+  價格為大概區間,實際以賣場為準。連結是搜尋頁,買貴了別怪我。<br>
+  本站不負責你的財務狀況,它本來就沒救了。
+</footer>
+
+<script>
+// [emoji, 名稱, 厭世描述, 價格, tier(s/m/l), who(self/home/gift 可多), mood(chill/up/dumb 可多), 搜尋關鍵字]
+const P = [
+// ── tier s (<500) ──
+['🍜','高級泡麵禮盒','把「吃泡麵」升級成「品味泡麵」,窮得很有儀式感。','NT$ 150~400','s','self,gift','chill,dumb','泡麵 禮盒'],
+['🧦','發熱襪三入組','腳暖了,人生好像也沒那麼冷。好像。','NT$ 200~400','s','self,gift','chill,up','發熱襪'],
+['🦆','桌上療癒小鴨','捏它。捏它。再捏它。專治老闆造成的內傷。','NT$ 100~300','s','self,gift','chill,dumb','紓壓 捏捏樂'],
+['📱','懶人手機支架','躺著追劇不用手拿,人類科技的巔峰就該用在這。','NT$ 150~450','s','self','chill','懶人 手機支架'],
+['🕯️','香氛蠟燭','點燃它,假裝自己住在北歐,而不是加班完的套房。','NT$ 250~500','s','self,home,gift','chill,up','香氛蠟燭'],
+['🧋','手搖飲料券一疊','直接預購十杯,把快樂變成定存,唯一不會虧的投資。','NT$ 300~500','s','self,gift','chill,dumb','飲料 提貨券'],
+['🪴','桌上小多肉','養一個不會跟你頂嘴的生命,死了也只會有點難過。','NT$ 100~350','s','self,home','up,chill','多肉植物 盆栽'],
+['🎮','手機遊戲課金','別騙了,你本來就要課。至少這次是「規劃過的」課金。','NT$ 170~490','s','self','dumb','遊戲點數卡'],
+['🧻','貓咪造型紙膠帶組','沒有用途,但是貓。這個理由在法律上完全成立。','NT$ 100~300','s','self,gift','dumb','貓咪 紙膠帶'],
+['☕','濾掛咖啡補充包','把「活著」的必需品囤好囤滿,咖啡因就是安全感。','NT$ 200~500','s','self,home','up,chill','濾掛咖啡'],
+['🛁','浴缸泡澡球','看它在水裡爆炸滋滋叫,比看股票綠掉療癒多了。','NT$ 100~400','s','self,gift','chill,dumb','泡澡球'],
+['🔦','迷你 LED 小夜燈','半夜起床不再踢到腳趾,500 元內最划算的人身保險。','NT$ 150~400','s','home','up','感應小夜燈'],
+['🍫','進口巧克力','血清素直接用買的,比等別人給你快樂有效率多了。','NT$ 150~500','s','self,gift','chill,dumb','進口巧克力'],
+['🖊️','順到起飛的中性筆組','寫字順了,開會做筆記都像在寫書法。小錢大爽。','NT$ 100~300','s','self,gift','up','日本 中性筆'],
+// ── tier m (500~3000) ──
+['🎧','入門藍牙耳機','戴上去,世界安靜了,同事的嘴巴變成默劇。','NT$ 800~2,500','m','self','chill,up','藍牙耳機'],
+['🪑','人體工學靠墊','你的腰撐起整個家,給它一點尊重不過分吧。','NT$ 600~2,000','m','self,home','up,chill','人體工學 靠墊'],
+['🍳','不沾平底鍋','煎蛋不破的那一刻,你會覺得自己是米其林主廚。','NT$ 700~2,500','m','home','up','不沾鍋'],
+['💆','筋膜按摩槍','讓機器代替你不存在的另一半幫你按摩,還不會抱怨手痠。','NT$ 900~3,000','m','self,gift','chill','筋膜槍'],
+['🎬','串流平台年費','合法地在家躺一整年,平均一天不到十塊,躺著都賺。','NT$ 1,000~2,700','m','self,home','chill','Netflix 禮物卡'],
+['🧸','巨型絨毛玩偶','一個永遠不會已讀不回的擁抱對象,比很多人類可靠。','NT$ 600~2,000','m','self,gift','dumb,chill','巨型 絨毛玩偶'],
+['⌨️','機械鍵盤(入門)','喀噠喀噠,把打字變成演奏,老闆以為你很忙。','NT$ 1,500~3,000','m','self','up,dumb','機械鍵盤'],
+['🌡️','電熱毯','冬天離開被窩是酷刑,這是你的減刑申請書。','NT$ 800~2,500','m','self,home,gift','chill,up','電熱毯'],
+['🍶','質感保溫瓶','喝水這件事終於有了排面,開會拿出來就是低調炫耀。','NT$ 800~2,000','m','self,gift','up','保溫瓶'],
+['🎲','桌遊派對包','買回家逼朋友來玩,友情破裂機率 30%,快樂機率 100%。','NT$ 600~2,000','m','self,gift','dumb','桌遊'],
+['💡','智慧燈泡組','用手機關燈,懶惰終於有了科技感的包裝。','NT$ 500~1,500','m','home','up,dumb','智慧燈泡'],
+['🧖','高級沐浴組','洗澡洗出五星級飯店的錯覺,一天最爽的十分鐘。','NT$ 600~2,000','m','self,gift','chill,up','沐浴 禮盒'],
+['📚','一整套想看的書','買書的快樂在下單那刻就完成了,看不看是另一回事。','NT$ 500~2,000','m','self,gift','up','暢銷書 套書'],
+['🐟','貓咪自動逗貓棒','貓在動,你不用動。雙方都得到了想要的生活。','NT$ 500~1,500','m','self,home','dumb,chill','自動逗貓棒'],
+['🔌','延長線界的勞斯萊斯','獨立開關、USB 快充、防雷擊。插座多到可以開發電廠。','NT$ 500~1,500','m','home','up','快充延長線'],
+['🎨','數字油畫','塗完一幅需要 20 小時,治好你的手機成癮,大概。','NT$ 500~1,200','m','self,gift','chill,dumb','數字油畫'],
+// ── tier l (3000+) ──
+['🖥️','4K 螢幕','眼睛是靈魂之窗,窗戶該換雙層玻璃了。','NT$ 4,000~12,000','l','self','up','4K 螢幕 27吋'],
+['🎧','降噪耳機(旗艦)','按下降噪鍵,全世界閉嘴。這錢買的是「靜音鍵」的權力。','NT$ 6,000~12,000','l','self,gift','up,chill','降噪耳機'],
+['🤖','掃地機器人','家裡多一個任勞任怨的成員,還不用給年終。','NT$ 6,000~20,000','l','home','up,chill','掃地機器人'],
+['💺','電競椅/人體工學椅','一天坐十小時的東西值得投資,你的椎間盤會寫感謝函。','NT$ 5,000~15,000','l','self,home','up','人體工學椅'],
+['🍚','高級電子鍋','白飯好吃到會發光,從此便當店的飯都是將就。','NT$ 4,000~15,000','l','home,gift','up','IH電子鍋'],
+['📷','拍立得相機','把回憶印出來,雖然大部分會拍到手指,但那也是回憶。','NT$ 3,000~7,000','l','self,gift','dumb,up','拍立得'],
+['🎮','遊戲主機','買了它,接下來三個月的週末行程全部自動排滿。','NT$ 9,000~18,000','l','self,home','dumb,chill','Switch 主機'],
+['💦','高壓清洗機','把陽台地板洗出原本的顏色,爽感堪比擠痘痘影片。','NT$ 3,000~8,000','l','home','dumb,up','高壓清洗機'],
+['🛏️','記憶床墊/枕頭組','人生三分之一在床上,另外三分之二在想睡覺,值得。','NT$ 3,000~10,000','l','self,home,gift','chill,up','記憶枕 床墊'],
+['🍷','威士忌/清酒禮盒','大人的飲料,送禮體面,自己喝更體面。','NT$ 3,000~8,000','l','self,gift','up,chill','威士忌 禮盒'],
+['⌚','智慧手錶','花五位數買一個提醒你「該站起來了」的錶,很合理。','NT$ 5,000~15,000','l','self,gift','up','智慧手錶'],
+['🧖‍♀️','按摩椅墊','把沙發升級成按摩椅,家裡最搶手的座位誕生了。','NT$ 3,000~10,000','l','home,gift','chill','按摩椅墊'],
+['🎤','家用卡拉OK麥克風','在家開演唱會,鄰居的評價是唯一的差評來源。','NT$ 3,000~8,000','l','home,gift','dumb','卡拉OK 麥克風'],
+['🧳','高質感行李箱','買了新行李箱,旅行的藉口就自己長出來了。','NT$ 3,000~10,000','l','self,gift','up','行李箱'],
+['☕','義式咖啡機','在家開咖啡廳,回本要 300 杯,但夢想無價(自我催眠)。','NT$ 5,000~20,000','l','self,home','up,dumb','義式咖啡機'],
+];
+
+const subLines = {
+  chill: '診斷結果:過勞。處方箋如下,健保不給付,錢包自付。',
+  up: '診斷結果:生活品質缺乏症。以下藥物長期服用效果更佳。',
+  dumb: '診斷結果:太理性太久了。以下純快樂製劑,不含任何實用成分。',
+};
+
+const state = { tier: null, who: null, mood: null };
+let pool = [], shown = [];
+
+function go(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('s-' + id).classList.add('active');
+  window.scrollTo({ top: 0 });
+}
+
+function pick(key, val) {
+  state[key] = val;
+  if (key === 'tier') go('q2');
+  else if (key === 'who') go('q3');
+  else showResults();
+}
+
+function match(p) {
+  return p[4] === state.tier && p[5].includes(state.who) && p[6].includes(state.mood);
+}
+
+function showResults() {
+  pool = P.filter(match);
+  // ponytail: 組合太冷門時放寬 mood 條件,保底至少 3 張卡
+  if (pool.length < 3) {
+    const extra = P.filter(p => p[4] === state.tier && p[5].includes(state.who) && !pool.includes(p));
+    pool = pool.concat(extra);
+  }
+  shown = [];
+  document.getElementById('r-sub').textContent = subLines[state.mood];
+  draw();
+  go('result');
+}
+
+function draw() {
+  let candidates = pool.filter(p => !shown.includes(p));
+  if (candidates.length < 3) { shown = []; candidates = pool; }
+  const picked = candidates.sort(() => Math.random() - .5).slice(0, 6);
+  shown = shown.concat(picked);
+  document.getElementById('r-cards').innerHTML = picked.map(p => `
+    <div class="card">
+      <div class="pic">${p[0]}</div>
+      <div class="name">${p[1]}</div>
+      <div class="desc">${p[2]}</div>
+      <div class="price">${p[3]}</div>
+      <div class="links">
+        <a href="https://www.momoshop.com.tw/search/searchShop.jsp?keyword=${encodeURIComponent(p[7])}" target="_blank" rel="noopener">momo</a>
+        <a href="https://shopee.tw/search?keyword=${encodeURIComponent(p[7])}" target="_blank" rel="noopener">蝦皮</a>
+      </div>
+    </div>`).join('');
+}
+
+function reroll() {
+  draw();
+  window.scrollTo({ top: 0 });
+}
+
+function restart() {
+  state.tier = state.who = state.mood = null;
+  go('q1');
+}
+</script>
+</body>
+</html>
