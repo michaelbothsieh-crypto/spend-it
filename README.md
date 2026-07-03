@@ -8,6 +8,10 @@
 
 純靜態單頁(HTML/CSS/JS),零依賴、零 build、零後端。開 `index.html` 就能跑。
 
+![完整流程展示](screenshots/demo.gif)
+
+*首頁 → 三題漏斗 → 拉霸機 → 診斷結果 → 重抽,一鏡到底。*
+
 ---
 
 ## 長這樣
