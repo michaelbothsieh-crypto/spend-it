@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-06T23:10:29.620Z",
+ "updated": "2026-07-07T23:04:04.624Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -9,21 +9,9 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報]  星展CARD+讓日常更省心 贈即享券",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1782910553.A.831.html",
-   "heat": 100
-  },
-  {
-   "src": "PTT 省錢板",
    "title": "[情報] 巴哈姆特動畫瘋2026夏日特惠",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1782963878.A.2B8.html",
-   "heat": 98
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 台新Richart Life 口貸多一點 限量3萬名",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1782871567.A.C52.html",
-   "heat": 98
+   "heat": 99
   },
   {
    "src": "PTT 省錢板",
@@ -39,15 +27,27 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 麻古IPM 60-30(IPASSmoney)",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1782919690.A.83D.html",
-   "heat": 67
+   "title": "[情報] 蝦皮 餐券/禮券 84 折",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783377552.A.5B0.html",
+   "heat": 72
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] iPASS MONEY 繳公路養管費最高480優惠券",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783078511.A.6DA.html",
-   "heat": 64
+   "heat": 65
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[問題] 買手機保險划算嗎？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783179124.A.041.html",
+   "heat": 61
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮7/7滿千折$200",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783322155.A.E5F.html",
+   "heat": 59
   },
   {
    "src": "PTT 省錢板",
@@ -56,16 +56,16 @@
    "heat": 59
   },
   {
-   "src": "PTT 3C板",
-   "title": "[問題] 買手機保險划算嗎？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783179124.A.041.html",
-   "heat": 59
+   "src": "PTT 省錢板",
+   "title": "[情報] 麥當勞豬肉滿福堡加蛋+冰咖啡 58元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1782951266.A.97F.html",
+   "heat": 56
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 麥當勞app刮優惠券",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1782877271.A.19C.html",
-   "heat": 58
+   "title": "[情報] Baseus 倍思 充電線 一日限定 67元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783041351.A.F04.html",
+   "heat": 56
   },
   {
    "src": "PTT 3C板",
@@ -83,7 +83,19 @@
    "src": "PTT 3C板",
    "title": "[購機] X300 or S25+",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1783252411.A.00C.html",
-   "heat": 38
+   "heat": 40
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] HONOR 600系列發表公佈價格",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783406383.A.6D2.html",
+   "heat": 37
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "Re: [討論] 麒麟9030的效能預測",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783092484.A.A93.html",
+   "heat": 37
   },
   {
    "src": "PTT 3C板",
@@ -93,15 +105,15 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "Re: [討論] 麒麟9030的效能預測",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783092484.A.A93.html",
+   "title": "[情報] 夏普R11台灣售價搶先曝光 26990元起",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1782968152.A.E70.html",
    "heat": 36
   },
   {
    "src": "PTT 3C板",
-   "title": "[情報] 夏普R11台灣售價搶先曝光 26990元起",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1782968152.A.E70.html",
-   "heat": 35
+   "title": "[問題] 請問便宜的資費",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783226382.A.779.html",
+   "heat": 32
   },
   {
    "src": "PTT 網購板",
@@ -116,28 +128,16 @@
    "heat": 30
   },
   {
-   "src": "PTT 3C板",
-   "title": "[問題] 請問便宜的資費",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783226382.A.779.html",
-   "heat": 29
-  },
-  {
    "src": "PTT 網購板",
    "title": "[心得] 3月日貨連線與近期日牌購買心得",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1780214860.A.DF7.html",
-   "heat": 28
+   "heat": 29
   },
   {
    "src": "PTT 網購板",
    "title": "[閒聊] 6/8韓貨韓組閒聊文",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1780930899.A.C3C.html",
    "heat": 26
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] 手機記憶體能回收再生有搞頭嗎",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1782902413.A.E95.html",
-   "heat": 25
   },
   {
    "src": "PTT 網購板",
@@ -171,14 +171,14 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[心得] 不推拼多多和天馬集運",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1778484112.A.2E2.html",
-   "heat": 8
+   "title": "[問題] 淘寶藍牙耳機，運送及自用申請問題？",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783149341.A.040.html",
+   "heat": 9
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 睡眠音箱",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1780318365.A.138.html",
+   "title": "[心得] 不推拼多多和天馬集運",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1778484112.A.2E2.html",
    "heat": 8
   }
  ]
