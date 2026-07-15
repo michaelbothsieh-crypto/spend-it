@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-14T22:57:59.170Z",
+ "updated": "2026-07-15T22:59:18.791Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -21,15 +21,21 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 雲端發票活動送免費咖啡券8000名",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783943026.A.0EF.html",
-   "heat": 81
+   "title": "[情報] 7-11 飲料抽抽樂",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784079966.A.4C1.html",
+   "heat": 84
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮 餐券/禮券 84 折",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783377552.A.5B0.html",
-   "heat": 76
+   "title": "[情報] 雲端發票活動送免費咖啡券8000名",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783943026.A.0EF.html",
+   "heat": 79
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 2026年全台捐血贈品",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1767366026.A.B74.html",
+   "heat": 73
   },
   {
    "src": "PTT 省錢板",
@@ -38,16 +44,10 @@
    "heat": 73
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 2026年全台捐血贈品",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1767366026.A.B74.html",
-   "heat": 72
-  },
-  {
    "src": "PTT 3C板",
    "title": "[心得] 反推 MLTIX保護貼 淘寶貨",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1783757832.A.851.html",
-   "heat": 66
+   "heat": 68
   },
   {
    "src": "PTT 3C板",
@@ -57,15 +57,9 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮7/7滿千折$200",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783322155.A.E5F.html",
-   "heat": 65
-  },
-  {
-   "src": "PTT 省錢板",
    "title": "[情報] 全家新品：白醋涼麵風味雪糕買一送一",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783943283.A.B02.html",
-   "heat": 60
+   "heat": 64
   },
   {
    "src": "PTT 3C板",
@@ -75,15 +69,21 @@
   },
   {
    "src": "PTT 省錢板",
+   "title": "[情報] 拿坡里小披薩+3炸雞199",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783905246.A.E35.html",
+   "heat": 54
+  },
+  {
+   "src": "PTT 省錢板",
    "title": "[情報] 註冊全鋒 T-Life會員 送肯德基蛋塔一顆",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783402968.A.F59.html",
    "heat": 53
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 拿坡里小披薩+3炸雞199",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783905246.A.E35.html",
-   "heat": 51
+   "title": "[情報] 7-11 icash Pay霜淇淋買1送1",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783490482.A.013.html",
+   "heat": 50
   },
   {
    "src": "PTT 3C板",
@@ -119,18 +119,18 @@
    "src": "PTT 3C板",
    "title": "[心得] 教學-取代Skype的網路電話樂天Viber Out",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1783384734.A.AC1.html",
+   "heat": 31
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "Re: [問題] 螢幕壞掉，有辦法把資料轉移嗎？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783610825.A.5E2.html",
    "heat": 30
   },
   {
    "src": "PTT 網購板",
    "title": "[心得] 3月日貨連線與近期日牌購買心得",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1780214860.A.DF7.html",
-   "heat": 29
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [問題] 螢幕壞掉，有辦法把資料轉移嗎？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783610825.A.5E2.html",
    "heat": 29
   },
   {
@@ -153,6 +153,12 @@
   },
   {
    "src": "PTT 網購板",
+   "title": "[心得] 飛利浦最近真的變很爛",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
+   "heat": 13
+  },
+  {
+   "src": "PTT 網購板",
    "title": "[問題] 店家一直上架一直取消是什麼意思 ???",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1781881371.A.881.html",
    "heat": 13
@@ -162,12 +168,6 @@
    "title": "[問題] 淘寶藍牙耳機，運送及自用申請問題？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1783149341.A.040.html",
    "heat": 13
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[心得] 飛利浦最近真的變很爛",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
-   "heat": 11
   },
   {
    "src": "PTT 網購板",
