@@ -1,6 +1,12 @@
 {
- "updated": "2026-07-18T22:52:26.934Z",
+ "updated": "2026-07-19T22:55:03.640Z",
  "items": [
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮全站500-100",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784374931.A.93D.html",
+   "heat": 100
+  },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 7-11 飲料抽抽樂",
@@ -11,31 +17,25 @@
    "src": "PTT 3C板",
    "title": "Re: [情報] Google Play 一年一度的購機活動出現了",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1783961491.A.B5C.html",
-   "heat": 100
+   "heat": 99
   },
   {
    "src": "PTT 3C板",
    "title": "Re: [新聞] 北海道飛高雄泰獅航班機出事！機艙內行",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1783826860.A.148.html",
-   "heat": 95
+   "heat": 96
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 蝦皮7/18全站滿千折百",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784271273.A.18E.html",
-   "heat": 87
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮全站500-100",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784374931.A.93D.html",
-   "heat": 84
+   "heat": 89
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 中華電信APP全民轉運站 送Hami point",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784187957.A.7ED.html",
-   "heat": 82
+   "heat": 83
   },
   {
    "src": "PTT 省錢板",
@@ -65,7 +65,7 @@
    "src": "PTT 3C板",
    "title": "Re: [新聞]蘋果棄TLC讓iPhone改用QLC快閃記憶體 壽命",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784114256.A.D6C.html",
-   "heat": 70
+   "heat": 71
   },
   {
    "src": "PTT 網購板",
@@ -86,9 +86,21 @@
    "heat": 64
   },
   {
+   "src": "PTT 3C板",
+   "title": "[討論] Pixel 11 價格曝光",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784305636.A.C11.html",
+   "heat": 60
+  },
+  {
    "src": "PTT 省錢板",
    "title": "[情報] 拿坡里小披薩+3炸雞199",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783905246.A.E35.html",
+   "heat": 55
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[新聞] 首次國家級手機限速演習！只能發簡訊、",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784288696.A.670.html",
    "heat": 55
   },
   {
@@ -98,28 +110,22 @@
    "heat": 51
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] Pixel 11 價格曝光",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784305636.A.C11.html",
-   "heat": 48
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[新聞] 首次國家級手機限速演習！只能發簡訊、",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784288696.A.670.html",
-   "heat": 45
+   "src": "PTT 網購板",
+   "title": "[閒聊] 5/5韓貨韓組閒聊文",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1777993076.A.0A9.html",
+   "heat": 39
   },
   {
    "src": "PTT 3C板",
    "title": "Re: [新聞] Google：希望續與華為合作",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784259977.A.32F.html",
-   "heat": 40
+   "heat": 39
   },
   {
-   "src": "PTT 網購板",
-   "title": "[閒聊] 5/5韓貨韓組閒聊文",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1777993076.A.0A9.html",
-   "heat": 39
+   "src": "PTT 3C板",
+   "title": "Re: [新聞] 首次國家級手機限速演習！只能發簡訊、",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784435933.A.F25.html",
+   "heat": 32
   },
   {
    "src": "PTT 3C板",
@@ -132,12 +138,6 @@
    "title": "[閒聊] 蝦皮店到店 既然都晚了那就慢慢送?",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1779078771.A.FDC.html",
    "heat": 31
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題] 台灣大(原台灣之星)日本收不到簡訊?",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784023173.A.9BD.html",
-   "heat": 30
   },
   {
    "src": "PTT 網購板",
