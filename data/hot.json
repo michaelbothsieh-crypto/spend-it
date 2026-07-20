@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-19T22:55:03.640Z",
+ "updated": "2026-07-20T23:02:17.077Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -8,16 +8,10 @@
    "heat": 100
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 7-11 飲料抽抽樂",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784079966.A.4C1.html",
-   "heat": 100
-  },
-  {
    "src": "PTT 3C板",
    "title": "Re: [情報] Google Play 一年一度的購機活動出現了",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1783961491.A.B5C.html",
-   "heat": 99
+   "heat": 100
   },
   {
    "src": "PTT 3C板",
@@ -35,13 +29,7 @@
    "src": "PTT 省錢板",
    "title": "[情報] 中華電信APP全民轉運站 送Hami point",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784187957.A.7ED.html",
-   "heat": 83
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 雲端發票活動送免費咖啡券8000名",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783943026.A.0EF.html",
-   "heat": 80
+   "heat": 84
   },
   {
    "src": "PTT 省錢板",
@@ -53,7 +41,7 @@
    "src": "PTT 省錢板",
    "title": "[情報] 全家康康五5日5好康 7/17~7/21",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784120264.A.A69.html",
-   "heat": 73
+   "heat": 74
   },
   {
    "src": "PTT 省錢板",
@@ -65,7 +53,13 @@
    "src": "PTT 3C板",
    "title": "Re: [新聞]蘋果棄TLC讓iPhone改用QLC快閃記憶體 壽命",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784114256.A.D6C.html",
-   "heat": 71
+   "heat": 73
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[心得] 反推 MLTIX保護貼 淘寶貨",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783757832.A.851.html",
+   "heat": 69
   },
   {
    "src": "PTT 網購板",
@@ -75,39 +69,51 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[心得] 反推 MLTIX保護貼 淘寶貨",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783757832.A.851.html",
-   "heat": 68
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 全家新品：白醋涼麵風味雪糕買一送一",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783943283.A.B02.html",
-   "heat": 64
-  },
-  {
-   "src": "PTT 3C板",
    "title": "[討論] Pixel 11 價格曝光",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784305636.A.C11.html",
-   "heat": 60
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 拿坡里小披薩+3炸雞199",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1783905246.A.E35.html",
-   "heat": 55
+   "heat": 65
   },
   {
    "src": "PTT 3C板",
    "title": "[新聞] 首次國家級手機限速演習！只能發簡訊、",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784288696.A.670.html",
-   "heat": 55
+   "heat": 62
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] LINE POINT 4+3+1",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784253810.A.7A8.html",
+   "heat": 52
   },
   {
    "src": "PTT 3C板",
    "title": "[購機] 健康智慧手錶選擇",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1783672912.A.B8A.html",
    "heat": 51
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮 小米手環9 NFC版",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784306753.A.DE3.html",
+   "heat": 47
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 分眾pchome送100p幣",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784249571.A.ED9.html",
+   "heat": 47
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] Line 禮物飲料抵用券35-20",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784215077.A.0FF.html",
+   "heat": 46
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "Re: [新聞] Google：希望續與華為合作",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784259977.A.32F.html",
+   "heat": 40
   },
   {
    "src": "PTT 網購板",
@@ -117,21 +123,15 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "Re: [新聞] Google：希望續與華為合作",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784259977.A.32F.html",
-   "heat": 39
-  },
-  {
-   "src": "PTT 3C板",
    "title": "Re: [新聞] 首次國家級手機限速演習！只能發簡訊、",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784435933.A.F25.html",
-   "heat": 32
+   "heat": 37
   },
   {
    "src": "PTT 3C板",
-   "title": "[情報] 紅米Note17系列(中國) 7月14日發布",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1783776564.A.124.html",
-   "heat": 32
+   "title": "[新聞]  iPhone 11還能升級iOS 27！外媒：安卓陣",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784438142.A.AA3.html",
+   "heat": 33
   },
   {
    "src": "PTT 網購板",
@@ -171,14 +171,14 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 店家一直上架一直取消是什麼意思 ???",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1781881371.A.881.html",
-   "heat": 13
+   "title": "[心得] COCO DEAL&amp;LILLIAN CARAT折扣季日貨分享",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1784138771.A.EB8.html",
+   "heat": 14
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 淘寶藍牙耳機，運送及自用申請問題？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783149341.A.040.html",
+   "title": "[問題] 店家一直上架一直取消是什麼意思 ???",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1781881371.A.881.html",
    "heat": 13
   }
  ]
