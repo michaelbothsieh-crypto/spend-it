@@ -1,17 +1,11 @@
 {
- "updated": "2026-07-23T22:58:04.288Z",
+ "updated": "2026-07-24T23:03:06.131Z",
  "items": [
   {
    "src": "PTT 省錢板",
    "title": "[情報] 蝦皮全站500-100",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784374931.A.93D.html",
    "heat": 100
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮7/18全站滿千折百",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784271273.A.18E.html",
-   "heat": 89
   },
   {
    "src": "PTT 3C板",
@@ -33,33 +27,39 @@
   },
   {
    "src": "PTT 省錢板",
+   "title": "Re: [情報] AdGuard家庭版9裝置8.8鎂（約 NT$280",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784806092.A.8AF.html",
+   "heat": 66
+  },
+  {
+   "src": "PTT 省錢板",
    "title": "[情報] 必勝客 189 - 50 折價券",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784560458.A.0E5.html",
    "heat": 59
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] 迷你 Type C 快充&#34;充電頭&#34; 推薦",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784623246.A.F3F.html",
-   "heat": 53
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] 壽星餐廳優惠",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784786240.A.F21.html",
-   "heat": 52
+   "heat": 58
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 迷你 Type C 快充&#34;充電頭&#34; 推薦",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784623246.A.F3F.html",
+   "heat": 55
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 拿坡里7/21~7/31大披薩、六塊炸雞199元",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784550883.A.790.html",
-   "heat": 52
+   "heat": 53
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] LINE POINT 4+3+1",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784253810.A.7A8.html",
-   "heat": 52
+   "src": "PTT 3C板",
+   "title": "[問題] 長輩雙人旅日吃到飽方案？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784780098.A.501.html",
+   "heat": 53
   },
   {
    "src": "PTT 省錢板",
@@ -69,15 +69,27 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 分眾pchome送100p幣",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784249571.A.ED9.html",
+   "title": "[情報] Ubereat 249-50",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784710361.A.E56.html",
    "heat": 47
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] Ubereat 249-50",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784710361.A.E56.html",
-   "heat": 46
+   "title": "[情報] 蝦皮7.25蝦幣回饋25%",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784864163.A.116.html",
+   "heat": 47
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮直營不出貨 找客服領補償優惠卷",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784294235.A.BC5.html",
+   "heat": 45
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 有業者的4G基地台數量正在減少?",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784622457.A.60F.html",
+   "heat": 41
   },
   {
    "src": "PTT 網購板",
@@ -87,20 +99,14 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[討論] 有業者的4G基地台數量正在減少?",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784622457.A.60F.html",
+   "title": "[心得] iPhone手機與安卓手機使用心得",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784697727.A.CAD.html",
    "heat": 39
   },
   {
    "src": "PTT 3C板",
-   "title": "[問題] 長輩雙人旅日吃到飽方案？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784780098.A.501.html",
-   "heat": 38
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[心得] iPhone手機與安卓手機使用心得",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784697727.A.CAD.html",
+   "title": "[問題] 為什麼x300pro好像快下架一樣？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784744603.A.25B.html",
    "heat": 37
   },
   {
@@ -111,21 +117,15 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[購機] 請推薦1萬到1萬5的手機？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784519837.A.A2A.html",
+   "title": "[新聞]  iPhone 11還能升級iOS 27！外媒：安卓陣",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784438142.A.AA3.html",
    "heat": 36
   },
   {
    "src": "PTT 3C板",
-   "title": "[新聞]  iPhone 11還能升級iOS 27！外媒：安卓陣",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784438142.A.AA3.html",
-   "heat": 35
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題] 為什麼x300pro好像快下架一樣？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784744603.A.25B.html",
-   "heat": 33
+   "title": "[購機] 請推薦1萬到1萬5的手機？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784519837.A.A2A.html",
+   "heat": 36
   },
   {
    "src": "PTT 3C板",
@@ -143,7 +143,7 @@
    "src": "PTT 網購板",
    "title": "[心得] 飛利浦最近真的變很爛",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
-   "heat": 29
+   "heat": 30
   },
   {
    "src": "PTT 網購板",
@@ -167,7 +167,7 @@
    "src": "PTT 網購板",
    "title": "[心得] COCO DEAL&amp;LILLIAN CARAT折扣季日貨分享",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1784138771.A.EB8.html",
-   "heat": 16
+   "heat": 17
   },
   {
    "src": "PTT 網購板",
