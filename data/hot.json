@@ -1,6 +1,12 @@
 {
- "updated": "2026-07-24T23:03:06.131Z",
+ "updated": "2026-07-25T22:57:11.413Z",
  "items": [
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 115年5-6月 統一發票中獎號碼",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784954413.A.0F3.html",
+   "heat": 100
+  },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 蝦皮全站500-100",
@@ -20,6 +26,12 @@
    "heat": 76
   },
   {
+   "src": "PTT 省錢板",
+   "title": "Re: [情報] AdGuard家庭版9裝置8.8鎂（約 NT$280",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784806092.A.8AF.html",
+   "heat": 68
+  },
+  {
    "src": "PTT 網購板",
    "title": "[閒聊] 日貨Rika&amp;Albert 中國製產品標示日本製",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1777130872.A.630.html",
@@ -27,9 +39,21 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "Re: [情報] AdGuard家庭版9裝置8.8鎂（約 NT$280",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784806092.A.8AF.html",
-   "heat": 66
+   "title": "[情報] 蝦皮饗食天堂下午茶4張2714元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784938287.A.F76.html",
+   "heat": 61
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮7.25蝦幣回饋25%",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784864163.A.116.html",
+   "heat": 60
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 壽星餐廳優惠",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784786240.A.F21.html",
+   "heat": 59
   },
   {
    "src": "PTT 省錢板",
@@ -38,10 +62,16 @@
    "heat": 59
   },
   {
+   "src": "PTT 3C板",
+   "title": "[問題] 長輩雙人旅日吃到飽方案？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784780098.A.501.html",
+   "heat": 57
+  },
+  {
    "src": "PTT 省錢板",
-   "title": "[情報] 壽星餐廳優惠",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784786240.A.F21.html",
-   "heat": 58
+   "title": "[情報] 肯德基大阪燒雙蝦海陸堡套買一送一",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784883646.A.D8F.html",
+   "heat": 55
   },
   {
    "src": "PTT 3C板",
@@ -57,50 +87,20 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[問題] 長輩雙人旅日吃到飽方案？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784780098.A.501.html",
-   "heat": 53
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮 小米手環9 NFC版",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784306753.A.DE3.html",
-   "heat": 48
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] Ubereat 249-50",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784710361.A.E56.html",
-   "heat": 47
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮7.25蝦幣回饋25%",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784864163.A.116.html",
-   "heat": 47
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮直營不出貨 找客服領補償優惠卷",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1784294235.A.BC5.html",
-   "heat": 45
-  },
-  {
-   "src": "PTT 3C板",
    "title": "[討論] 有業者的4G基地台數量正在減少?",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784622457.A.60F.html",
-   "heat": 41
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[閒聊] 5/5韓貨韓組閒聊文",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1777993076.A.0A9.html",
-   "heat": 39
+   "heat": 42
   },
   {
    "src": "PTT 3C板",
    "title": "[心得] iPhone手機與安卓手機使用心得",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1784697727.A.CAD.html",
+   "heat": 40
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[閒聊] 5/5韓貨韓組閒聊文",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1777993076.A.0A9.html",
    "heat": 39
   },
   {
@@ -129,8 +129,14 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[心得] 出國還是選擇實體sim卡",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784441144.A.24B.html",
+   "title": "[新聞] 三星認了Galaxy S26 Ultra螢幕泛紅　非硬",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1784689694.A.961.html",
+   "heat": 34
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[心得] 飛利浦最近真的變很爛",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
    "heat": 33
   },
   {
@@ -138,12 +144,6 @@
    "title": "[閒聊] 蝦皮店到店 既然都晚了那就慢慢送?",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1779078771.A.FDC.html",
    "heat": 31
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[心得] 飛利浦最近真的變很爛",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
-   "heat": 30
   },
   {
    "src": "PTT 網購板",
