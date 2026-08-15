@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-14T22:24:27.498Z",
+ "updated": "2026-08-15T22:22:54.819Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -44,16 +44,16 @@
    "heat": 78
   },
   {
+   "src": "PTT 省錢板",
+   "title": "[情報] 三商巧福原汁牛肉麵139",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786344092.A.C32.html",
+   "heat": 74
+  },
+  {
    "src": "PTT 3C板",
    "title": "[新聞] 蘋果要出手了？爆料：iPhone 17最快下週",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1786216310.A.326.html",
    "heat": 74
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 三商巧福原汁牛肉麵139",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786344092.A.C32.html",
-   "heat": 73
   },
   {
    "src": "PTT 省錢板",
@@ -62,10 +62,40 @@
    "heat": 62
   },
   {
+   "src": "PTT 省錢板",
+   "title": "[情報] LINE購物35元紅包",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786531794.A.D9A.html",
+   "heat": 60
+  },
+  {
    "src": "PTT 3C板",
    "title": "[情報] Google Pixel 11 系列台灣 DM 折頁曝光",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1786514974.A.0A1.html",
    "heat": 56
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] Pixel 11 全系列支援 FeliCa 西瓜卡",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1786624930.A.E6B.html",
+   "heat": 56
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] -4杜老爺買2送2",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786674107.A.B68.html",
+   "heat": 53
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[Live] Made by Google ‘26",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1786565156.A.2F5.html",
+   "heat": 53
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "Re: [情報] ExpressVPN TopCashback 120%返現 被取消",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786344970.A.A5C.html",
+   "heat": 52
   },
   {
    "src": "PTT 省錢板",
@@ -75,33 +105,15 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[Live] Made by Google ‘26",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1786565156.A.2F5.html",
-   "heat": 52
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "Re: [情報] ExpressVPN TopCashback 120%返現 被取消",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786344970.A.A5C.html",
-   "heat": 50
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 富士通日本製3號/4號電池 20入$299",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786359608.A.E5C.html",
-   "heat": 48
-  },
-  {
-   "src": "PTT 3C板",
    "title": "[討論] 2025-2026行動電源召回型號",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1786577052.A.39B.html",
    "heat": 47
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] IPASS 中元祭優惠券",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786551681.A.819.html",
-   "heat": 41
+   "src": "PTT 3C板",
+   "title": "[新聞] 蘋果首款摺疊iPhone Ultra傳9月亮相 美",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1786672798.A.57E.html",
+   "heat": 42
   },
   {
    "src": "PTT 網購板",
@@ -116,16 +128,10 @@
    "heat": 39
   },
   {
-   "src": "PTT 3C板",
-   "title": "[新聞] 蘋果首款摺疊iPhone Ultra傳9月亮相 美",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1786672798.A.57E.html",
-   "heat": 37
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[購機] vivo/pixel/oppo選擇請益",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1786527458.A.2F7.html",
-   "heat": 36
+   "src": "PTT 網購板",
+   "title": "[心得] 3月日貨連線與近期日牌購買心得",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1780214860.A.DF7.html",
+   "heat": 29
   },
   {
    "src": "PTT 網購板",
@@ -137,7 +143,7 @@
    "src": "PTT 網購板",
    "title": "[閒聊] 有人在MOMO買冷氣嗎?",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1785484764.A.784.html",
-   "heat": 24
+   "heat": 25
   },
   {
    "src": "PTT 網購板",
@@ -173,12 +179,6 @@
    "src": "PTT 網購板",
    "title": "[閒聊] 收到比比昂個資外洩的詐騙信",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1785841102.A.2EB.html",
-   "heat": 10
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[問題] 攜帶型刮鬍刀",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1781169520.A.DDF.html",
    "heat": 10
   }
  ]
