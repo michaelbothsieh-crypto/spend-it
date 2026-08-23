@@ -31,6 +31,11 @@ button{background:var(--bg3);color:var(--fg);border:1px solid var(--line);border
   padding:6px 12px;cursor:pointer;font-family:inherit;font-size:13px}
 button:hover:not(:disabled){border-color:var(--acc);color:var(--acc)}
 button:disabled{opacity:.4;cursor:not-allowed}
+a.btnlink{display:inline-block;text-decoration:none;background:var(--bg3);color:var(--fg);
+  border:1px solid var(--line);border-radius:5px;padding:6px 12px;font-size:13px;cursor:pointer}
+a.btnlink:hover{border-color:var(--acc);color:var(--acc)}
+a.btnlink.primary{background:var(--acc);color:#141410;border-color:var(--acc);font-weight:600}
+a.btnlink.primary:hover{filter:brightness(1.12);color:#141410}
 button.primary{background:var(--acc);color:#141410;border-color:var(--acc);font-weight:600}
 button.primary:hover:not(:disabled){filter:brightness(1.12);color:#141410}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -143,6 +148,8 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
     <button id="btnLoadStats">自動抓取官方詞綴表</button>
     <button id="btnUploadStats">上傳 stats.json</button>
     <input type="file" id="fileStats" accept=".json,application/json" style="display:none">
+    <button id="btnUploadZh">上傳中文 stats.json</button>
+    <input type="file" id="fileZh" accept=".json,application/json" style="display:none">
     <span class="legend">
       <span><i class="dot official"></i>官方對照</span>
       <span><i class="dot builtin"></i>內建對照</span>
@@ -169,6 +176,11 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
       <button id="btnImportant">只勾重要詞綴</button>
       <button id="btnAll">全部勾選</button>
       <button id="btnNone">全部取消</button>
+      <select id="lang" style="margin-left:6px">
+        <option value="zh">詞綴顯示：中文</option>
+        <option value="both">詞綴顯示：中英對照</option>
+        <option value="en">詞綴顯示：英文</option>
+      </select>
       <span class="hint" id="counts"></span>
     </div>
   </div>
@@ -291,6 +303,131 @@ const BUILTIN_STATS = {
   "#% increased Skill Effect Duration":"explicit.stat_3377888098",
   "#% increased Light Radius":"explicit.stat_1263695895"
 };
+
+
+/* ================================================================
+   內建詞綴中文對照（自行翻譯，用詞盡量貼近國際服台灣玩家慣用）
+   可另外匯入官方中文 stats.json，會以 stat id 為準覆蓋這裡
+   ================================================================ */
+const ZH_BUILTIN = {
+  "+#% to Fire Resistance":"+#% 火焰抗性",
+  "+#% to Cold Resistance":"+#% 冰霜抗性",
+  "+#% to Lightning Resistance":"+#% 閃電抗性",
+  "+#% to Chaos Resistance":"+#% 混沌抗性",
+  "+#% to all Elemental Resistances":"+#% 所有元素抗性",
+  "+#% to Fire and Cold Resistances":"+#% 火焰與冰霜抗性",
+  "+#% to Fire and Lightning Resistances":"+#% 火焰與閃電抗性",
+  "+#% to Cold and Lightning Resistances":"+#% 冰霜與閃電抗性",
+  "+#% to maximum Fire Resistance":"+#% 最大火焰抗性",
+  "+#% to maximum Cold Resistance":"+#% 最大冰霜抗性",
+  "+#% to maximum Lightning Resistance":"+#% 最大閃電抗性",
+  "+# to maximum Life":"+# 最大生命",
+  "+# to maximum Mana":"+# 最大魔力",
+  "+# to maximum Energy Shield":"+# 最大能量護盾",
+  "#% increased maximum Energy Shield":"增加 #% 最大能量護盾",
+  "#% increased maximum Life":"增加 #% 最大生命",
+  "#% increased Mana Regeneration Rate":"增加 #% 魔力回復速度",
+  "Regenerate # Life per second":"每秒回復 # 生命",
+  "#% of Physical Attack Damage Leeched as Life":"#% 物理攻擊傷害偷取生命",
+  "+# to Ward":"+# 壁壘",
+  "+# to Strength":"+# 力量",
+  "+# to Dexterity":"+# 敏捷",
+  "+# to Intelligence":"+# 智慧",
+  "+# to all Attributes":"+# 所有屬性",
+  "+# to Strength and Dexterity":"+# 力量與敏捷",
+  "+# to Strength and Intelligence":"+# 力量與智慧",
+  "+# to Dexterity and Intelligence":"+# 敏捷與智慧",
+  "#% increased Movement Speed":"增加 #% 移動速度",
+  "#% increased Attack Speed":"增加 #% 攻擊速度",
+  "#% increased Cast Speed":"增加 #% 施放速度",
+  "#% increased Attack and Cast Speed":"增加 #% 攻擊與施放速度",
+  "#% increased Critical Strike Chance":"增加 #% 暴擊率",
+  "#% increased Global Critical Strike Chance":"增加 #% 全域暴擊率",
+  "+#% to Global Critical Strike Multiplier":"+#% 全域暴擊傷害加成",
+  "+#% to Critical Strike Multiplier":"+#% 暴擊傷害加成",
+  "#% increased Critical Strike Chance for Spells":"增加 #% 法術暴擊率",
+  "#% increased Global Critical Strike Multiplier":"增加 #% 全域暴擊傷害加成",
+  "Adds # to # Physical Damage":"附加 # 至 # 物理傷害",
+  "Adds # to # Fire Damage":"附加 # 至 # 火焰傷害",
+  "Adds # to # Cold Damage":"附加 # 至 # 冰霜傷害",
+  "Adds # to # Lightning Damage":"附加 # 至 # 閃電傷害",
+  "Adds # to # Chaos Damage":"附加 # 至 # 混沌傷害",
+  "Adds # to # Physical Damage to Attacks":"攻擊附加 # 至 # 物理傷害",
+  "Adds # to # Fire Damage to Attacks":"攻擊附加 # 至 # 火焰傷害",
+  "Adds # to # Cold Damage to Attacks":"攻擊附加 # 至 # 冰霜傷害",
+  "Adds # to # Lightning Damage to Attacks":"攻擊附加 # 至 # 閃電傷害",
+  "Adds # to # Chaos Damage to Attacks":"攻擊附加 # 至 # 混沌傷害",
+  "Adds # to # Fire Damage to Spells":"法術附加 # 至 # 火焰傷害",
+  "Adds # to # Cold Damage to Spells":"法術附加 # 至 # 冰霜傷害",
+  "Adds # to # Lightning Damage to Spells":"法術附加 # 至 # 閃電傷害",
+  "#% increased Physical Damage":"增加 #% 物理傷害",
+  "#% increased Spell Damage":"增加 #% 法術傷害",
+  "#% increased Elemental Damage with Attack Skills":"增加 #% 攻擊技能元素傷害",
+  "#% increased Fire Damage":"增加 #% 火焰傷害",
+  "#% increased Cold Damage":"增加 #% 冰霜傷害",
+  "#% increased Lightning Damage":"增加 #% 閃電傷害",
+  "#% increased Chaos Damage":"增加 #% 混沌傷害",
+  "#% increased Global Physical Damage":"增加 #% 全域物理傷害",
+  "+#% to Damage over Time Multiplier":"+#% 持續傷害加成",
+  "#% increased Damage over Time":"增加 #% 持續傷害",
+  "#% increased Area Damage":"增加 #% 範圍傷害",
+  "#% increased Projectile Damage":"增加 #% 投射物傷害",
+  "#% increased Burning Damage":"增加 #% 燃燒傷害",
+  "#% increased Armour":"增加 #% 護甲",
+  "#% increased Evasion Rating":"增加 #% 閃避值",
+  "#% increased Armour and Evasion":"增加 #% 護甲與閃避值",
+  "#% increased Armour and Energy Shield":"增加 #% 護甲與能量護盾",
+  "#% increased Evasion and Energy Shield":"增加 #% 閃避與能量護盾",
+  "#% increased Global Defences":"增加 #% 全域防禦值",
+  "+# to Armour":"+# 護甲",
+  "+# to Evasion Rating":"+# 閃避值",
+  "+# to Accuracy Rating":"+# 命中值",
+  "#% increased Global Accuracy Rating":"增加 #% 全域命中值",
+  "+#% Chance to Block":"+#% 格擋率",
+  "+#% chance to Suppress Spell Damage":"+#% 機率抑制法術傷害",
+  "+#% to all maximum Resistances":"+#% 所有最大抗性",
+  "+# to Level of all Spell Skill Gems":"+# 所有法術技能寶石等級",
+  "+# to Level of all Fire Skill Gems":"+# 所有火焰技能寶石等級",
+  "+# to Level of all Cold Skill Gems":"+# 所有冰霜技能寶石等級",
+  "+# to Level of all Lightning Skill Gems":"+# 所有閃電技能寶石等級",
+  "+# to Level of all Chaos Skill Gems":"+# 所有混沌技能寶石等級",
+  "+# to Level of all Physical Skill Gems":"+# 所有物理技能寶石等級",
+  "+# to Level of all Minion Skill Gems":"+# 所有召喚生物技能寶石等級",
+  "+# to Level of all Skill Gems":"+# 所有技能寶石等級",
+  "#% increased Rarity of Items found":"增加 #% 物品稀有度",
+  "#% increased Stun and Block Recovery":"增加 #% 暈眩和格擋回復",
+  "#% increased Effect of Flasks on you":"增加 #% 藥劑效果",
+  "#% increased Mana Cost of Skills":"增加 #% 技能魔力消耗",
+  "#% increased Minion Damage":"增加 #% 召喚物傷害",
+  "#% increased Trap Damage":"增加 #% 陷阱傷害",
+  "#% increased Mine Damage":"增加 #% 地雷傷害",
+  "#% increased Skill Effect Duration":"增加 #% 技能持續時間",
+  "#% increased Light Radius":"增加 #% 照明範圍"
+};
+const ZH_LS_KEY = "poe_trade_stats_zh_v1";
+let ZH_BY_ID = null;   // { "explicit.stat_x": "中文文字（含 # 佔位）" }
+
+function fillNumbers(tpl, nums){
+  let i = 0;
+  return tpl.replace(/#/g, () => {
+    const v = nums[i++];
+    return v === undefined ? "#" : String(v);
+  }).replace(/\+(-)/g, "$1");
+}
+function zhText(m){
+  const nums = numbersIn(m.text);
+  if (ZH_BY_ID && m.statId && ZH_BY_ID[m.statId]) return fillNumbers(ZH_BY_ID[m.statId], nums);
+  const tpl = ZH_BUILTIN[m.key] || ZH_BUILTIN[statKey(m.text)];
+  return tpl ? fillNumbers(tpl, nums) : null;
+}
+function indexZh(json){
+  const out = {};
+  for (const g of (json && json.result) || [])
+    for (const e of (g.entries || []))
+      if (e.id && e.text && !(e.id in out)) out[e.id] = e.text;
+  if (!Object.keys(out).length) throw new Error("看起來不是交易站的 stats.json");
+  return out;
+}
 
 /* ---------------- 官方 stats.json ---------------- */
 const STATS_LS_KEY = "poe_trade_stats_v1";
@@ -755,21 +892,16 @@ function card(it){
   c.appendChild(mods);
 
   const foot = el("div","foot");
-  const go = el("button","primary","🔍 開啟交易站搜尋");
-  go.onclick = () => window.open(tradeURL(it), "_blank", "noopener");
-  const cp = el("button",null,"複製搜尋網址");
-  cp.onclick = async () => {
-    try { await navigator.clipboard.writeText(tradeURL(it)); cp.textContent = "已複製 ✓"; }
-    catch(e){ cp.textContent = "複製失敗"; }
-    setTimeout(()=>{ cp.textContent = "複製搜尋網址"; }, 1500);
+  const go = el("a","btnlink primary","🔍 開啟交易站搜尋");
+  go.target = "_blank"; go.rel = "noopener";
+  go.href = tradeURL(it);
+  go.onmousedown = go.onfocus = () => { go.href = tradeURL(it); };
+  const clr = el("button",null,"清空勾選");
+  clr.onclick = () => {
+    for (const m of it.mods){ m.checked = false; m.min = null; m.max = null; }
+    render();
   };
-  const cj = el("button",null,"複製 Query JSON");
-  cj.onclick = async () => {
-    try { await navigator.clipboard.writeText(JSON.stringify(tradeQuery(it), null, 2));
-      cj.textContent = "已複製 ✓"; } catch(e){ cj.textContent = "複製失敗"; }
-    setTimeout(()=>{ cj.textContent = "複製 Query JSON"; }, 1500);
-  };
-  foot.append(go, cp, cj);
+  foot.append(go, clr);
   c.appendChild(foot);
   return c;
 }
@@ -799,7 +931,16 @@ function modRow(it, m){
   maxI.oninput = () => { m.max = maxI.value === "" ? null : Number(maxI.value); };
 
   const prefix = m.flags.crafted ? "⚒ " : m.flags.fractured ? "◈ " : m.flags.enchant ? "✦ " : "";
-  const txt = el("div","txt", prefix + m.text);
+  const mode = $("#lang") ? $("#lang").value : "zh";
+  const zh = zhText(m);
+  const txt = el("div","txt");
+  if (mode === "en" || !zh) txt.textContent = prefix + m.text;
+  else if (mode === "both"){
+    txt.textContent = prefix + zh;
+    const en = el("div", null, m.text);
+    en.style.cssText = "color:var(--dim);font-size:11.5px";
+    txt.appendChild(en);
+  } else txt.textContent = prefix + zh;
   if (!m.statId) txt.title = "找不到對照的交易站 stat id，載入官方詞綴表可能可以解決";
   else txt.title = m.key + "  →  " + m.statId;
 
@@ -867,6 +1008,10 @@ function tradeURL(it){
    聯盟清單：自動抓最新賽季
    ================================================================ */
 const LEAGUE_LS_KEY = "poe_trade_leagues_v1";
+/* 抓不到官方清單時的備援：把最新賽季放第一個 */
+const FALLBACK_LEAGUES = ["Curse of the Allflame","Hardcore Curse of the Allflame",
+  "SSF Curse of the Allflame","HC SSF Curse of the Allflame",
+  "Standard","Hardcore","Solo Self-Found","Hardcore SSF","Ruthless"];
 const PERMANENT_LEAGUES = /^(Standard|Hardcore|Solo Self-Found|Hardcore SSF|SSF |HC |Ruthless|Hardcore Ruthless|SSF Ruthless|HC SSF Ruthless)/i;
 function fillLeagues(ids, note){
   const dl = $("#leagues");
@@ -877,6 +1022,7 @@ function fillLeagues(ids, note){
   $("#leagueNote").textContent = note || (current ? "（已帶入最新賽季）" : "");
 }
 async function loadLeagues(){
+  fillLeagues(FALLBACK_LEAGUES, "（內建賽季，正在向官方確認…）");
   try{
     const cached = JSON.parse(localStorage.getItem(LEAGUE_LS_KEY) || "null");
     if (cached && Date.now() - cached.ts < 12 * 3600 * 1000){
@@ -886,17 +1032,20 @@ async function loadLeagues(){
   const url = "https://www.pathofexile.com/api/trade/data/leagues";
   for (const wrap of PROXIES){
     try{
-      const res = await fetch(wrap(url), { headers:{ "Accept":"application/json" } });
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), 6000);
+      const res = await fetch(wrap(url), { headers:{ "Accept":"application/json" }, signal: ctl.signal });
+      clearTimeout(timer);
       if (!res.ok) continue;
       const json = await res.json();
       const ids = (json.result || []).map(l => l.id).filter(Boolean);
       if (!ids.length) continue;
       try { localStorage.setItem(LEAGUE_LS_KEY, JSON.stringify({ ts:Date.now(), ids })); } catch(e){}
-      fillLeagues(ids, "");
+      fillLeagues(ids, "（已帶入最新賽季）");
       return;
     }catch(e){}
   }
-  $("#leagueNote").textContent = "（抓不到聯盟清單，請自行輸入賽季名）";
+  fillLeagues(FALLBACK_LEAGUES, "（連不到官方清單，改用內建賽季名，可自行修改）");
 }
 
 /* ================================================================
@@ -920,6 +1069,10 @@ async function doParse(text, note){
     setImport("✗ " + (e.message || e), "err");
   }
 }
+try{
+  const zhRaw = localStorage.getItem(ZH_LS_KEY);
+  if (zhRaw) ZH_BY_ID = JSON.parse(zhRaw);
+}catch(e){}
 loadLeagues();
 $("#btnParse").onclick = () => doParse($("#code").value, "");
 $("#btnClear").onclick = () => {
@@ -946,6 +1099,18 @@ $("#btnApplyPct").onclick = () => {
   for (const it of STATE.items) for (const m of it.mods)
     if (m.checked) m.min = defaultMin(m);
   render();
+};
+$("#lang").onchange = () => { if (STATE.items.length) render(); };
+$("#btnUploadZh").onclick = () => $("#fileZh").click();
+$("#fileZh").onchange = async (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  try{
+    ZH_BY_ID = indexZh(JSON.parse(await f.text()));
+    try { localStorage.setItem(ZH_LS_KEY, JSON.stringify(ZH_BY_ID)); } catch(err){}
+    setStatsStatus("已載入中文詞綴表：" + Object.keys(ZH_BY_ID).length + " 條翻譯。", "ok");
+    if (STATE.items.length) render();
+  }catch(err){ setStatsStatus("✗ 中文詞綴表讀取失敗：" + (err.message||err), "err"); }
+  e.target.value = "";
 };
 $("#btnUploadStats").onclick = () => $("#fileStats").click();
 $("#fileStats").onchange = async (e) => {
