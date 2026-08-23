@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-22T22:23:24.337Z",
+ "updated": "2026-08-23T22:23:26.828Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -50,16 +50,28 @@
    "heat": 69
   },
   {
-   "src": "PTT 3C板",
-   "title": "[新聞] 鏡頭保護貼只是智商稅？外媒：最沒必要",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787022858.A.BC8.html",
-   "heat": 63
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] 拿坡里 月月慶",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787237018.A.23B.html",
-   "heat": 61
+   "heat": 66
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[新聞] 鏡頭保護貼只是智商稅？外媒：最沒必要",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787022858.A.BC8.html",
+   "heat": 64
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[新聞] 平日國旅補助今起登錄 觀光署：400萬人",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787233981.A.AAD.html",
+   "heat": 60
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[心得]從S23U換vivo X300 Ultra，我終回到中國廠",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787282904.A.E74.html",
+   "heat": 58
   },
   {
    "src": "PTT 省錢板",
@@ -69,33 +81,21 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[新聞] 平日國旅補助今起登錄 觀光署：400萬人",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787233981.A.AAD.html",
-   "heat": 56
-  },
-  {
-   "src": "PTT 省錢板",
    "title": "[情報] Momo國際牌冷氣週末促銷約83折",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1786842339.A.117.html",
    "heat": 56
   },
   {
    "src": "PTT 3C板",
-   "title": "[心得]從S23U換vivo X300 Ultra，我終回到中國廠",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787282904.A.E74.html",
-   "heat": 54
-  },
-  {
-   "src": "PTT 3C板",
    "title": "[討論] Pixel 11 系列 8/20 上市",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1787126283.A.DA6.html",
-   "heat": 54
+   "heat": 56
   },
   {
    "src": "PTT 3C板",
    "title": "[情報] 華為發表闊直板手機Pura X View",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1787306318.A.FAB.html",
-   "heat": 48
+   "heat": 51
   },
   {
    "src": "PTT 3C板",
@@ -113,19 +113,25 @@
    "src": "PTT 3C板",
    "title": "[心得] Vivo X300 Pro 雪梨&amp;吉隆坡 掃街心得",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1787324054.A.419.html",
+   "heat": 36
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 懷念十年前那個百花齊放的時代",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787408406.A.490.html",
+   "heat": 34
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[閒聊] POCO F7P 開關鍵掉下來",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787447162.A.B08.html",
    "heat": 32
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] fold 8 無印版 最新螢幕災情",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787186417.A.544.html",
-   "heat": 31
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[心得] SHARP AQUOS R11",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1786952290.A.AC8.html",
-   "heat": 27
+   "src": "PTT 網購板",
+   "title": "[閒聊] 有人在MOMO買冷氣嗎?",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1785484764.A.784.html",
+   "heat": 26
   },
   {
    "src": "PTT 網購板",
@@ -135,15 +141,9 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[閒聊] 有人在MOMO買冷氣嗎?",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1785484764.A.784.html",
-   "heat": 25
-  },
-  {
-   "src": "PTT 網購板",
    "title": "[心得] COCO DEAL&amp;LILLIAN CARAT折扣季日貨分享",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1784138771.A.EB8.html",
-   "heat": 19
+   "heat": 20
   },
   {
    "src": "PTT 網購板",
