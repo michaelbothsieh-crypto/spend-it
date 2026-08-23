@@ -106,7 +106,7 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
 <section class="panel">
   <h2>1 · 匯入 Build</h2>
   <div class="row">
-    <input id="url" style="flex:1;min-width:280px" placeholder="貼上連結：pobb.in / pastebin / poe.ninja/pob / maxroll / poe.ninja build 頁">
+    <input id="url" style="flex:1;min-width:280px" placeholder="貼上連結：pobb.in / pastebin / poe.ninja/pob（maxroll 請改貼代碼）">
     <button id="btnFetch">抓取連結</button>
   </div>
   <div class="row mt">
@@ -115,7 +115,7 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
   <div class="row mt">
     <button class="primary" id="btnParse">解析裝備</button>
     <button id="btnClear">清除</button>
-    <span class="hint">連結抓取受對方網站 CORS 限制，失敗時請改用該站的「Copy PoB code」貼到上面。</span>
+    <span class="hint">maxroll、poe.ninja build 頁抓不到，請在該站按 Copy 複製 PoB 代碼貼上。</span>
   </div>
   <div class="status" id="importStatus"></div>
 </section>
@@ -133,10 +133,6 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
       <select id="status"><option value="online">線上</option>
         <option value="onlineleague">線上（本聯盟）</option>
         <option value="any">任何</option></select></div>
-    <div class="field"><label>交易方式</label>
-      <select id="saletype">
-        <option value="priced">即刻交易（已標價 Buyout）</option>
-        <option value="any">任意（含議價 / 未標價）</option></select></div>
     <div class="field"><label>排序</label>
       <select id="sort"><option value="price">價格 ↑</option>
         <option value="ilvl">物品等級 ↓</option></select></div>
@@ -144,29 +140,6 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
       <input id="pct" type="number" value="100" min="1" max="200" step="5" style="width:80px"></div>
     <div class="field"><label>&nbsp;</label><button id="btnApplyPct">套用到已勾選</button></div>
   </div>
-  <div class="row mt">
-    <button id="btnLoadStats">自動抓取官方詞綴表</button>
-    <button id="btnUploadStats">上傳 stats.json</button>
-    <input type="file" id="fileStats" accept=".json,application/json" style="display:none">
-    <button id="btnUploadZh">上傳中文 stats.json</button>
-    <input type="file" id="fileZh" accept=".json,application/json" style="display:none">
-    <span class="legend">
-      <span><i class="dot official"></i>官方對照</span>
-      <span><i class="dot builtin"></i>內建對照</span>
-      <span><i class="dot none"></i>無對照（無法帶入）</span>
-    </span>
-  </div>
-  <div class="status show info" id="statsStatus"></div>
-  <details class="help" style="margin-top:10px"><summary>為什麼要載入官方詞綴表？</summary>
-    <div>
-      交易站的搜尋網址裡，每個詞綴都是一組 <code>explicit.stat_1234567890</code> 這樣的 id。
-      本頁內建了常見詞綴（抗性、生命、能量護盾、屬性、攻速施法速、暴擊、加成傷害…）的對照，
-      但要 100% 覆蓋所有詞綴，需要官方的
-      <a href="https://www.pathofexile.com/api/trade/data/stats" target="_blank" rel="noopener">/api/trade/data/stats</a>。<br>
-      「自動抓取」會依序嘗試直連與幾個公開 CORS proxy；若都失敗，請自己開上面那個網址、存成 <code>stats.json</code>，再用「上傳」匯入。
-      匯入後會存在瀏覽器 localStorage，下次開這個檔案就不用再載。
-    </div>
-  </details>
 </section>
 
 <section id="result" style="display:none">
@@ -447,10 +420,7 @@ function indexOfficial(json){
   return out;
 }
 function statsCount(o){ return Object.values(o).reduce((s,m)=>s+Object.keys(m).length,0); }
-function setStatsStatus(msg, kind){
-  const n = $("#statsStatus"); n.textContent = msg;
-  n.className = "status show " + (kind || "info");
-}
+function setStatsStatus(){ /* 詞綴表 UI 已移除，保留空實作 */ }
 function saveStats(json){
   OFFICIAL = indexOfficial(json);
   try { localStorage.setItem(STATS_LS_KEY, JSON.stringify(json)); } catch(e){}
@@ -530,13 +500,24 @@ function rawCandidates(url){
   out.push(u);                                          // 最後：原網址整頁掃描
   return [...new Set(out)];
 }
+const SPA_SITES = [
+  { re:/maxroll\.gg/i,          name:"maxroll" },
+  { re:/poe\.ninja\/builds/i,   name:"poe.ninja build 頁" }
+];
 async function fetchBuild(url){
+  const spa = SPA_SITES.find(x => x.re.test(url));
+  if (spa)
+    throw new Error(spa.name + " 的頁面是前端渲染的，PoB 代碼不在原始碼裡，抓網址拿不到。\n" +
+      "請在該頁按 Copy / Export 複製 PoB 代碼，貼到下面的欄位再按「解析裝備」。");
   const errs = [];
   for (const target of rawCandidates(url)){
     for (const wrap of PROXIES){
       let body;
       try{
-        const res = await fetch(wrap(target), { redirect:"follow" });
+        const ctl = new AbortController();
+        const timer = setTimeout(() => ctl.abort(), 5000);
+        const res = await fetch(wrap(target), { redirect:"follow", signal: ctl.signal });
+        clearTimeout(timer);
         if (!res.ok) { errs.push(target+" → HTTP "+res.status); continue; }
         body = await res.text();
       }catch(e){ errs.push(target+" → "+(e.message||"fetch 失敗")); continue; }
@@ -592,8 +573,11 @@ function parseItemText(raw){
   const twoNames = (it.rarity === "RARE" || it.rarity === "UNIQUE" || it.rarity === "RELIC");
   if (lines[i]) { it.name = lines[i++]; }
   if (twoNames && lines[i] && !/^[A-Za-z][\w' ]*:/.test(lines[i])) { it.base = lines[i++]; }
-  // 魔法裝的名稱含前後綴，無法可靠推出底材 → 不填 base
-  if (!it.base && it.rarity !== "MAGIC") it.base = it.name;
+  if (!it.base){
+    // 魔法裝名稱是「前綴 底材 of 後綴」，去掉後綴當猜測值，使用者可在卡片上修正
+    it.base = it.rarity === "MAGIC" ? it.name.replace(/\s+of\s+.*$/i, "") : it.name;
+    if (it.rarity === "MAGIC") it.baseGuess = true;
+  }
 
   const mods = [];
   for (; i < lines.length; i++){
@@ -758,7 +742,7 @@ function prepare(parsed){
       links: linkGroups.length ? Math.max.apply(null, linkGroups) : 0,
       opt: {
         useName: it.rarity === "UNIQUE" || it.rarity === "RELIC",
-        useType: !!it.base && !(it.rarity === "UNIQUE" || it.rarity === "RELIC"),
+        useType: !!it.base,
         rarity: (it.rarity === "UNIQUE" || it.rarity === "RELIC") ? "unique" : "nonunique",
         ilvl: null, links: null, sockets: null, corrupted: "any"
       }
@@ -808,7 +792,7 @@ function render(){
     grid.appendChild(card(it));
   }
   $("#counts").textContent = "已勾選 " + checked + " / " + total + " 條詞綴" +
-    (nomatch ? "（" + nomatch + " 條找不到對照 id）" : "");
+    (nomatch ? "（" + nomatch + " 條無法帶入）" : "");
   $("#result").style.display = "";
 }
 
@@ -868,9 +852,16 @@ function card(it){
   cs.onchange = () => { it.opt.corrupted = cs.value; };
   cf.appendChild(cs);
 
+  const bf = el("div","field");
+  bf.appendChild(el("label",null,"底材 Base" + (it.baseGuess ? "（推測，請確認）" : "")));
+  const bi = el("input"); bi.type = "text"; bi.value = it.base || ""; bi.style.width = "150px";
+  bi.oninput = () => { it.base = bi.value.trim(); };
+  bf.appendChild(bi);
+
   opts.append(
     mkChk("同名（唯一裝）","useName"),
     mkChk("限定底材","useType"),
+    bf,
     rf,
     mkNum("iLvl ≥","ilvl", it.ilvl || ""),
     mkNum("連線 ≥","links", it.links || ""),
@@ -941,12 +932,11 @@ function modRow(it, m){
     en.style.cssText = "color:var(--dim);font-size:11.5px";
     txt.appendChild(en);
   } else txt.textContent = prefix + zh;
-  if (!m.statId) txt.title = "找不到對照的交易站 stat id，載入官方詞綴表可能可以解決";
+  if (!m.statId) txt.title = "交易站沒有這條詞綴的對應搜尋項目，無法帶入";
   else txt.title = m.key + "  →  " + m.statId;
 
   const vals = el("div","vals"); vals.append(minI, maxI);
-  const dot = el("i","dot " + (m.source === "official" ? "official" : m.source === "builtin" ? "builtin" : "none"));
-  row.append(cb, txt, vals, dot);
+  row.append(cb, txt, vals);
   sync();
   return row;
 }
@@ -962,7 +952,8 @@ function updateCounts(){
 function tradeQuery(it){
   const q = { query: { status: { option: $("#status").value }, stats: [] },
               sort: $("#sort").value === "price" ? { price:"asc" } : { ilvl:"desc" } };
-  if (it.opt.useName && (it.rarity === "UNIQUE" || it.rarity === "RELIC") && it.name) q.query.name = it.name;
+  const isUnique = (it.rarity === "UNIQUE" || it.rarity === "RELIC");
+  if (it.opt.useName && isUnique && it.name) q.query.name = it.name;
   if (it.opt.useType && it.base) q.query.type = it.base;
 
   const filters = {};
@@ -975,8 +966,8 @@ function tradeQuery(it){
   if (it.opt.corrupted !== "any") miscF.corrupted = { option: it.opt.corrupted };
   if (Object.keys(miscF).length) filters.misc_filters = { filters: miscF };
 
-  if ($("#saletype").value === "priced")
-    filters.trade_filters = { filters: { sale_type: { option: "priced" } } };
+  // 固定即刻購買（已標價 Buyout）
+  filters.trade_filters = { filters: { sale_type: { option: "priced" } } };
 
   const sockF = {};
   if (it.opt.sockets != null) sockF.sockets = { min: it.opt.sockets };
@@ -1063,7 +1054,7 @@ async function doParse(text, note){
     render();
     const bad = STATE.items.reduce((s,it)=>s+it.mods.filter(m=>!m.statId).length,0);
     setImport("解析完成：" + STATE.items.length + " 件裝備" + (note ? "（來源：" + note + "）" : "") +
-      (bad ? "。有 " + bad + " 條詞綴找不到交易站對照 id，載入官方詞綴表可改善。" : "。"), "ok");
+      (bad ? "。其中 " + bad + " 條詞綴無法帶入交易站。" : "。"), "ok");
     $("#result").scrollIntoView({ behavior:"smooth", block:"start" });
   }catch(e){
     setImport("✗ " + (e.message || e), "err");
@@ -1101,39 +1092,6 @@ $("#btnApplyPct").onclick = () => {
   render();
 };
 $("#lang").onchange = () => { if (STATE.items.length) render(); };
-$("#btnUploadZh").onclick = () => $("#fileZh").click();
-$("#fileZh").onchange = async (e) => {
-  const f = e.target.files[0]; if (!f) return;
-  try{
-    ZH_BY_ID = indexZh(JSON.parse(await f.text()));
-    try { localStorage.setItem(ZH_LS_KEY, JSON.stringify(ZH_BY_ID)); } catch(err){}
-    setStatsStatus("已載入中文詞綴表：" + Object.keys(ZH_BY_ID).length + " 條翻譯。", "ok");
-    if (STATE.items.length) render();
-  }catch(err){ setStatsStatus("✗ 中文詞綴表讀取失敗：" + (err.message||err), "err"); }
-  e.target.value = "";
-};
-$("#btnUploadStats").onclick = () => $("#fileStats").click();
-$("#fileStats").onchange = async (e) => {
-  const f = e.target.files[0]; if (!f) return;
-  try { saveStats(JSON.parse(await f.text())); }
-  catch(err){ setStatsStatus("✗ 讀取失敗：" + (err.message||err), "err"); }
-  e.target.value = "";
-};
-$("#btnLoadStats").onclick = async () => {
-  const url = "https://www.pathofexile.com/api/trade/data/stats";
-  setStatsStatus("抓取官方詞綴表中…","info");
-  for (const wrap of PROXIES){
-    try{
-      const res = await fetch(wrap(url), { headers: { "Accept":"application/json" } });
-      if (!res.ok) continue;
-      const json = await res.json();
-      saveStats(json);
-      return;
-    }catch(e){}
-  }
-  setStatsStatus("✗ 自動抓取失敗（CORS 或 Cloudflare 擋下）。請自行開啟 " + url +
-    "，另存為 stats.json 後用「上傳 stats.json」匯入。", "err");
-};
 </script>
 </body>
 </html>
