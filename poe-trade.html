@@ -1000,8 +1000,7 @@ function tradeURL(it){
    ================================================================ */
 const LEAGUE_LS_KEY = "poe_trade_leagues_v1";
 /* 抓不到官方清單時的備援：把最新賽季放第一個 */
-const FALLBACK_LEAGUES = ["Curse of the Allflame","Hardcore Curse of the Allflame",
-  "SSF Curse of the Allflame","HC SSF Curse of the Allflame",
+const FALLBACK_LEAGUES = ["Allflame","Hardcore Allflame","SSF Allflame","HC SSF Allflame",
   "Standard","Hardcore","Solo Self-Found","Hardcore SSF","Ruthless"];
 const PERMANENT_LEAGUES = /^(Standard|Hardcore|Solo Self-Found|Hardcore SSF|SSF |HC |Ruthless|Hardcore Ruthless|SSF Ruthless|HC SSF Ruthless)/i;
 function fillLeagues(ids, note){
@@ -1013,7 +1012,7 @@ function fillLeagues(ids, note){
   $("#leagueNote").textContent = note || (current ? "（已帶入最新賽季）" : "");
 }
 async function loadLeagues(){
-  fillLeagues(FALLBACK_LEAGUES, "（內建賽季，正在向官方確認…）");
+  fillLeagues(FALLBACK_LEAGUES, "（內建賽季名，需與交易站下拉選單一致）");
   try{
     const cached = JSON.parse(localStorage.getItem(LEAGUE_LS_KEY) || "null");
     if (cached && Date.now() - cached.ts < 12 * 3600 * 1000){
