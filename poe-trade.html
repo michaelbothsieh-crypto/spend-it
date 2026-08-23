@@ -118,8 +118,8 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
 <section class="panel">
   <h2>2 · 交易站設定</h2>
   <div class="row">
-    <div class="field"><label>聯盟 League</label>
-      <input id="league" list="leagues" value="Standard" style="width:180px"></div>
+    <div class="field"><label>聯盟 League <span id="leagueNote" class="hint"></span></label>
+      <input id="league" list="leagues" value="Standard" style="width:200px"></div>
     <datalist id="leagues">
       <option>Standard</option><option>Hardcore</option>
       <option>Solo Self-Found</option><option>Hardcore SSF</option>
@@ -128,6 +128,10 @@ code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
       <select id="status"><option value="online">線上</option>
         <option value="onlineleague">線上（本聯盟）</option>
         <option value="any">任何</option></select></div>
+    <div class="field"><label>交易方式</label>
+      <select id="saletype">
+        <option value="priced">即刻交易（已標價 Buyout）</option>
+        <option value="any">任意（含議價 / 未標價）</option></select></div>
     <div class="field"><label>排序</label>
       <select id="sort"><option value="price">價格 ↑</option>
         <option value="ilvl">物品等級 ↓</option></select></div>
@@ -830,6 +834,9 @@ function tradeQuery(it){
   if (it.opt.corrupted !== "any") miscF.corrupted = { option: it.opt.corrupted };
   if (Object.keys(miscF).length) filters.misc_filters = { filters: miscF };
 
+  if ($("#saletype").value === "priced")
+    filters.trade_filters = { filters: { sale_type: { option: "priced" } } };
+
   const sockF = {};
   if (it.opt.sockets != null) sockF.sockets = { min: it.opt.sockets };
   if (it.opt.links != null) sockF.links = { min: it.opt.links };
@@ -857,6 +864,42 @@ function tradeURL(it){
 }
 
 /* ================================================================
+   聯盟清單：自動抓最新賽季
+   ================================================================ */
+const LEAGUE_LS_KEY = "poe_trade_leagues_v1";
+const PERMANENT_LEAGUES = /^(Standard|Hardcore|Solo Self-Found|Hardcore SSF|SSF |HC |Ruthless|Hardcore Ruthless|SSF Ruthless|HC SSF Ruthless)/i;
+function fillLeagues(ids, note){
+  const dl = $("#leagues");
+  dl.innerHTML = "";
+  ids.forEach(id => { const o = el("option"); o.value = id; dl.appendChild(o); });
+  const current = ids.find(id => !PERMANENT_LEAGUES.test(id));
+  if (current) $("#league").value = current;
+  $("#leagueNote").textContent = note || (current ? "（已帶入最新賽季）" : "");
+}
+async function loadLeagues(){
+  try{
+    const cached = JSON.parse(localStorage.getItem(LEAGUE_LS_KEY) || "null");
+    if (cached && Date.now() - cached.ts < 12 * 3600 * 1000){
+      fillLeagues(cached.ids, "（快取）"); return;
+    }
+  }catch(e){}
+  const url = "https://www.pathofexile.com/api/trade/data/leagues";
+  for (const wrap of PROXIES){
+    try{
+      const res = await fetch(wrap(url), { headers:{ "Accept":"application/json" } });
+      if (!res.ok) continue;
+      const json = await res.json();
+      const ids = (json.result || []).map(l => l.id).filter(Boolean);
+      if (!ids.length) continue;
+      try { localStorage.setItem(LEAGUE_LS_KEY, JSON.stringify({ ts:Date.now(), ids })); } catch(e){}
+      fillLeagues(ids, "");
+      return;
+    }catch(e){}
+  }
+  $("#leagueNote").textContent = "（抓不到聯盟清單，請自行輸入賽季名）";
+}
+
+/* ================================================================
    事件
    ================================================================ */
 function setImport(msg, kind){
@@ -877,6 +920,7 @@ async function doParse(text, note){
     setImport("✗ " + (e.message || e), "err");
   }
 }
+loadLeagues();
 $("#btnParse").onclick = () => doParse($("#code").value, "");
 $("#btnClear").onclick = () => {
   $("#code").value = ""; $("#url").value = "";
