@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PoB 裝備 → 交易站</title>
+<style>
+:root{
+  --bg:#0d0d10; --bg2:#15151b; --bg3:#1d1d26; --line:#2e2e3a;
+  --fg:#e6e2d8; --dim:#948e80; --acc:#c9a227; --acc2:#7aa2f7;
+  --normal:#e6e2d8; --magic:#8888ff; --rare:#ffff77; --unique:#af6025;
+  --ok:#69b36b; --warn:#d8a24a; --bad:#d05b5b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  font-size:14px;line-height:1.5}
+a{color:var(--acc2)}
+h1{font-size:20px;margin:0}
+h2{font-size:15px;margin:0 0 10px;color:var(--acc);letter-spacing:.5px}
+header{background:var(--bg2);border-bottom:1px solid var(--line);padding:14px 18px;
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+header .sub{color:var(--dim);font-size:12px}
+main{max-width:1500px;margin:0 auto;padding:18px}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:16px}
+textarea,input,select{background:var(--bg3);color:var(--fg);border:1px solid var(--line);
+  border-radius:5px;padding:6px 8px;font-family:inherit;font-size:13px}
+textarea{width:100%;min-height:110px;resize:vertical;font-family:ui-monospace,Consolas,monospace;font-size:12px}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--acc2);border-color:var(--acc2)}
+button{background:var(--bg3);color:var(--fg);border:1px solid var(--line);border-radius:5px;
+  padding:6px 12px;cursor:pointer;font-family:inherit;font-size:13px}
+button:hover:not(:disabled){border-color:var(--acc);color:var(--acc)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.primary{background:var(--acc);color:#141410;border-color:var(--acc);font-weight:600}
+button.primary:hover:not(:disabled){filter:brightness(1.12);color:#141410}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row.mt{margin-top:10px}
+.field{display:flex;flex-direction:column;gap:3px}
+.field label{font-size:11px;color:var(--dim)}
+.hint{color:var(--dim);font-size:12px}
+.status{font-size:12px;padding:6px 10px;border-radius:5px;margin-top:10px;display:none;white-space:pre-wrap}
+.status.show{display:block}
+.status.err{background:#3a1c1c;color:#f0a0a0;border:1px solid #6a3030}
+.status.ok{background:#1c3320;color:#a8dcaa;border:1px solid #2f5c34}
+.status.info{background:#1c2633;color:#a9c4e6;border:1px solid #2f4a6a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:14px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column}
+.card .slot{background:var(--bg3);padding:4px 12px;font-size:11px;color:var(--dim);
+  letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card .head{padding:10px 12px 8px}
+.card .iname{font-weight:600;font-size:15px}
+.card .ibase{font-size:13px;color:var(--dim)}
+.r-NORMAL .iname{color:var(--normal)} .r-MAGIC .iname{color:var(--magic)}
+.r-RARE .iname{color:var(--rare)} .r-UNIQUE .iname{color:var(--unique)}
+.r-RELIC .iname{color:var(--unique)}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:10.5px;padding:1px 6px;border-radius:3px;background:var(--bg3);
+  border:1px solid var(--line);color:var(--dim)}
+.tag.hot{color:var(--bad);border-color:#5c2b2b}
+.opts{padding:8px 12px;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);
+  background:#131319;display:flex;gap:10px;flex-wrap:wrap}
+.opts .field input,.opts .field select{padding:3px 6px;font-size:12px}
+.opts .field input[type=number]{width:66px}
+.mods{padding:6px 12px;flex:1}
+.mods .group{font-size:10.5px;color:var(--dim);letter-spacing:1px;margin:8px 0 4px;text-transform:uppercase}
+.mod{display:flex;align-items:flex-start;gap:7px;padding:3px 0;border-bottom:1px solid #1c1c24}
+.mod:last-child{border-bottom:none}
+.mod input[type=checkbox]{margin-top:4px;accent-color:var(--acc)}
+.mod .txt{flex:1;font-size:12.5px;word-break:break-word}
+.mod.crafted .txt{color:#a8c4ff} .mod.fractured .txt{color:#c8a97a}
+.mod.enchant .txt{color:#c8a8ff}
+.mod.nomatch .txt{color:#6f6a60}
+.mod .vals{display:flex;gap:4px;align-items:center}
+.mod .vals input{width:56px;padding:2px 5px;font-size:12px;text-align:center}
+.mod .vals input:disabled{opacity:.3}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;flex:none;margin-top:6px}
+.dot.official{background:var(--ok)} .dot.builtin{background:var(--warn)}
+.dot.none{background:#4a4a55}
+.card .foot{padding:10px 12px;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--line);background:#131319}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.buildinfo{display:flex;gap:16px;flex-wrap:wrap;align-items:baseline;margin-bottom:12px}
+.buildinfo .big{font-size:17px;font-weight:600;color:var(--acc)}
+details.help summary{cursor:pointer;color:var(--dim);font-size:12px}
+details.help div{margin-top:8px;font-size:12.5px;color:var(--dim);line-height:1.7}
+code{background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:12px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--dim);align-items:center}
+.legend span{display:flex;gap:5px;align-items:center}
+.legend .dot{margin-top:0}
+@media(max-width:640px){.grid{grid-template-columns:1fr}main{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>PoB 裝備 <span style="color:var(--dim)">→</span> 交易站</h1>
+  <span class="sub">貼上 PoB 代碼或分享連結，解析每件裝備的詞綴，勾選要帶去 pathofexile.com/trade 的條件</span>
+</header>
+<main>
+
+<section class="panel">
+  <h2>1 · 匯入 Build</h2>
+  <div class="row">
+    <input id="url" style="flex:1;min-width:280px" placeholder="貼上連結：pobb.in / pastebin / poe.ninja/pob / maxroll / poe.ninja build 頁">
+    <button id="btnFetch">抓取連結</button>
+  </div>
+  <div class="row mt">
+    <textarea id="code" placeholder="或直接貼上 PoB 匯出代碼（Base64，最穩定）／PoB 的 XML 內容。&#10;也可以整段貼上含代碼的文字，會自動找出代碼。"></textarea>
+  </div>
+  <div class="row mt">
+    <button class="primary" id="btnParse">解析裝備</button>
+    <button id="btnClear">清除</button>
+    <span class="hint">連結抓取受對方網站 CORS 限制，失敗時請改用該站的「Copy PoB code」貼到上面。</span>
+  </div>
+  <div class="status" id="importStatus"></div>
+</section>
+
+<section class="panel">
+  <h2>2 · 交易站設定</h2>
+  <div class="row">
+    <div class="field"><label>聯盟 League</label>
+      <input id="league" list="leagues" value="Standard" style="width:180px"></div>
+    <datalist id="leagues">
+      <option>Standard</option><option>Hardcore</option>
+      <option>Solo Self-Found</option><option>Hardcore SSF</option>
+    </datalist>
+    <div class="field"><label>賣家狀態</label>
+      <select id="status"><option value="online">線上</option>
+        <option value="onlineleague">線上（本聯盟）</option>
+        <option value="any">任何</option></select></div>
+    <div class="field"><label>排序</label>
+      <select id="sort"><option value="price">價格 ↑</option>
+        <option value="ilvl">物品等級 ↓</option></select></div>
+    <div class="field"><label>預設 min = 原值 ×</label>
+      <input id="pct" type="number" value="100" min="1" max="200" step="5" style="width:80px"></div>
+    <div class="field"><label>&nbsp;</label><button id="btnApplyPct">套用到已勾選</button></div>
+  </div>
+  <div class="row mt">
+    <button id="btnLoadStats">自動抓取官方詞綴表</button>
+    <button id="btnUploadStats">上傳 stats.json</button>
+    <input type="file" id="fileStats" accept=".json,application/json" style="display:none">
+    <span class="legend">
+      <span><i class="dot official"></i>官方對照</span>
+      <span><i class="dot builtin"></i>內建對照</span>
+      <span><i class="dot none"></i>無對照（無法帶入）</span>
+    </span>
+  </div>
+  <div class="status show info" id="statsStatus"></div>
+  <details class="help" style="margin-top:10px"><summary>為什麼要載入官方詞綴表？</summary>
+    <div>
+      交易站的搜尋網址裡，每個詞綴都是一組 <code>explicit.stat_1234567890</code> 這樣的 id。
+      本頁內建了常見詞綴（抗性、生命、能量護盾、屬性、攻速施法速、暴擊、加成傷害…）的對照，
+      但要 100% 覆蓋所有詞綴，需要官方的
+      <a href="https://www.pathofexile.com/api/trade/data/stats" target="_blank" rel="noopener">/api/trade/data/stats</a>。<br>
+      「自動抓取」會依序嘗試直連與幾個公開 CORS proxy；若都失敗，請自己開上面那個網址、存成 <code>stats.json</code>，再用「上傳」匯入。
+      匯入後會存在瀏覽器 localStorage，下次開這個檔案就不用再載。
+    </div>
+  </details>
+</section>
+
+<section id="result" style="display:none">
+  <div class="panel">
+    <div class="buildinfo" id="buildinfo"></div>
+    <div class="toolbar">
+      <button id="btnImportant">只勾重要詞綴</button>
+      <button id="btnAll">全部勾選</button>
+      <button id="btnNone">全部取消</button>
+      <span class="hint" id="counts"></span>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+</main>
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c;
+  if (x !== undefined) n.textContent = x; return n; };
+
+/* ================================================================
+   內建詞綴 → 交易站 stat id 對照（fallback）
+   key 為「數字換成 #」之後的詞綴文字，與交易站顯示文字一致。
+   載入官方 stats.json 後會優先使用官方對照。
+   ================================================================ */
+const BUILTIN_STATS = {
+  // 抗性
+  "+#% to Fire Resistance":"explicit.stat_3372524247",
+  "+#% to Cold Resistance":"explicit.stat_4220027924",
+  "+#% to Lightning Resistance":"explicit.stat_1671376347",
+  "+#% to Chaos Resistance":"explicit.stat_2923486259",
+  "+#% to all Elemental Resistances":"explicit.stat_2901986750",
+  "+#% to Fire and Cold Resistances":"explicit.stat_3441501978",
+  "+#% to Fire and Lightning Resistances":"explicit.stat_3081296693",
+  "+#% to Cold and Lightning Resistances":"explicit.stat_4277795662",
+  "+#% to maximum Fire Resistance":"explicit.stat_4095671657",
+  "+#% to maximum Cold Resistance":"explicit.stat_3676141501",
+  "+#% to maximum Lightning Resistance":"explicit.stat_1011760251",
+  // 生命 / 魔力 / 護盾
+  "+# to maximum Life":"explicit.stat_3299347043",
+  "+# to maximum Mana":"explicit.stat_1050105434",
+  "+# to maximum Energy Shield":"explicit.stat_3489782002",
+  "#% increased maximum Energy Shield":"explicit.stat_2482852589",
+  "#% increased maximum Life":"explicit.stat_983749596",
+  "#% increased Mana Regeneration Rate":"explicit.stat_789117908",
+  "Regenerate # Life per second":"explicit.stat_3325883026",
+  "#% of Physical Attack Damage Leeched as Life":"explicit.stat_3593843976",
+  "+# to Ward":"explicit.stat_3489872381",
+  // 屬性
+  "+# to Strength":"explicit.stat_4080418644",
+  "+# to Dexterity":"explicit.stat_3261801346",
+  "+# to Intelligence":"explicit.stat_328541901",
+  "+# to all Attributes":"explicit.stat_1379411836",
+  "+# to Strength and Dexterity":"explicit.stat_538848803",
+  "+# to Strength and Intelligence":"explicit.stat_1535626285",
+  "+# to Dexterity and Intelligence":"explicit.stat_2300185227",
+  // 速度
+  "#% increased Movement Speed":"explicit.stat_2250533757",
+  "#% increased Attack Speed":"explicit.stat_210067635",
+  "#% increased Cast Speed":"explicit.stat_2891184298",
+  "#% increased Attack and Cast Speed":"explicit.stat_2672805335",
+  // 暴擊
+  "#% increased Critical Strike Chance":"explicit.stat_2375316951",
+  "#% increased Global Critical Strike Chance":"explicit.stat_587431675",
+  "+#% to Global Critical Strike Multiplier":"explicit.stat_3556824919",
+  "+#% to Critical Strike Multiplier":"explicit.stat_2694482655",
+  "#% increased Critical Strike Chance for Spells":"explicit.stat_737908626",
+  "#% increased Global Critical Strike Multiplier":"explicit.stat_2301191210",
+  // 加成傷害
+  "Adds # to # Physical Damage":"explicit.stat_1940865751",
+  "Adds # to # Fire Damage":"explicit.stat_321077055",
+  "Adds # to # Cold Damage":"explicit.stat_1037193709",
+  "Adds # to # Lightning Damage":"explicit.stat_1334060246",
+  "Adds # to # Chaos Damage":"explicit.stat_2223678961",
+  "Adds # to # Physical Damage to Attacks":"explicit.stat_3032590688",
+  "Adds # to # Fire Damage to Attacks":"explicit.stat_1573130764",
+  "Adds # to # Cold Damage to Attacks":"explicit.stat_4067062424",
+  "Adds # to # Lightning Damage to Attacks":"explicit.stat_1754445556",
+  "Adds # to # Chaos Damage to Attacks":"explicit.stat_674553446",
+  "Adds # to # Fire Damage to Spells":"explicit.stat_1133016593",
+  "Adds # to # Cold Damage to Spells":"explicit.stat_2469416729",
+  "Adds # to # Lightning Damage to Spells":"explicit.stat_2831165374",
+  // 增傷
+  "#% increased Physical Damage":"explicit.stat_1509134228",
+  "#% increased Spell Damage":"explicit.stat_2974417149",
+  "#% increased Elemental Damage with Attack Skills":"explicit.stat_387439868",
+  "#% increased Fire Damage":"explicit.stat_3962278098",
+  "#% increased Cold Damage":"explicit.stat_3291658075",
+  "#% increased Lightning Damage":"explicit.stat_2231156303",
+  "#% increased Chaos Damage":"explicit.stat_736967255",
+  "#% increased Global Physical Damage":"explicit.stat_1310194496",
+  "+#% to Damage over Time Multiplier":"explicit.stat_1443060084",
+  "#% increased Damage over Time":"explicit.stat_967627487",
+  "#% increased Area Damage":"explicit.stat_4251717817",
+  "#% increased Projectile Damage":"explicit.stat_1839076647",
+  "#% increased Burning Damage":"explicit.stat_1175385867",
+  // 防禦
+  "#% increased Armour":"explicit.stat_2866361420",
+  "#% increased Evasion Rating":"explicit.stat_124859000",
+  "#% increased Armour and Evasion":"explicit.stat_2451402625",
+  "#% increased Armour and Energy Shield":"explicit.stat_3321629045",
+  "#% increased Evasion and Energy Shield":"explicit.stat_1999113824",
+  "#% increased Global Defences":"explicit.stat_1389153006",
+  "+# to Armour":"explicit.stat_3484657501",
+  "+# to Evasion Rating":"explicit.stat_2144192055",
+  "+# to Accuracy Rating":"explicit.stat_803737631",
+  "#% increased Global Accuracy Rating":"explicit.stat_624954515",
+  "+#% Chance to Block":"explicit.stat_4253454700",
+  "+#% chance to Suppress Spell Damage":"explicit.stat_3680664274",
+  "+#% to all maximum Resistances":"explicit.stat_569299859",
+  // 寶石等級 / 其他
+  "+# to Level of all Spell Skill Gems":"explicit.stat_2843100721",
+  "+# to Level of all Fire Skill Gems":"explicit.stat_3846088475",
+  "+# to Level of all Cold Skill Gems":"explicit.stat_2143644418",
+  "+# to Level of all Lightning Skill Gems":"explicit.stat_2921084940",
+  "+# to Level of all Chaos Skill Gems":"explicit.stat_2379781920",
+  "+# to Level of all Physical Skill Gems":"explicit.stat_2966394389",
+  "+# to Level of all Minion Skill Gems":"explicit.stat_3095345975",
+  "+# to Level of all Skill Gems":"explicit.stat_1873752457",
+  "#% increased Rarity of Items found":"explicit.stat_3917489142",
+  "#% increased Stun and Block Recovery":"explicit.stat_2511217560",
+  "#% increased Effect of Flasks on you":"explicit.stat_114734841",
+  "#% increased Mana Cost of Skills":"explicit.stat_474294393",
+  "#% increased Minion Damage":"explicit.stat_1589917703",
+  "#% increased Trap Damage":"explicit.stat_3814876985",
+  "#% increased Mine Damage":"explicit.stat_2137912951",
+  "#% increased Skill Effect Duration":"explicit.stat_3377888098",
+  "#% increased Light Radius":"explicit.stat_1263695895"
+};
+
+/* ---------------- 官方 stats.json ---------------- */
+const STATS_LS_KEY = "poe_trade_stats_v1";
+let OFFICIAL = null;          // { explicit:{text:id}, implicit:{...}, ... }
+
+function indexOfficial(json){
+  const out = {};
+  const arr = (json && json.result) || [];
+  for (const group of arr){
+    for (const e of (group.entries || [])){
+      const t = (e.type || (e.id || "").split(".")[0] || "explicit");
+      (out[t] = out[t] || {});
+      if (!(e.text in out[t])) out[t][e.text] = e.id;
+    }
+  }
+  if (!Object.keys(out).length) throw new Error("看起來不是交易站的 stats.json");
+  return out;
+}
+function statsCount(o){ return Object.values(o).reduce((s,m)=>s+Object.keys(m).length,0); }
+function setStatsStatus(msg, kind){
+  const n = $("#statsStatus"); n.textContent = msg;
+  n.className = "status show " + (kind || "info");
+}
+function saveStats(json){
+  OFFICIAL = indexOfficial(json);
+  try { localStorage.setItem(STATS_LS_KEY, JSON.stringify(json)); } catch(e){}
+  setStatsStatus("已載入官方詞綴表：" + statsCount(OFFICIAL) + " 條對照。", "ok");
+  if (STATE.items.length) render();
+}
+(function initStats(){
+  try{
+    const raw = localStorage.getItem(STATS_LS_KEY);
+    if (raw){ OFFICIAL = indexOfficial(JSON.parse(raw));
+      setStatsStatus("已從瀏覽器快取載入官方詞綴表：" + statsCount(OFFICIAL) + " 條對照。", "ok");
+      return; }
+  }catch(e){}
+  setStatsStatus("目前使用內建對照表（" + Object.keys(BUILTIN_STATS).length +
+    " 條常見詞綴）。建議載入官方詞綴表以覆蓋全部詞綴。", "info");
+})();
+
+/* ================================================================
+   PoB 代碼解碼
+   ================================================================ */
+function b64ToBytes(s){
+  s = s.trim().replace(/[-]/g,"+").replace(/_/g,"/").replace(/\s+/g,"");
+  while (s.length % 4) s += "=";
+  const bin = atob(s), out = new Uint8Array(bin.length);
+  for (let i=0;i<bin.length;i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+async function inflate(bytes){
+  if (typeof DecompressionStream === "undefined")
+    throw new Error("這個瀏覽器不支援 DecompressionStream，請改用 Chrome / Edge / Firefox / Safari 16.4+");
+  let last;
+  for (const fmt of ["deflate","deflate-raw","gzip"]){
+    try{
+      const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream(fmt));
+      const buf = await new Response(stream).arrayBuffer();
+      return new TextDecoder("utf-8").decode(buf);
+    }catch(e){ last = e; }
+  }
+  throw new Error("解壓縮失敗：" + (last && last.message || "未知錯誤"));
+}
+/* 從任意文字中挑出可能的 PoB 代碼（長 base64 token），長的優先 */
+function candidateCodes(text){
+  const found = text.match(/[A-Za-z0-9_\-+/=]{120,}/g) || [];
+  return [...new Set(found)].sort((a,b)=>b.length-a.length).slice(0,8);
+}
+async function decodeAnything(input){
+  const t = (input||"").trim();
+  if (!t) throw new Error("沒有內容可解析");
+  if (t.startsWith("<")) return t;                       // 直接是 XML
+  for (const c of candidateCodes(t)){
+    try{
+      const xml = await inflate(b64ToBytes(c));
+      if (xml.includes("<PathOfBuilding")) return xml;
+    }catch(e){}
+  }
+  throw new Error("找不到有效的 PoB 代碼。請確認貼上的是 PoB「Import/Export → Generate」產生的代碼。");
+}
+
+/* ================================================================
+   連結抓取（直連 → CORS proxy）
+   ================================================================ */
+const PROXIES = [
+  u => u,
+  u => "https://corsproxy.io/?url=" + encodeURIComponent(u),
+  u => "https://api.allorigins.win/raw?url=" + encodeURIComponent(u),
+  u => "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(u)
+];
+function rawCandidates(url){
+  const u = url.trim().replace(/^http:/,"https:");
+  const out = [];
+  let m;
+  if ((m = u.match(/pobb\.in\/([\w-]+)/)))            out.push("https://pobb.in/"+m[1]+"/raw");
+  if ((m = u.match(/pastebin\.com\/(?:raw\/)?(\w+)/))) out.push("https://pastebin.com/raw/"+m[1]);
+  if ((m = u.match(/poe\.ninja\/pob\/(?:raw\/)?([\w-]+)/))) out.push("https://poe.ninja/pob/raw/"+m[1]);
+  if ((m = u.match(/pobarchives\.com\/build\/([\w-]+)/))) out.push("https://pobarchives.com/build/"+m[1]+"/raw");
+  if ((m = u.match(/maxroll\.gg\/poe\/pob\/([\w-]+)/)))  out.push("https://maxroll.gg/poe/pob/"+m[1]);
+  out.push(u);                                          // 最後：原網址整頁掃描
+  return [...new Set(out)];
+}
+async function fetchBuild(url){
+  const errs = [];
+  for (const target of rawCandidates(url)){
+    for (const wrap of PROXIES){
+      let body;
+      try{
+        const res = await fetch(wrap(target), { redirect:"follow" });
+        if (!res.ok) { errs.push(target+" → HTTP "+res.status); continue; }
+        body = await res.text();
+      }catch(e){ errs.push(target+" → "+(e.message||"fetch 失敗")); continue; }
+      try { return { xml: await decodeAnything(body), from: target }; }
+      catch(e){ errs.push(target+" → 內容不是 PoB 代碼"); }
+    }
+  }
+  throw new Error("抓取失敗（已嘗試 " + errs.length + " 種組合）。\n" +
+    errs.slice(0,6).join("\n") +
+    "\n\n多半是對方網站的 CORS 限制。請到該網站按「Copy PoB code / Export」，把代碼貼到下面的欄位。");
+}
+
+/* ================================================================
+   PoB XML → 裝備
+   ================================================================ */
+const META_FLAGS = new Set(["Corrupted","Mirrored","Split","Unidentified","Shaper Item","Elder Item",
+  "Crusader Item","Warlord Item","Redeemer Item","Hunter Item","Synthesised Item","Fractured Item",
+  "Searing Exarch Item","Eater of Worlds Item","Veiled","Fabricated Item"]);
+
+function resolveRanges(text, range){
+  return text.replace(/\((-?[\d.]+)\s*-\s*(-?[\d.]+)\)/g, (all, a, b) => {
+    const lo = parseFloat(a), hi = parseFloat(b);
+    if (isNaN(lo) || isNaN(hi)) return all;
+    const dec = Math.max((a.split(".")[1]||"").length, (b.split(".")[1]||"").length);
+    const v = lo + (hi - lo) * (range === null ? 0.5 : range);
+    return dec ? v.toFixed(dec) : String(Math.round(v));
+  });
+}
+function parseModLine(line){
+  const flags = { crafted:false, fractured:false, enchant:false, veiled:false, scourge:false };
+  let range = null, text = line;
+  let m;
+  const tagRe = /^\{([^}]*)\}/;
+  while ((m = text.match(tagRe))){
+    const tag = m[1];
+    if (tag.startsWith("range:")) range = parseFloat(tag.slice(6));
+    else if (tag === "crafted") flags.crafted = true;
+    else if (tag === "fractured") flags.fractured = true;
+    else if (tag === "enchant") flags.enchant = true;
+    else if (tag === "veiled") flags.veiled = true;
+    else if (tag === "scourge") flags.scourge = true;
+    text = text.slice(m[0].length);
+  }
+  text = resolveRanges(text.trim(), range);
+  return { text, flags };
+}
+function parseItemText(raw){
+  const lines = raw.split(/\r?\n/).map(l=>l.trim()).filter(l=>l.length);
+  const it = { rarity:"NORMAL", name:"", base:"", ilvl:null, quality:null, sockets:"",
+               corrupted:false, influences:[], implicits:[], explicits:[], meta:{} };
+  let i = 0, implicitCount = 0;
+  if (/^Rarity:/i.test(lines[0]||"")) { it.rarity = lines[0].split(":")[1].trim().toUpperCase(); i = 1; }
+  const twoNames = (it.rarity === "RARE" || it.rarity === "UNIQUE" || it.rarity === "RELIC");
+  if (lines[i]) { it.name = lines[i++]; }
+  if (twoNames && lines[i] && !/^[A-Za-z][\w' ]*:/.test(lines[i])) { it.base = lines[i++]; }
+  // 魔法裝的名稱含前後綴，無法可靠推出底材 → 不填 base
+  if (!it.base && it.rarity !== "MAGIC") it.base = it.name;
+
+  const mods = [];
+  for (; i < lines.length; i++){
+    const line = lines[i];
+    if (META_FLAGS.has(line)){
+      if (line === "Corrupted") it.corrupted = true;
+      else if (/Item$/.test(line)) it.influences.push(line.replace(/ Item$/,""));
+      continue;
+    }
+    const km = line.match(/^([A-Za-z][A-Za-z' ]*):\s*(.*)$/);
+    if (km && !line.startsWith("{")){
+      const k = km[1], v = km[2];
+      it.meta[k] = v;
+      if (k === "Item Level") it.ilvl = parseInt(v,10);
+      else if (k === "Quality") it.quality = parseInt(v,10);
+      else if (k === "Sockets") it.sockets = v;
+      else if (k === "Implicits") implicitCount = parseInt(v,10) || 0;
+      continue;
+    }
+    if (/^Requires\b/.test(line) || /^Level \d/.test(line)) continue;
+    mods.push(parseModLine(line));
+  }
+  it.implicits = mods.slice(0, implicitCount);
+  it.explicits = mods.slice(implicitCount);
+  return it;
+}
+const SLOT_ORDER = ["Weapon 1","Weapon 1 Swap","Weapon 2","Weapon 2 Swap","Helmet","Body Armour",
+  "Gloves","Boots","Amulet","Ring 1","Ring 2","Belt"];
+function slotRank(name){
+  const i = SLOT_ORDER.indexOf(name);
+  if (i >= 0) return i;
+  if (/^Flask/.test(name)) return 100 + (parseInt(name.replace(/\D/g,""),10)||0);
+  if (/Jewel|Socket/.test(name)) return 200 + (parseInt(name.replace(/\D/g,""),10)||0);
+  return 300;
+}
+function parsePoB(xml){
+  const doc = new DOMParser().parseFromString(xml, "text/xml");
+  if (doc.querySelector("parsererror")) throw new Error("PoB XML 解析失敗");
+  const b = doc.querySelector("Build");
+  const build = {
+    level: b && b.getAttribute("level") || "?",
+    cls: b && b.getAttribute("className") || "",
+    ascend: b && b.getAttribute("ascendClassName") || "",
+    main: b && b.getAttribute("mainSocketGroup") || ""
+  };
+  const byId = {};
+  doc.querySelectorAll("Items > Item").forEach(node => {
+    const id = node.getAttribute("id");
+    const txt = node.textContent || "";
+    if (!txt.trim()) return;
+    try { byId[id] = parseItemText(txt); } catch(e){}
+  });
+  const itemsRoot = doc.querySelector("Items");
+  const activeSet = itemsRoot && itemsRoot.getAttribute("activeItemSet");
+  let sets = [...doc.querySelectorAll("Items > ItemSet")];
+  let set = sets.find(s => s.getAttribute("id") === activeSet) || sets[0] || itemsRoot;
+  const used = new Set(), out = [];
+  if (set){
+    set.querySelectorAll("Slot").forEach(s => {
+      const id = s.getAttribute("itemId"), slot = s.getAttribute("name") || "";
+      if (!id || id === "0" || !byId[id] || used.has(id)) return;
+      used.add(id);
+      out.push(Object.assign({ slot }, byId[id]));
+    });
+  }
+  Object.keys(byId).forEach(id => {
+    if (!used.has(id)) out.push(Object.assign({ slot:"未配置 / 其他" }, byId[id]));
+  });
+  out.sort((a,b)=>slotRank(a.slot)-slotRank(b.slot));
+  return { build, items: out };
+}
+
+/* ================================================================
+   詞綴 → stat id 對照 + 重要性判斷
+   ================================================================ */
+function statKey(text){
+  return text.replace(/\d+(\.\d+)?/g, "#").replace(/\s+/g," ").trim();
+}
+function numbersIn(text){
+  return (text.match(/-?\d+(\.\d+)?/g) || []).map(Number);
+}
+function lookupOfficial(key, types){
+  if (!OFFICIAL) return null;
+  for (const t of types){
+    const m = OFFICIAL[t];
+    if (m && m[key]) return m[key];
+  }
+  return null;
+}
+function matchStat(mod, isImplicit){
+  const types = [];
+  if (mod.flags.enchant) types.push("enchant");
+  if (mod.flags.crafted) types.push("crafted");
+  if (mod.flags.fractured) types.push("fractured");
+  if (isImplicit) types.push("implicit");
+  types.push("explicit","implicit","crafted","enchant","fractured");
+
+  const base = statKey(mod.text);
+  const tries = [{ key:base, neg:false }];
+  if (base.includes("reduced"))
+    tries.push({ key:base.replace("reduced","increased"), neg:true });
+  if (base.startsWith("-"))
+    tries.push({ key:"+" + base.slice(1), neg:false });  // 數值本身已是負的，不再取負
+  if (base.includes("Damage taken"))
+    tries.push({ key:base.replace(/^\+?#/,"+#"), neg:false });
+
+  for (const t of tries){
+    const off = lookupOfficial(t.key, types);
+    if (off) return { id:off, source:"official", neg:t.neg, key:t.key };
+  }
+  for (const t of tries){
+    if (BUILTIN_STATS[t.key])
+      return { id:BUILTIN_STATS[t.key], source:"builtin", neg:t.neg, key:t.key };
+  }
+  return { id:null, source:"none", neg:false, key:base };
+}
+const IMPORTANT_RE = new RegExp([
+  "Resistance", "maximum Life", "maximum Energy Shield", "maximum Mana",
+  "to Strength", "to Dexterity", "to Intelligence", "all Attributes",
+  "Movement Speed", "Attack Speed", "Cast Speed",
+  "Critical Strike", "Damage over Time Multiplier",
+  "increased .*Damage", "Adds # to #", "Accuracy Rating",
+  "Level of all", "Suppress Spell Damage", "Leeched", "Regenerate",
+  "increased Armour", "increased Evasion", "increased maximum"
+].join("|"));
+function isImportant(mod){
+  return IMPORTANT_RE.test(statKey(mod.text));
+}
+
+/* ================================================================
+   狀態 + 渲染
+   ================================================================ */
+const STATE = { build:null, items:[] };
+
+function buildMod(raw, isImplicit){
+  const st = matchStat(raw, isImplicit);
+  const nums = numbersIn(raw.text);
+  let value = null;
+  if (nums.length === 1) value = nums[0];
+  else if (nums.length >= 2 && /^Adds # to #/.test(statKey(raw.text)))
+    value = (nums[0] + nums[1]) / 2;
+  else if (nums.length >= 2) value = nums[0];
+  if (value !== null && st.neg) value = -value;
+  return {
+    text: raw.text, flags: raw.flags, isImplicit,
+    statId: st.id, source: st.source, key: st.key,
+    value, checked: false, min:null, max:null,
+    important: isImportant(raw)
+  };
+}
+function prepare(parsed){
+  STATE.build = parsed.build;
+  STATE.items = parsed.items.map((it, idx) => {
+    const mods = []
+      .concat(it.implicits.map(m => buildMod(m, true)))
+      .concat(it.explicits.map(m => buildMod(m, false)));
+    const linkGroups = (it.sockets||"").split(/\s+/).filter(Boolean)
+      .map(g => g.split("-").length);
+    return Object.assign({}, it, {
+      idx, mods,
+      socketCount: (it.sockets.match(/[A-Za-z]/g)||[]).length,
+      links: linkGroups.length ? Math.max.apply(null, linkGroups) : 0,
+      opt: {
+        useName: it.rarity === "UNIQUE" || it.rarity === "RELIC",
+        useType: !!it.base && !(it.rarity === "UNIQUE" || it.rarity === "RELIC"),
+        rarity: (it.rarity === "UNIQUE" || it.rarity === "RELIC") ? "unique" : "nonunique",
+        ilvl: null, links: null, sockets: null, corrupted: "any"
+      }
+    });
+  });
+  applyDefaults();
+}
+function pct(){ return (parseFloat($("#pct").value) || 100) / 100; }
+function defaultMin(mod){
+  if (mod.value === null) return null;
+  const v = mod.value * pct();
+  return Math.abs(v) >= 10 ? Math.round(v) : Math.round(v * 10) / 10;
+}
+function applyDefaults(){
+  for (const it of STATE.items)
+    for (const m of it.mods){
+      m.checked = !!(m.statId && m.important);
+      m.min = m.checked ? defaultMin(m) : null;
+      m.max = null;
+    }
+}
+function setAll(mode){
+  for (const it of STATE.items)
+    for (const m of it.mods){
+      const on = mode === "all" ? !!m.statId
+               : mode === "important" ? !!(m.statId && m.important)
+               : false;
+      m.checked = on;
+      if (on && m.min === null) m.min = defaultMin(m);
+      if (!on) { m.min = null; m.max = null; }
+    }
+  render();
+}
+
+function render(){
+  const grid = $("#grid"); grid.innerHTML = "";
+  const b = STATE.build;
+  $("#buildinfo").innerHTML = "";
+  $("#buildinfo").append(
+    el("span","big", (b.ascend && b.ascend !== "None" ? b.ascend : b.cls) || "Build"),
+    el("span","hint","等級 " + b.level),
+    el("span","hint", STATE.items.length + " 件裝備")
+  );
+  let checked = 0, total = 0, nomatch = 0;
+  for (const it of STATE.items){
+    for (const m of it.mods){ total++; if (m.checked) checked++; if (!m.statId) nomatch++; }
+    grid.appendChild(card(it));
+  }
+  $("#counts").textContent = "已勾選 " + checked + " / " + total + " 條詞綴" +
+    (nomatch ? "（" + nomatch + " 條找不到對照 id）" : "");
+  $("#result").style.display = "";
+}
+
+function card(it){
+  const c = el("div","card r-" + it.rarity);
+  const slot = el("div","slot");
+  slot.append(el("span",null,it.slot));
+  const ilvlTxt = it.ilvl ? ("iLvl " + it.ilvl) : "";
+  slot.append(el("span",null,ilvlTxt));
+  c.appendChild(slot);
+
+  const head = el("div","head");
+  head.appendChild(el("div","iname", it.name || it.base));
+  if (it.base && it.base !== it.name) head.appendChild(el("div","ibase", it.base));
+  const tags = el("div","tags");
+  if (it.quality) tags.appendChild(el("span","tag","品質 " + it.quality + "%"));
+  if (it.sockets) tags.appendChild(el("span","tag", it.sockets + "（" + it.links + "連）"));
+  if (it.corrupted) tags.appendChild(el("span","tag hot","已汙染"));
+  it.influences.forEach(inf => tags.appendChild(el("span","tag", inf)));
+  tags.appendChild(el("span","tag", it.rarity));
+  head.appendChild(tags);
+  c.appendChild(head);
+
+  /* --- 搜尋選項 --- */
+  const opts = el("div","opts");
+  const mkChk = (label, key) => {
+    const f = el("label","field");
+    const cb = el("input"); cb.type = "checkbox"; cb.checked = !!it.opt[key];
+    cb.onchange = () => { it.opt[key] = cb.checked; };
+    const wrap = el("span"); wrap.style.fontSize = "12px";
+    wrap.append(cb, document.createTextNode(" " + label));
+    f.appendChild(wrap); return f;
+  };
+  const mkNum = (label, key, ph) => {
+    const f = el("div","field");
+    f.appendChild(el("label",null,label));
+    const i = el("input"); i.type = "number"; i.placeholder = ph || "";
+    if (it.opt[key] !== null) i.value = it.opt[key];
+    i.oninput = () => { it.opt[key] = i.value === "" ? null : Number(i.value); };
+    f.appendChild(i); return f;
+  };
+  const rf = el("div","field");
+  rf.appendChild(el("label",null,"稀有度"));
+  const rs = el("select");
+  [["any","任意"],["nonunique","非唯一"],["unique","唯一"],["rare","稀有"],["magic","魔法"],["normal","普通"]]
+    .forEach(([v,t]) => { const o = el("option",null,t); o.value = v; rs.appendChild(o); });
+  rs.value = it.opt.rarity;
+  rs.onchange = () => { it.opt.rarity = rs.value; };
+  rf.appendChild(rs);
+
+  const cf = el("div","field");
+  cf.appendChild(el("label",null,"汙染"));
+  const cs = el("select");
+  [["any","任意"],["true","是"],["false","否"]].forEach(([v,t]) => {
+    const o = el("option",null,t); o.value = v; cs.appendChild(o); });
+  cs.value = it.opt.corrupted;
+  cs.onchange = () => { it.opt.corrupted = cs.value; };
+  cf.appendChild(cs);
+
+  opts.append(
+    mkChk("同名（唯一裝）","useName"),
+    mkChk("限定底材","useType"),
+    rf,
+    mkNum("iLvl ≥","ilvl", it.ilvl || ""),
+    mkNum("連線 ≥","links", it.links || ""),
+    mkNum("插槽 ≥","sockets", it.socketCount || ""),
+    cf
+  );
+  c.appendChild(opts);
+
+  /* --- 詞綴 --- */
+  const mods = el("div","mods");
+  const addGroup = (title, list) => {
+    if (!list.length) return;
+    mods.appendChild(el("div","group",title));
+    list.forEach(m => mods.appendChild(modRow(it, m)));
+  };
+  addGroup("固定 Implicit / 附魔", it.mods.filter(m => m.isImplicit));
+  addGroup("詞綴 Explicit", it.mods.filter(m => !m.isImplicit));
+  if (!it.mods.length) mods.appendChild(el("div","hint","（這件裝備沒有詞綴）"));
+  c.appendChild(mods);
+
+  const foot = el("div","foot");
+  const go = el("button","primary","🔍 開啟交易站搜尋");
+  go.onclick = () => window.open(tradeURL(it), "_blank", "noopener");
+  const cp = el("button",null,"複製搜尋網址");
+  cp.onclick = async () => {
+    try { await navigator.clipboard.writeText(tradeURL(it)); cp.textContent = "已複製 ✓"; }
+    catch(e){ cp.textContent = "複製失敗"; }
+    setTimeout(()=>{ cp.textContent = "複製搜尋網址"; }, 1500);
+  };
+  const cj = el("button",null,"複製 Query JSON");
+  cj.onclick = async () => {
+    try { await navigator.clipboard.writeText(JSON.stringify(tradeQuery(it), null, 2));
+      cj.textContent = "已複製 ✓"; } catch(e){ cj.textContent = "複製失敗"; }
+    setTimeout(()=>{ cj.textContent = "複製 Query JSON"; }, 1500);
+  };
+  foot.append(go, cp, cj);
+  c.appendChild(foot);
+  return c;
+}
+
+function modRow(it, m){
+  const cls = ["mod"];
+  if (m.flags.crafted) cls.push("crafted");
+  if (m.flags.fractured) cls.push("fractured");
+  if (m.flags.enchant) cls.push("enchant");
+  if (!m.statId) cls.push("nomatch");
+  const row = el("div", cls.join(" "));
+  const cb = el("input"); cb.type = "checkbox"; cb.checked = m.checked; cb.disabled = !m.statId;
+  const minI = el("input"); minI.type = "number"; minI.placeholder = "min";
+  const maxI = el("input"); maxI.type = "number"; maxI.placeholder = "max";
+  const sync = () => {
+    minI.disabled = maxI.disabled = !cb.checked || m.value === null;
+    minI.value = m.min === null ? "" : m.min;
+    maxI.value = m.max === null ? "" : m.max;
+  };
+  cb.onchange = () => {
+    m.checked = cb.checked;
+    if (cb.checked && m.min === null) m.min = defaultMin(m);
+    if (!cb.checked) { m.min = null; m.max = null; }
+    sync(); updateCounts();
+  };
+  minI.oninput = () => { m.min = minI.value === "" ? null : Number(minI.value); };
+  maxI.oninput = () => { m.max = maxI.value === "" ? null : Number(maxI.value); };
+
+  const prefix = m.flags.crafted ? "⚒ " : m.flags.fractured ? "◈ " : m.flags.enchant ? "✦ " : "";
+  const txt = el("div","txt", prefix + m.text);
+  if (!m.statId) txt.title = "找不到對照的交易站 stat id，載入官方詞綴表可能可以解決";
+  else txt.title = m.key + "  →  " + m.statId;
+
+  const vals = el("div","vals"); vals.append(minI, maxI);
+  const dot = el("i","dot " + (m.source === "official" ? "official" : m.source === "builtin" ? "builtin" : "none"));
+  row.append(cb, txt, vals, dot);
+  sync();
+  return row;
+}
+function updateCounts(){
+  let checked = 0, total = 0;
+  for (const it of STATE.items) for (const m of it.mods){ total++; if (m.checked) checked++; }
+  $("#counts").textContent = "已勾選 " + checked + " / " + total + " 條詞綴";
+}
+
+/* ================================================================
+   交易站 query
+   ================================================================ */
+function tradeQuery(it){
+  const q = { query: { status: { option: $("#status").value }, stats: [] },
+              sort: $("#sort").value === "price" ? { price:"asc" } : { ilvl:"desc" } };
+  if (it.opt.useName && (it.rarity === "UNIQUE" || it.rarity === "RELIC") && it.name) q.query.name = it.name;
+  if (it.opt.useType && it.base) q.query.type = it.base;
+
+  const filters = {};
+  const typeF = {};
+  if (it.opt.rarity && it.opt.rarity !== "any") typeF.rarity = { option: it.opt.rarity };
+  if (Object.keys(typeF).length) filters.type_filters = { filters: typeF };
+
+  const miscF = {};
+  if (it.opt.ilvl != null) miscF.ilvl = { min: it.opt.ilvl };
+  if (it.opt.corrupted !== "any") miscF.corrupted = { option: it.opt.corrupted };
+  if (Object.keys(miscF).length) filters.misc_filters = { filters: miscF };
+
+  const sockF = {};
+  if (it.opt.sockets != null) sockF.sockets = { min: it.opt.sockets };
+  if (it.opt.links != null) sockF.links = { min: it.opt.links };
+  if (Object.keys(sockF).length) filters.socket_filters = { filters: sockF };
+
+  if (Object.keys(filters).length) q.query.filters = filters;
+
+  const stats = [];
+  for (const m of it.mods){
+    if (!m.checked || !m.statId) continue;
+    const f = { id: m.statId, disabled: false };
+    const value = {};
+    if (m.min !== null && m.min !== undefined && !isNaN(m.min)) value.min = m.min;
+    if (m.max !== null && m.max !== undefined && !isNaN(m.max)) value.max = m.max;
+    if (Object.keys(value).length) f.value = value;
+    stats.push(f);
+  }
+  q.query.stats = [{ type:"and", filters: stats }];
+  return q;
+}
+function tradeURL(it){
+  const league = encodeURIComponent(($("#league").value || "Standard").trim());
+  return "https://www.pathofexile.com/trade/search/" + league +
+         "?q=" + encodeURIComponent(JSON.stringify(tradeQuery(it)));
+}
+
+/* ================================================================
+   事件
+   ================================================================ */
+function setImport(msg, kind){
+  const n = $("#importStatus");
+  n.textContent = msg; n.className = "status show " + kind;
+}
+async function doParse(text, note){
+  try{
+    setImport("解析中…","info");
+    const xml = await decodeAnything(text);
+    prepare(parsePoB(xml));
+    render();
+    const bad = STATE.items.reduce((s,it)=>s+it.mods.filter(m=>!m.statId).length,0);
+    setImport("解析完成：" + STATE.items.length + " 件裝備" + (note ? "（來源：" + note + "）" : "") +
+      (bad ? "。有 " + bad + " 條詞綴找不到交易站對照 id，載入官方詞綴表可改善。" : "。"), "ok");
+    $("#result").scrollIntoView({ behavior:"smooth", block:"start" });
+  }catch(e){
+    setImport("✗ " + (e.message || e), "err");
+  }
+}
+$("#btnParse").onclick = () => doParse($("#code").value, "");
+$("#btnClear").onclick = () => {
+  $("#code").value = ""; $("#url").value = "";
+  STATE.items = []; $("#result").style.display = "none";
+  $("#importStatus").className = "status";
+};
+$("#btnFetch").onclick = async () => {
+  const u = $("#url").value.trim();
+  if (!u) { setImport("請先貼上連結","err"); return; }
+  setImport("抓取中…（會依序嘗試直連與公開 CORS proxy，可能需要幾秒）","info");
+  try{
+    const r = await fetchBuild(u);
+    $("#code").value = "";
+    prepare(parsePoB(r.xml)); render();
+    setImport("抓取成功：" + r.from + " → " + STATE.items.length + " 件裝備","ok");
+    $("#result").scrollIntoView({ behavior:"smooth", block:"start" });
+  }catch(e){ setImport("✗ " + (e.message || e), "err"); }
+};
+$("#btnImportant").onclick = () => setAll("important");
+$("#btnAll").onclick = () => setAll("all");
+$("#btnNone").onclick = () => setAll("none");
+$("#btnApplyPct").onclick = () => {
+  for (const it of STATE.items) for (const m of it.mods)
+    if (m.checked) m.min = defaultMin(m);
+  render();
+};
+$("#btnUploadStats").onclick = () => $("#fileStats").click();
+$("#fileStats").onchange = async (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  try { saveStats(JSON.parse(await f.text())); }
+  catch(err){ setStatsStatus("✗ 讀取失敗：" + (err.message||err), "err"); }
+  e.target.value = "";
+};
+$("#btnLoadStats").onclick = async () => {
+  const url = "https://www.pathofexile.com/api/trade/data/stats";
+  setStatsStatus("抓取官方詞綴表中…","info");
+  for (const wrap of PROXIES){
+    try{
+      const res = await fetch(wrap(url), { headers: { "Accept":"application/json" } });
+      if (!res.ok) continue;
+      const json = await res.json();
+      saveStats(json);
+      return;
+    }catch(e){}
+  }
+  setStatsStatus("✗ 自動抓取失敗（CORS 或 Cloudflare 擋下）。請自行開啟 " + url +
+    "，另存為 stats.json 後用「上傳 stats.json」匯入。", "err");
+};
+</script>
+</body>
+</html>
