@@ -1,6 +1,12 @@
 {
- "updated": "2026-08-29T03:33:04.327Z",
+ "updated": "2026-08-29T23:56:22.064Z",
  "items": [
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮VIP首次年訂閱 送500蝦幣",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787902978.A.09C.html",
+   "heat": 100
+  },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 電腦版合法且免費看直播電視頻道",
@@ -20,34 +26,34 @@
    "heat": 100
   },
   {
+   "src": "PTT 3C板",
+   "title": "[情報] 極客灣 Tensor G6 能效圖",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787934588.A.B39.html",
+   "heat": 100
+  },
+  {
    "src": "PTT 省錢板",
    "title": "[情報] 2026年全台捐血贈品",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1767366026.A.B74.html",
    "heat": 86
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮VIP首次年訂閱 送500蝦幣",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787902978.A.09C.html",
-   "heat": 84
-  },
-  {
    "src": "PTT 3C板",
    "title": "[情報] 台版Pixel 11免Root成功加入西瓜卡",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1787738509.A.96C.html",
-   "heat": 76
+   "heat": 79
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 必勝客夏威夷40元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787186120.A.5E6.html",
+   "heat": 74
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 拿坡里 月月慶",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787237018.A.23B.html",
    "heat": 68
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[情報] 極客灣 Tensor G6 能效圖",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787934588.A.B39.html",
-   "heat": 65
   },
   {
    "src": "PTT 省錢板",
@@ -63,21 +69,21 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[討論] Coupang 莫名其妙要被扣費",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787751145.A.E45.html",
+   "title": "[情報] KIOXIA EXCERIA G2 2TB m.2 SSD 6900元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787936202.A.47C.html",
    "heat": 59
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 南投九九峰動物園週年慶",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787884176.A.5D4.html",
-   "heat": 54
+   "heat": 58
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 摩斯密碼(8/24至8/31)",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1787618952.A.B83.html",
-   "heat": 54
+   "src": "PTT 3C板",
+   "title": "[問題] S23綠線維修請益",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787723937.A.901.html",
+   "heat": 53
   },
   {
    "src": "PTT 3C板",
@@ -87,15 +93,9 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[問題] S23綠線維修請益",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787723937.A.901.html",
-   "heat": 50
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] Pixel 11系列保護貼及保護殼推薦",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787545061.A.FD7.html",
-   "heat": 46
+   "title": "[新聞] 簡訊驗證掰了！Passkey技術登台　75%全",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787828846.A.D49.html",
+   "heat": 42
   },
   {
    "src": "PTT 網購板",
@@ -105,27 +105,27 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[新聞] 「海神」停地下停車場 車內行充竟自燃毀",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787790881.A.89E.html",
+   "heat": 40
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[情報] POCO F9 系列 09/04 台灣上市",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1787585081.A.0E7.html",
    "heat": 40
   },
   {
    "src": "PTT 3C板",
-   "title": "[新聞] 「海神」停地下停車場 車內行充竟自燃毀",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787790881.A.89E.html",
-   "heat": 39
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[新聞] 簡訊驗證掰了！Passkey技術登台　75%全",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787828846.A.D49.html",
-   "heat": 38
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[新聞] Apple 首款摺疊 iPhone 傳 9 月亮相，售",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787566226.A.8C2.html",
+   "title": "[問題]大學生作筆記用三星平板哪個型號和尺寸較好?",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787905207.A.619.html",
    "heat": 37
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[問題] 租屋 傳統電視 電視盒子請益(有選手)",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787640512.A.891.html",
+   "heat": 36
   },
   {
    "src": "PTT 網購板",
@@ -141,9 +141,27 @@
   },
   {
    "src": "PTT 網購板",
+   "title": "[心得] 海爾除濕機使用心得分享",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1781957535.A.BA9.html",
+   "heat": 18
+  },
+  {
+   "src": "PTT 網購板",
    "title": "[問題] 淘寶藍牙耳機，運送及自用申請問題？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1783149341.A.040.html",
    "heat": 15
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[閒聊] ezway說我長期未登入到期提醒通知",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1787790529.A.4B3.html",
+   "heat": 14
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[問題] 店家一直上架一直取消是什麼意思 ???",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1781881371.A.881.html",
+   "heat": 13
   },
   {
    "src": "PTT 網購板",
@@ -159,27 +177,9 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[挑選] 28吋上掀行李箱",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786748944.A.EF8.html",
-   "heat": 9
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[問題] LINE的蝦皮店到店包裹通知收不到",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786687649.A.61C.html",
-   "heat": 8
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[閒聊] 有人在蝦皮上買過機車嗎？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786007540.A.801.html",
-   "heat": 7
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[閒聊] 有人在蝦皮買過馬桶嗎",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786106382.A.F03.html",
-   "heat": 7
+   "title": "[問題] 淘寶賣家請我重新下單(更新進度)",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1782369571.A.63F.html",
+   "heat": 11
   }
  ]
 }
