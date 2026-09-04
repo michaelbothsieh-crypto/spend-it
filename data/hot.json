@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-03T23:49:59.695Z",
+ "updated": "2026-09-04T23:47:13.490Z",
  "items": [
   {
    "src": "PTT 3C板",
@@ -21,9 +21,15 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[情報] POCO F9 系列售價",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788498915.A.1BD.html",
+   "heat": 80
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[討論] 華為P70系列100%國產被爆使用三星",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1788312337.A.0DD.html",
-   "heat": 67
+   "heat": 69
   },
   {
    "src": "PTT 省錢板",
@@ -32,15 +38,27 @@
    "heat": 63
   },
   {
+   "src": "PTT 3C板",
+   "title": "[討論] POCO F9 Ultra價格",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788271351.A.EE0.html",
+   "heat": 59
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[新聞] Snapdragon 8 Elite 與記憶體漲太兇，三",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788436128.A.CCD.html",
+   "heat": 55
+  },
+  {
    "src": "PTT 省錢板",
    "title": "[情報] line 禮物12-10優惠券(指定好友專屬)",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788231147.A.F0F.html",
    "heat": 51
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] POCO F9 Ultra價格",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788271351.A.EE0.html",
+   "src": "PTT 省錢板",
+   "title": "[情報] 開學季開心卡",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788419621.A.EAC.html",
    "heat": 49
   },
   {
@@ -75,8 +93,8 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[問題]大學生作筆記用三星平板哪個型號和尺寸較好?",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1787905207.A.619.html",
+   "title": "[新聞] iPhone 18 Pro Max及折疊iPhone下周亮相",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788340321.A.4FD.html",
    "heat": 40
   },
   {
@@ -86,16 +104,16 @@
    "heat": 39
   },
   {
-   "src": "PTT 3C板",
-   "title": "[新聞] iPhone 18 Pro Max及折疊iPhone下周亮相",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788340321.A.4FD.html",
-   "heat": 39
+   "src": "PTT 省錢板",
+   "title": "[情報] 母子鱷魚跑步y拖 折後$370",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788499469.A.9EC.html",
+   "heat": 38
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] Google 智慧家庭部分產品 漲價囉 (美國)",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788285480.A.1FC.html",
-   "heat": 37
+   "src": "PTT 省錢板",
+   "title": "[情報] iherb 7折加line導購8%",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788373539.A.96E.html",
+   "heat": 35
   },
   {
    "src": "PTT 省錢板",
@@ -105,26 +123,14 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] iherb 7折加line導購8%",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788373539.A.96E.html",
-   "heat": 33
-  },
-  {
-   "src": "PTT 省錢板",
    "title": "[討論] 麥當勞app點數兌換也沒有超值全餐了",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788334099.A.56F.html",
-   "heat": 31
+   "heat": 32
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 開學季開心卡",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788419621.A.EAC.html",
-   "heat": 31
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 全家康康五 9/03~9/08",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788327509.A.EA6.html",
+   "src": "PTT 網購板",
+   "title": "[心得] 2026喜憨兒中秋禮盒開箱",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788243811.A.6A3.html",
    "heat": 30
   },
   {
@@ -132,12 +138,6 @@
    "title": "[閒聊] 有人在MOMO買冷氣嗎?",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1785484764.A.784.html",
    "heat": 26
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[心得] 2026喜憨兒中秋禮盒開箱",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788243811.A.6A3.html",
-   "heat": 23
   },
   {
    "src": "PTT 網購板",
