@@ -1,6 +1,12 @@
 {
- "updated": "2026-09-09T23:52:37.163Z",
+ "updated": "2026-09-10T23:48:59.474Z",
  "items": [
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 必勝客189-50又來了",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788944959.A.B25.html",
+   "heat": 100
+  },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 蝦皮9/9全站$1,000-200",
@@ -14,28 +20,16 @@
    "heat": 100
   },
   {
-   "src": "PTT 3C板",
-   "title": "[新聞] 網路恐龍狂占頻寬 全台估千戶",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788750623.A.BF7.html",
-   "heat": 92
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] 2026年全台捐血贈品",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1767366026.A.B74.html",
    "heat": 86
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 必勝客189-50又來了",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788944959.A.B25.html",
-   "heat": 75
-  },
-  {
    "src": "PTT 3C板",
-   "title": "[新聞] 華為史上最強處理器！麒麟9050 Pro 官方",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788777749.A.C08.html",
-   "heat": 75
+   "title": "[討論] iPhone 18 Pro/18 Pro Max/Duo售價",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788978050.A.C14.html",
+   "heat": 73
   },
   {
    "src": "PTT 省錢板",
@@ -45,26 +39,38 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 母子鱷魚跑步y拖 折後$370",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788499469.A.9EC.html",
+   "title": "Fw: [情報] 44屆小天使招考（9/7～9/16）",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788785302.A.837.html",
+   "heat": 68
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "Fw: [情報] 44屆小天使招考（9/7～9/16）",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788785302.A.837.html",
    "heat": 67
   },
   {
-   "src": "PTT 省錢板",
-   "title": "Fw: [情報] 44屆小天使招考（9/7～9/16）",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788785302.A.837.html",
-   "heat": 66
+   "src": "PTT 3C板",
+   "title": "[新聞] 三星狠酸蘋果iPhone Duo「So far, so same」　登頂微博熱搜",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789011965.A.D54.html",
+   "heat": 64
   },
   {
-   "src": "PTT 省錢板",
-   "title": "Fw: [情報] 44屆小天使招考（9/7～9/16）",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788785302.A.837.html",
+   "src": "PTT 3C板",
+   "title": "[討論] iPhone Duo後發先至fold不斷退步",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788998070.A.A57.html",
    "heat": 63
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 台新point1點換蝦皮vip三個月",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788768164.A.009.html",
+   "heat": 62
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 蘋果會吃冷筍嗎？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789021825.A.57F.html",
    "heat": 62
   },
   {
@@ -75,21 +81,39 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[討論] iPhone首款摺疊機不叫iPhone Ultra",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788793205.A.10E.html",
+   "title": "Re: [討論] iPhone Duo後發先至fold不斷退步",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789002003.A.0F6.html",
    "heat": 47
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] iPhone 18 Pro/18 Pro Max/Duo售價",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788978050.A.C14.html",
-   "heat": 46
   },
   {
    "src": "PTT 網購板",
    "title": "[心得] 飛利浦最近真的變很爛",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
    "heat": 42
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 中嘉寬頻降價 1G/$799",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788856065.A.F47.html",
+   "heat": 40
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] iPhone 17標準版 一年後漲價3000",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788978512.A.654.html",
+   "heat": 40
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 遠傳電信又開始搞小動作了？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788860086.A.CD0.html",
+   "heat": 34
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[Live] Apple Event 9/9",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788973154.A.8F7.html",
+   "heat": 34
   },
   {
    "src": "PTT 網購板",
@@ -99,44 +123,20 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[新聞] Google Assistant 今日起正式退場！Gemin",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788689562.A.486.html",
-   "heat": 33
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [問題] 為什麼只有三星手機能內建悠遊卡？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788751397.A.3DB.html",
-   "heat": 32
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] 遠傳電信又開始搞小動作了？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788860086.A.CD0.html",
+   "title": "[問題] 安卓後來怎麼捨棄全面屏的",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789016390.A.FEF.html",
    "heat": 31
   },
   {
    "src": "PTT 3C板",
-   "title": "[Live] Apple Event 9/9",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788973154.A.8F7.html",
-   "heat": 30
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[情報] 小米 18 Fold 售價 ￥ 10999起",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788865754.A.217.html",
+   "title": "Re: [討論] 遠傳電信又開始搞小動作了？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788869074.A.CC7.html",
    "heat": 27
   },
   {
    "src": "PTT 網購板",
    "title": "[閒聊] 有人在MOMO買冷氣嗎?",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1785484764.A.784.html",
-   "heat": 26
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題]  輕薄行動電源推薦10000mAh",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788840302.A.B59.html",
    "heat": 26
   },
   {
@@ -171,15 +171,15 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[閒聊] 收到比比昂個資外洩的詐騙信",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1785841102.A.2EB.html",
+   "title": "[問題] 拼多多49到台免運詐欺狀況",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788264962.A.078.html",
    "heat": 12
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 酷澎美韓跨境保健品EZWAY免稅額計算",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786937068.A.CB9.html",
-   "heat": 11
+   "title": "[閒聊] 收到比比昂個資外洩的詐騙信",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1785841102.A.2EB.html",
+   "heat": 12
   }
  ]
 }
