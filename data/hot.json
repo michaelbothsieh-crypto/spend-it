@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T23:48:59.474Z",
+ "updated": "2026-09-11T23:56:05.383Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -26,12 +26,6 @@
    "heat": 86
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] iPhone 18 Pro/18 Pro Max/Duo售價",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788978050.A.C14.html",
-   "heat": 73
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] Yahoo購物金 100元 (-9/9)",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788713929.A.008.html",
@@ -44,6 +38,12 @@
    "heat": 68
   },
   {
+   "src": "PTT 3C板",
+   "title": "[新聞] 三星狠酸蘋果iPhone Duo「So far, so same」　登頂微博熱搜",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789011965.A.D54.html",
+   "heat": 68
+  },
+  {
    "src": "PTT 省錢板",
    "title": "Fw: [情報] 44屆小天使招考（9/7～9/16）",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788785302.A.837.html",
@@ -51,8 +51,14 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[新聞] 三星狠酸蘋果iPhone Duo「So far, so same」　登頂微博熱搜",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789011965.A.D54.html",
+   "title": "[討論] 蘋果會吃冷筍嗎？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789021825.A.57F.html",
+   "heat": 67
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[問題] iPhone Duo 最後會跟Air一樣後繼無力嗎",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789114539.A.E7B.html",
    "heat": 64
   },
   {
@@ -68,10 +74,10 @@
    "heat": 62
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] 蘋果會吃冷筍嗎？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789021825.A.57F.html",
-   "heat": 62
+   "src": "PTT 省錢板",
+   "title": "[情報] PChome分眾送100P",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789096279.A.276.html",
+   "heat": 61
   },
   {
    "src": "PTT 省錢板",
@@ -92,28 +98,22 @@
    "heat": 42
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 中嘉寬頻降價 1G/$799",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788856065.A.F47.html",
-   "heat": 40
+   "src": "PTT 3C板",
+   "title": "[購機] iPhone 18 Pro 還是Pixel 11 Pro XL",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789059121.A.183.html",
+   "heat": 39
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] iPhone 17標準版 一年後漲價3000",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1788978512.A.654.html",
-   "heat": 40
+   "heat": 39
   },
   {
    "src": "PTT 3C板",
-   "title": "[討論] 遠傳電信又開始搞小動作了？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788860086.A.CD0.html",
-   "heat": 34
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[Live] Apple Event 9/9",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788973154.A.8F7.html",
-   "heat": 34
+   "title": "[問題] 安卓後來怎麼捨棄全面屏的",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789016390.A.FEF.html",
+   "heat": 36
   },
   {
    "src": "PTT 網購板",
@@ -123,14 +123,8 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[問題] 安卓後來怎麼捨棄全面屏的",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789016390.A.FEF.html",
-   "heat": 31
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [討論] 遠傳電信又開始搞小動作了？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1788869074.A.CC7.html",
+   "title": "[討論] AW現在無敵到只能擠牙膏了嗎",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789021425.A.539.html",
    "heat": 27
   },
   {
@@ -138,6 +132,12 @@
    "title": "[閒聊] 有人在MOMO買冷氣嗎?",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1785484764.A.784.html",
    "heat": 26
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 鍾文澤 蘋果新品各顏色推薦",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789088003.A.876.html",
+   "heat": 23
   },
   {
    "src": "PTT 網購板",
@@ -159,6 +159,12 @@
   },
   {
    "src": "PTT 網購板",
+   "title": "[請益] 萬元左右人體工學椅推薦",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788839467.A.6BD.html",
+   "heat": 15
+  },
+  {
+   "src": "PTT 網購板",
    "title": "[問題] 淘寶藍牙耳機，運送及自用申請問題？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1783149341.A.040.html",
    "heat": 15
@@ -173,12 +179,6 @@
    "src": "PTT 網購板",
    "title": "[問題] 拼多多49到台免運詐欺狀況",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1788264962.A.078.html",
-   "heat": 12
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[閒聊] 收到比比昂個資外洩的詐騙信",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1785841102.A.2EB.html",
    "heat": 12
   }
  ]
