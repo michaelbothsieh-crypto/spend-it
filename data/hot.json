@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-15T00:22:26.511Z",
+ "updated": "2026-09-16T00:01:53.659Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -8,9 +8,9 @@
    "heat": 100
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮9/9全站$1,000-200",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788854107.A.F71.html",
+   "src": "PTT 3C板",
+   "title": "[新聞] 蘋果高層揭秘 iPhone Duo 折痕消失的秘密",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789220844.A.F9C.html",
    "heat": 100
   },
   {
@@ -26,22 +26,10 @@
    "heat": 100
   },
   {
-   "src": "PTT 3C板",
-   "title": "[新聞] 蘋果高層揭秘 iPhone Duo 折痕消失的秘密",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789220844.A.F9C.html",
-   "heat": 99
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] 2026年全台捐血贈品",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1767366026.A.B74.html",
    "heat": 87
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] linepay 購好券抽獎活動",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788783764.A.23E.html",
-   "heat": 78
   },
   {
    "src": "PTT 3C板",
@@ -56,6 +44,18 @@
    "heat": 72
   },
   {
+   "src": "PTT 3C板",
+   "title": "[新聞] Google Pixel 亟需突破性性能提升以應對未來挑戰",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789284202.A.2CC.html",
+   "heat": 72
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 拼多多跨國集運發瘋了",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789358333.A.F2F.html",
+   "heat": 71
+  },
+  {
    "src": "PTT 省錢板",
    "title": "Fw: [情報] 44屆小天使招考（9/7～9/16）",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788785302.A.837.html",
@@ -63,21 +63,15 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "Fw: [情報] 44屆小天使招考（9/7～9/16）",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1788785302.A.837.html",
-   "heat": 67
+   "title": "Re: [新聞] 運動換健康好禮！7-11、全家加碼購物",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789390744.A.F4D.html",
+   "heat": 66
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 拼多多跨國集運發瘋了",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789358333.A.F2F.html",
-   "heat": 65
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[新聞] Google Pixel 亟需突破性性能提升以應對未來挑戰",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789284202.A.2CC.html",
-   "heat": 64
+   "title": "[情報] 大大大雞排",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789381766.A.13A.html",
+   "heat": 56
   },
   {
    "src": "PTT 省錢板",
@@ -89,7 +83,25 @@
    "src": "PTT 省錢板",
    "title": "[情報] 拿坡里 月月慶",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789049920.A.020.html",
-   "heat": 50
+   "heat": 49
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 全聯消費送美式咖啡",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789178977.A.913.html",
+   "heat": 46
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "Re: [新聞] 蘋果高層揭秘 iPhone Duo 折痕消失的秘密",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789372478.A.3D2.html",
+   "heat": 46
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] pixel9a 不開機維修報價一萬五正常嗎",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789386319.A.38D.html",
+   "heat": 45
   },
   {
    "src": "PTT 網購板",
@@ -99,15 +111,21 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[情報] 聯發科天璣9600 pro官宣",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789459222.A.720.html",
+   "heat": 42
+  },
+  {
+   "src": "PTT 3C板",
    "title": "Re: [討論] 搞得好像折疊手機第一次發明？",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1789143233.A.41B.html",
    "heat": 39
   },
   {
    "src": "PTT 3C板",
-   "title": "Re: [新聞] 蘋果高層揭秘 iPhone Duo 折痕消失的秘密",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789372478.A.3D2.html",
-   "heat": 37
+   "title": "[問題] 台達電innergie充電器 怎都買不到@@?",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789446379.A.1B4.html",
+   "heat": 34
   },
   {
    "src": "PTT 網購板",
@@ -116,28 +134,10 @@
    "heat": 33
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] pixel9a 不開機維修報價一萬五正常嗎",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789386319.A.38D.html",
-   "heat": 29
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題] iphone以圖搜尋",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789185660.A.CAA.html",
-   "heat": 29
-  },
-  {
    "src": "PTT 網購板",
    "title": "[閒聊] 有人在MOMO買冷氣嗎?",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1785484764.A.784.html",
    "heat": 26
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [問題] iPhone Duo 最後會跟Air一樣後繼無力嗎",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789117969.A.933.html",
-   "heat": 24
   },
   {
    "src": "PTT 網購板",
