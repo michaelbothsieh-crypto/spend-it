@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-20T23:55:19.792Z",
+ "updated": "2026-09-22T00:38:17.226Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -15,6 +15,12 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[問題] 一輩子的三星想換蘋果要注意什麼",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789619667.A.C79.html",
+   "heat": 100
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[討論] 目前各APP瀏覽PTT的狀況",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1789867584.A.AE5.html",
    "heat": 100
@@ -26,34 +32,22 @@
    "heat": 100
   },
   {
-   "src": "PTT 3C板",
-   "title": "[問題] 一輩子的三星想換蘋果要注意什麼",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789619667.A.C79.html",
-   "heat": 99
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] 2026年全台捐血贈品",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1767366026.A.B74.html",
    "heat": 88
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 拼多多跨國集運發瘋了",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789358333.A.F2F.html",
-   "heat": 73
+   "src": "PTT 3C板",
+   "title": "[討論] 科技狗點名邦尼 九面 by突然公開的兩年",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789844874.A.D54.html",
+   "heat": 66
   },
   {
-   "src": "PTT 省錢板",
-   "title": "Re: [新聞] 運動換健康好禮！7-11、全家加碼購物",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789390744.A.F4D.html",
-   "heat": 69
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 大大大雞排",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789381766.A.13A.html",
-   "heat": 60
+   "src": "PTT 3C板",
+   "title": "[情報] vivo X500人民幣價格出爐",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789995521.A.4AE.html",
+   "heat": 63
   },
   {
    "src": "PTT 省錢板",
@@ -75,15 +69,9 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[討論] 科技狗點名邦尼 九面 by突然公開的兩年",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789844874.A.D54.html",
-   "heat": 55
-  },
-  {
-   "src": "PTT 3C板",
    "title": "[討論] Iphone 18 pro 螢幕瑕疵出現白線",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1789788781.A.B27.html",
-   "heat": 52
+   "heat": 56
   },
   {
    "src": "PTT 3C板",
@@ -99,14 +87,14 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 機車座墊套重包5~700 座墊套只要69",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789224286.A.3B7.html",
-   "heat": 51
+   "title": "[情報] COCO都可～9/30珍珠奶茶只要39元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789619020.A.64B.html",
+   "heat": 49
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] COCO都可～9/30珍珠奶茶只要39元",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789619020.A.64B.html",
+   "title": "Re: [情報] 拼多多跨國集運發瘋了",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789506748.A.4C3.html",
    "heat": 49
   },
   {
@@ -116,16 +104,28 @@
    "heat": 49
   },
   {
+   "src": "PTT 省錢板",
+   "title": "Re: [情報] PChome Mcdodo 67W GaN氮化鎵3孔特價388",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789687731.A.D33.html",
+   "heat": 44
+  },
+  {
    "src": "PTT 網購板",
    "title": "[心得] 飛利浦最近真的變很爛",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
    "heat": 44
   },
   {
-   "src": "PTT 3C板",
-   "title": "[問題] 台達電innergie充電器 怎都買不到@@?",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1789446379.A.1B4.html",
-   "heat": 39
+   "src": "PTT 省錢板",
+   "title": "PChome 分眾 50P",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789610081.A.CFE.html",
+   "heat": 42
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 7-11 12OP點數換統一亮妍莓果牛乳",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789659217.A.7F3.html",
+   "heat": 41
   },
   {
    "src": "PTT 網購板",
@@ -177,8 +177,8 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 店家一直上架一直取消是什麼意思 ???",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1781881371.A.881.html",
+   "title": "[問題] 拼多多台灣49免運是否取消了",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789525516.A.73C.html",
    "heat": 13
   }
  ]
