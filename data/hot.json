@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T00:21:48.532Z",
+ "updated": "2026-09-29T01:33:14.758Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -27,15 +27,15 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "Re: [討論] YouTube Premium LITE？",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790241216.A.B27.html",
-   "heat": 78
-  },
-  {
-   "src": "PTT 省錢板",
    "title": "[情報] 蝦皮100-50又有了",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790337021.A.93E.html",
    "heat": 73
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] Apple再被揭削成本 iPhone 18 Pro OLED",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790529047.A.FA2.html",
+   "heat": 70
   },
   {
    "src": "PTT 3C板",
@@ -47,12 +47,18 @@
    "src": "PTT 省錢板",
    "title": "[情報] 全聯週末買一送一 9/26～9/27",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790379456.A.639.html",
-   "heat": 57
+   "heat": 58
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 蝦皮 泰山八寶粥12罐 124元",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790148640.A.3DE.html",
+   "heat": 55
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] 旗艦手機用白片:降本增笑",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790477513.A.831.html",
    "heat": 55
   },
   {
@@ -68,9 +74,15 @@
    "heat": 49
   },
   {
+   "src": "PTT 省錢板",
+   "title": "[情報] COCO都可～9/30珍珠奶茶只要39元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789619020.A.64B.html",
+   "heat": 49
+  },
+  {
    "src": "PTT 3C板",
-   "title": "[情報] 旗艦手機用白片:降本增笑",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790477513.A.831.html",
+   "title": "Re: [問題] 為什麼都快2027了還有人幻想會降價?",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790521529.A.496.html",
    "heat": 46
   },
   {
@@ -83,7 +95,7 @@
    "src": "PTT 3C板",
    "title": "[問題] iPhone如何使用USB與Win電腦互傳資料？",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1790174075.A.834.html",
-   "heat": 42
+   "heat": 43
   },
   {
    "src": "PTT 3C板",
@@ -107,31 +119,19 @@
    "src": "PTT 3C板",
    "title": "[購機] 65K 玩皮克敏順流暢",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1790350361.A.DE1.html",
-   "heat": 30
+   "heat": 31
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "Re: [討論] 手機重量一去不復返???",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790187356.A.932.html",
+   "heat": 31
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] realme開始放棄台灣市場了嗎？哈利波特",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1790142336.A.19E.html",
    "heat": 30
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [討論] 手機重量一去不復返???",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790187356.A.932.html",
-   "heat": 30
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [討論] Iphone 18 1TB為QLC NAND 晶片",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790211499.A.B10.html",
-   "heat": 29
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[情報] 驚！vivo X300pro 12+256G 台版",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790171414.A.A5D.html",
-   "heat": 28
   },
   {
    "src": "PTT 網購板",
@@ -153,15 +153,15 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[心得] COCO DEAL&amp;LILLIAN CARAT折扣季日貨分享",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1784138771.A.EB8.html",
+   "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
    "heat": 21
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
-   "heat": 20
+   "title": "[心得] COCO DEAL&amp;LILLIAN CARAT折扣季日貨分享",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1784138771.A.EB8.html",
+   "heat": 21
   },
   {
    "src": "PTT 網購板",
