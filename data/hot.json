@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T01:08:11.000Z",
+ "updated": "2026-10-01T01:08:15.020Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -20,16 +20,16 @@
    "heat": 100
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮100-50又有了",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790337021.A.93E.html",
-   "heat": 73
-  },
-  {
    "src": "PTT 3C板",
    "title": "[討論] Apple再被揭削成本 iPhone 18 Pro OLED",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1790529047.A.FA2.html",
-   "heat": 73
+   "heat": 76
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮100-50又有了",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790337021.A.93E.html",
+   "heat": 74
   },
   {
    "src": "PTT 省錢板",
@@ -51,6 +51,12 @@
   },
   {
    "src": "PTT 省錢板",
+   "title": "[情報] 國泰秋日遊 1點換全家10元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790785973.A.44D.html",
+   "heat": 52
+  },
+  {
+   "src": "PTT 省錢板",
    "title": "[情報] 全家9/22十點免費發大雞排",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789984305.A.393.html",
    "heat": 49
@@ -62,34 +68,28 @@
    "heat": 48
   },
   {
-   "src": "PTT 網購板",
-   "title": "[心得] 飛利浦最近真的變很爛",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783952433.A.122.html",
-   "heat": 44
+   "src": "PTT 省錢板",
+   "title": "[情報]  GoShare 30元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790676389.A.6D9.html",
+   "heat": 47
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[問題] 最近不要淘寶或拼多多買螢幕總成",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790733111.A.990.html",
+   "heat": 46
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 921德克士免費炸雞 MSDonut買5送5",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789986325.A.096.html",
-   "heat": 39
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] LINE POINT 3+1+1",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790042661.A.599.html",
-   "heat": 39
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] EDIFIER無線降噪耳罩耳機1981元",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790246321.A.6CE.html",
-   "heat": 38
+   "title": "[情報] 台北捷運Go 看影片拿點數-16th出口音樂節",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790649173.A.608.html",
+   "heat": 40
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] 三星手機十月要漲價？",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1790349084.A.F28.html",
-   "heat": 36
+   "heat": 37
   },
   {
    "src": "PTT 網購板",
@@ -105,14 +105,14 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[討論]小米17U的CP值",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790471599.A.E18.html",
-   "heat": 27
+   "title": "[購機] 三星 S25 S26 無印版選擇",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790297222.A.C23.html",
+   "heat": 28
   },
   {
    "src": "PTT 3C板",
-   "title": "[購機] 三星 S25 S26 無印版選擇",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790297222.A.C23.html",
+   "title": "[討論]小米17U的CP值",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790471599.A.E18.html",
    "heat": 27
   },
   {
@@ -123,21 +123,21 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "Re: [討論] 【9/15中華推出了】遠傳免費漫遊VoLTE",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790324749.A.0E3.html",
+   "title": "[新聞]iPhone 18 Pro又爆災情！錄影畫面莫名抽動",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790651280.A.D03.html",
+   "heat": 26
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] S26U One UI 9.0更新",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790748113.A.BF5.html",
    "heat": 25
   },
   {
-   "src": "PTT 3C板",
-   "title": "Re: [情報] 小米手環11 支援門禁卡功能了",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790309245.A.ACD.html",
-   "heat": 24
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [Live] 小米18 Pro系列暨秋季新品發布會",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790314389.A.272.html",
-   "heat": 24
+   "src": "PTT 網購板",
+   "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
+   "heat": 22
   },
   {
    "src": "PTT 網購板",
@@ -153,33 +153,33 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
-   "heat": 21
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[心得] COCO DEAL&amp;LILLIAN CARAT折扣季日貨分享",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1784138771.A.EB8.html",
-   "heat": 21
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[心得] 海爾除濕機使用心得分享",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1781957535.A.BA9.html",
-   "heat": 18
-  },
-  {
-   "src": "PTT 網購板",
    "title": "[閒聊] ezway說我長期未登入到期提醒通知",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1787790529.A.4B3.html",
    "heat": 15
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 淘寶藍牙耳機，運送及自用申請問題？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1783149341.A.040.html",
-   "heat": 15
+   "title": "[問題] 拼多多49到台免運詐欺狀況",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788264962.A.078.html",
+   "heat": 14
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[問題] 求推薦正韓/日貨服飾口袋名單",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788170990.A.8F3.html",
+   "heat": 13
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[閒聊] 收到比比昂個資外洩的詐騙信",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1785841102.A.2EB.html",
+   "heat": 12
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[問題] 酷澎美韓跨境保健品EZWAY免稅額計算",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786937068.A.CB9.html",
+   "heat": 11
   }
  ]
 }
