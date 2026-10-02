@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T01:08:15.020Z",
+ "updated": "2026-10-02T01:21:44.028Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -20,6 +20,12 @@
    "heat": 100
   },
   {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮VIP每月60蝦幣改為手動領取",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790853770.A.F46.html",
+   "heat": 89
+  },
+  {
    "src": "PTT 3C板",
    "title": "[討論] Apple再被揭削成本 iPhone 18 Pro OLED",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1790529047.A.FA2.html",
@@ -30,6 +36,24 @@
    "title": "[情報] 蝦皮100-50又有了",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790337021.A.93E.html",
    "heat": 74
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 國泰秋日遊 1點換全家10元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790785973.A.44D.html",
+   "heat": 72
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[討論] 我用到的10月生日壽星禮",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790828972.A.774.html",
+   "heat": 61
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 分眾 Line 禮物 25-20 僅送好友",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790834476.A.D64.html",
+   "heat": 59
   },
   {
    "src": "PTT 省錢板",
@@ -50,46 +74,22 @@
    "heat": 55
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 國泰秋日遊 1點換全家10元",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790785973.A.44D.html",
-   "heat": 52
+   "src": "PTT 3C板",
+   "title": "[問題] 最近不要淘寶或拼多多買螢幕總成",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790733111.A.990.html",
+   "heat": 54
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 全家9/22十點免費發大雞排",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1789984305.A.393.html",
-   "heat": 49
+   "src": "PTT 3C板",
+   "title": "[新聞] 拔管急找醫師卻遭擋！醫揭iPhone「通話",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790788846.A.59F.html",
+   "heat": 51
   },
   {
    "src": "PTT 3C板",
    "title": "Re: [問題] 為什麼都快2027了還有人幻想會降價?",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1790521529.A.496.html",
    "heat": 48
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報]  GoShare 30元",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790676389.A.6D9.html",
-   "heat": 47
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題] 最近不要淘寶或拼多多買螢幕總成",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790733111.A.990.html",
-   "heat": 46
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 台北捷運Go 看影片拿點數-16th出口音樂節",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790649173.A.608.html",
-   "heat": 40
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] 三星手機十月要漲價？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790349084.A.F28.html",
-   "heat": 37
   },
   {
    "src": "PTT 網購板",
@@ -99,15 +99,21 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[購機] 65K 玩皮克敏順流暢",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790350361.A.DE1.html",
-   "heat": 31
+   "title": "[情報] S26U One UI 9.0更新",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790748113.A.BF5.html",
+   "heat": 33
   },
   {
    "src": "PTT 3C板",
-   "title": "[購機] 三星 S25 S26 無印版選擇",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790297222.A.C23.html",
-   "heat": 28
+   "title": "[新聞] 三星「漲聲」不斷！Galaxy Tab S12旗艦平",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790845882.A.8CF.html",
+   "heat": 30
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "Re: [討論] 三星手機十月要漲價？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790799335.A.E5B.html",
+   "heat": 29
   },
   {
    "src": "PTT 3C板",
@@ -128,22 +134,16 @@
    "heat": 26
   },
   {
-   "src": "PTT 3C板",
-   "title": "[情報] S26U One UI 9.0更新",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790748113.A.BF5.html",
-   "heat": 25
+   "src": "PTT 網購板",
+   "title": "[請益] 萬元左右人體工學椅推薦",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788839467.A.6BD.html",
+   "heat": 22
   },
   {
    "src": "PTT 網購板",
    "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
    "heat": 22
-  },
-  {
-   "src": "PTT 網購板",
-   "title": "[請益] 萬元左右人體工學椅推薦",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1788839467.A.6BD.html",
-   "heat": 21
   },
   {
    "src": "PTT 網購板",
