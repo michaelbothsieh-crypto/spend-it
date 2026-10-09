@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T01:36:21.953Z",
+ "updated": "2026-10-09T01:47:33.734Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -20,16 +20,28 @@
    "heat": 100
   },
   {
+   "src": "PTT 3C板",
+   "title": "[心得] Apple care + 真的有夠爛",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791379596.A.FE7.html",
+   "heat": 100
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 玉山銀行APP Line point 10點",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791448735.A.F12.html",
+   "heat": 77
+  },
+  {
    "src": "PTT 省錢板",
    "title": "[討論] 迪卡儂慢跑鞋599算便宜嗎？",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791006412.A.580.html",
-   "heat": 76
+   "heat": 77
   },
   {
    "src": "PTT 3C板",
    "title": "Re: [討論] 麒麟9050效能預估",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791040282.A.410.html",
-   "heat": 76
+   "heat": 77
   },
   {
    "src": "PTT 3C板",
@@ -38,16 +50,10 @@
    "heat": 69
   },
   {
-   "src": "PTT 3C板",
-   "title": "[心得] Apple care + 真的有夠爛",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791379596.A.FE7.html",
-   "heat": 68
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] 全聯：波的多洋芋片(36元)買一送一",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1790993631.A.236.html",
-   "heat": 65
+   "heat": 66
   },
   {
    "src": "PTT 省錢板",
@@ -80,16 +86,10 @@
    "heat": 47
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[新聞] 健康幣開跑！「左流右新」賺1350幣 疫苗",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791003426.A.A70.html",
-   "heat": 43
-  },
-  {
    "src": "PTT 3C板",
    "title": "Re: [討論] 麒麟9050效能預估",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791280614.A.E39.html",
-   "heat": 42
+   "heat": 43
   },
   {
    "src": "PTT 3C板",
@@ -101,7 +101,7 @@
    "src": "PTT 3C板",
    "title": "Re: [討論] 麒麟9050效能預估",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791208674.A.CB5.html",
-   "heat": 34
+   "heat": 35
   },
   {
    "src": "PTT 網購板",
@@ -113,13 +113,13 @@
    "src": "PTT 3C板",
    "title": "[新聞] 台灣暫時沒事，但 Google 在海外大漲 Pix",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791205096.A.44C.html",
-   "heat": 32
+   "heat": 33
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] 台星用戶換sim卡通知",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791012948.A.6BE.html",
-   "heat": 31
+   "heat": 32
   },
   {
    "src": "PTT 3C板",
@@ -131,7 +131,7 @@
    "src": "PTT 網購板",
    "title": "[問題] 拼多多台灣49免運是否取消了",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1789525516.A.73C.html",
-   "heat": 23
+   "heat": 24
   },
   {
    "src": "PTT 網購板",
