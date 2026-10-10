@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T01:47:33.734Z",
+ "updated": "2026-10-10T01:33:40.779Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -29,7 +29,13 @@
    "src": "PTT 省錢板",
    "title": "[情報] 玉山銀行APP Line point 10點",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791448735.A.F12.html",
-   "heat": 77
+   "heat": 94
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮10.10超商優惠碼",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791529439.A.880.html",
+   "heat": 89
   },
   {
    "src": "PTT 省錢板",
@@ -41,7 +47,13 @@
    "src": "PTT 3C板",
    "title": "Re: [討論] 麒麟9050效能預估",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791040282.A.410.html",
-   "heat": 77
+   "heat": 75
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] PCHOME 100P 分眾",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791512878.A.770.html",
+   "heat": 71
   },
   {
    "src": "PTT 3C板",
@@ -68,28 +80,16 @@
    "heat": 54
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] line point+3(紅蝦),line禮物12-10(送禮)",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791167116.A.4B2.html",
-   "heat": 49
-  },
-  {
    "src": "PTT 3C板",
    "title": "[情報] iPhone 18爆斷訊災情：需換新機",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791119333.A.1BA.html",
    "heat": 49
   },
   {
-   "src": "PTT 省錢板",
-   "title": "Re: [情報] 街口5號會員日 166拿滿50回饋",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791122360.A.EC0.html",
-   "heat": 47
-  },
-  {
    "src": "PTT 3C板",
    "title": "Re: [討論] 麒麟9050效能預估",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791280614.A.E39.html",
-   "heat": 43
+   "heat": 45
   },
   {
    "src": "PTT 3C板",
@@ -101,7 +101,7 @@
    "src": "PTT 3C板",
    "title": "Re: [討論] 麒麟9050效能預估",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791208674.A.CB5.html",
-   "heat": 35
+   "heat": 36
   },
   {
    "src": "PTT 網購板",
@@ -123,9 +123,9 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "Re: [討論] 收到遠傳限速通知，超沒誠意的吃到飽！",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1790923568.A.3EC.html",
-   "heat": 29
+   "title": "[新聞] 災情重演？iPhone 18 Pro系列驚傳褪色",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791359670.A.1A1.html",
+   "heat": 31
   },
   {
    "src": "PTT 網購板",
@@ -135,14 +135,14 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
-   "heat": 23
+   "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
+   "heat": 24
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
+   "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
    "heat": 23
   },
   {
