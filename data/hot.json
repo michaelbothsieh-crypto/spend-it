@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T00:55:56.277Z",
+ "updated": "2026-10-15T00:19:38.293Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -51,6 +51,12 @@
   },
   {
    "src": "PTT 省錢板",
+   "title": "[情報] 麥當勞1+1大地遊戲",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791944070.A.388.html",
+   "heat": 99
+  },
+  {
+   "src": "PTT 省錢板",
    "title": "[情報] 玉山銀行APP Line point 10點",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791448735.A.F12.html",
    "heat": 96
@@ -71,7 +77,7 @@
    "src": "PTT 3C板",
    "title": "[新聞]從市占9.1％到乏人問津 HTC手機年底退場",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791637182.A.FEE.html",
-   "heat": 69
+   "heat": 70
   },
   {
    "src": "PTT 3C板",
@@ -87,39 +93,33 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 酷澎全站300元折抵金",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791483224.A.DDD.html",
-   "heat": 55
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] line point+3(紅蝦),line禮物12-10(送禮)",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791167116.A.4B2.html",
-   "heat": 49
+   "title": "[情報] 全家行動購 世界級普渡箱",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791944235.A.4FC.html",
+   "heat": 56
   },
   {
    "src": "PTT 3C板",
    "title": "[心得] 台版Pixel 11 Suica日本開通及回台實測",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791812853.A.D48.html",
+   "heat": 49
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[問題] 通話錄音除了華碩外，還有其他？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791825616.A.9FF.html",
    "heat": 43
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[新聞]2026年Q3全球手機銷售調查",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791946345.A.F7F.html",
+   "heat": 39
   },
   {
    "src": "PTT 3C板",
    "title": "[情報] S25+ 推送 One UI 9.0",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1791779558.A.3C5.html",
    "heat": 39
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題] 通話錄音除了華碩外，還有其他？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791825616.A.9FF.html",
-   "heat": 39
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] iPhone 18系列都賣不好了?others不就?",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791558454.A.86E.html",
-   "heat": 37
   },
   {
    "src": "PTT 網購板",
@@ -131,7 +131,7 @@
    "src": "PTT 網購板",
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
-   "heat": 28
+   "heat": 27
   },
   {
    "src": "PTT 網購板",
@@ -171,15 +171,15 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 酷澎美韓跨境保健品EZWAY免稅額計算",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786937068.A.CB9.html",
-   "heat": 11
+   "title": "[問題] 請問可視鏡頭掏耳棒推薦嗎？",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1791619729.A.A7C.html",
+   "heat": 12
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 請問可視鏡頭掏耳棒推薦嗎？",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1791619729.A.A7C.html",
-   "heat": 10
+   "title": "[問題] 酷澎美韓跨境保健品EZWAY免稅額計算",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786937068.A.CB9.html",
+   "heat": 11
   }
  ]
 }
