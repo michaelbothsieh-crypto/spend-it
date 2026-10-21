@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T00:56:14.908Z",
+ "updated": "2026-10-21T00:24:44.829Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -20,12 +20,6 @@
    "heat": 100
   },
   {
-   "src": "PTT 3C板",
-   "title": "Re: [心得] Apple care + 真的有夠爛（結局）",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791809295.A.301.html",
-   "heat": 100
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] 麥當勞1+1大地遊戲",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791944070.A.388.html",
@@ -38,16 +32,22 @@
    "heat": 83
   },
   {
+   "src": "PTT 3C板",
+   "title": "Re: [討論] 目前各APP瀏覽PTT的狀況",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792330647.A.B53.html",
+   "heat": 79
+  },
+  {
    "src": "PTT 省錢板",
    "title": "[情報] 全家行動購 世界級普渡箱",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791944235.A.4FC.html",
-   "heat": 76
+   "heat": 78
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] PCHOME 100P 分眾",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792203021.A.211.html",
-   "heat": 74
+   "heat": 76
   },
   {
    "src": "PTT 省錢板",
@@ -56,28 +56,16 @@
    "heat": 59
   },
   {
-   "src": "PTT 3C板",
-   "title": "Re: [討論] 目前各APP瀏覽PTT的狀況",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792330647.A.B53.html",
-   "heat": 59
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] Klook 免費領3GB eSIM流量活動",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792143594.A.48C.html",
-   "heat": 56
+   "heat": 57
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] 現在還流行名店退傭嗎??",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1792057848.A.205.html",
-   "heat": 52
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[心得] 台版Pixel 11 Suica日本開通及回台實測",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791812853.A.D48.html",
-   "heat": 51
+   "heat": 54
   },
   {
    "src": "PTT 省錢板",
@@ -93,32 +81,14 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[問題] 通話錄音除了華碩外，還有其他？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791825616.A.9FF.html",
-   "heat": 47
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[情報] S25+ 推送 One UI 9.0",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791779558.A.3C5.html",
-   "heat": 39
+   "title": "[情報] S23 U 收到one ui 9.0更新",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792401532.A.27F.html",
+   "heat": 38
   },
   {
    "src": "PTT 3C板",
    "title": "Fw: [討論] iPhone Duo保固外維修價格",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1792049314.A.8E4.html",
-   "heat": 36
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[購機] 截至現在的1萬2以內手機",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791856630.A.A8C.html",
-   "heat": 36
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [心得] Apple care + 真的有夠爛（結局）",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791881052.A.105.html",
    "heat": 36
   },
   {
@@ -128,9 +98,27 @@
    "heat": 33
   },
   {
+   "src": "PTT 3C板",
+   "title": "[情報] OPPO Find X10系列 預計10月21日全球發表",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792041297.A.F2F.html",
+   "heat": 29
+  },
+  {
    "src": "PTT 網購板",
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
+   "heat": 27
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 晚爸 OV耀(旗艦新機)人像大戰",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791909874.A.290.html",
+   "heat": 27
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[心得] vivo x300 pro 嚐鮮升級安卓17",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792142144.A.CC7.html",
    "heat": 27
   },
   {
@@ -149,6 +137,18 @@
    "src": "PTT 網購板",
    "title": "[請益] 萬元左右人體工學椅推薦",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1788839467.A.6BD.html",
+   "heat": 23
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] 極客灣：大橫評最快10/25",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792252608.A.82C.html",
+   "heat": 23
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "S25現在是價格最香的時候嗎？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792311232.A.111.html",
    "heat": 23
   },
   {
