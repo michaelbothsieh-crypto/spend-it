@@ -1,10 +1,16 @@
 {
- "updated": "2026-10-24T00:20:51.391Z",
+ "updated": "2026-10-25T00:03:43.719Z",
  "items": [
   {
    "src": "PTT 省錢板",
    "title": "[情報] （額滿）台新點1點 16號會員日",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792080008.A.E78.html",
+   "heat": 100
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "Re: [新聞] 蘋果高層揭秘 iPhone Duo 折痕消失的秘密",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792730753.A.A10.html",
    "heat": 100
   },
   {
@@ -18,12 +24,6 @@
    "title": "[情報] 麥當勞1+1大地遊戲",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1791944070.A.388.html",
    "heat": 98
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [新聞] 蘋果高層揭秘 iPhone Duo 折痕消失的秘密",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792730753.A.A10.html",
-   "heat": 88
   },
   {
    "src": "PTT 省錢板",
@@ -57,21 +57,21 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[討論] 現在還流行名店退傭嗎??",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792057848.A.205.html",
-   "heat": 56
+   "title": "[新聞] iPhone Duo災情！　苦主曝「同一位置」",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792820534.A.293.html",
+   "heat": 54
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] 明年可換電池的政策",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1792592119.A.AB7.html",
-   "heat": 52
+   "heat": 53
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 雙11優惠總整理：折扣碼和直郵運費券",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792576130.A.3DE.html",
-   "heat": 49
+   "heat": 51
   },
   {
    "src": "PTT 省錢板",
@@ -80,10 +80,10 @@
    "heat": 47
   },
   {
-   "src": "PTT 3C板",
-   "title": "[新聞]2026年Q3全球手機銷售調查",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1791946345.A.F7F.html",
-   "heat": 47
+   "src": "PTT 省錢板",
+   "title": "[情報] 7-11 杜老爺高級甜筒18支150元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792771633.A.277.html",
+   "heat": 46
   },
   {
    "src": "PTT 省錢板",
@@ -92,22 +92,10 @@
    "heat": 45
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 拿坡里 月月慶 6塊雞$209 大披薩$199",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792036863.A.8D4.html",
-   "heat": 42
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Fw: [討論] iPhone Duo保固外維修價格",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792049314.A.8E4.html",
-   "heat": 37
-  },
-  {
    "src": "PTT 3C板",
    "title": "[情報] OPPO Find X10系列全球發表重點整理",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1792655591.A.FCF.html",
-   "heat": 36
+   "heat": 37
   },
   {
    "src": "PTT 網購板",
@@ -125,13 +113,25 @@
    "src": "PTT 3C板",
    "title": "S25現在是價格最香的時候嗎？",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1792311232.A.111.html",
-   "heat": 29
+   "heat": 31
   },
   {
    "src": "PTT 網購板",
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
    "heat": 28
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[購機] 求推薦5萬以內，拍照跟看影片的手機",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792220148.A.0A0.html",
+   "heat": 26
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] 極客灣：大橫評最快10/25",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1792252608.A.82C.html",
+   "heat": 26
   },
   {
    "src": "PTT 網購板",
