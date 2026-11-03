@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T01:19:23.084Z",
+ "updated": "2026-11-03T03:20:11.256Z",
  "items": [
   {
    "src": "PTT 3C板",
@@ -8,22 +8,22 @@
    "heat": 97
   },
   {
-   "src": "PTT 3C板",
-   "title": "[情報] vivo X500系列、X Fold 6價格跟方案",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793329823.A.3EF.html",
-   "heat": 94
-  },
-  {
    "src": "PTT 省錢板",
    "title": "[情報] PCHOME 100P 分眾",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793416198.A.05F.html",
-   "heat": 93
+   "heat": 95
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] vivo X500系列、X Fold 6價格跟方案",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793329823.A.3EF.html",
+   "heat": 95
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] line禮物 小七 中熱美 五折 領券 9元",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793073050.A.D58.html",
-   "heat": 93
+   "title": "[情報] line購物紅包35點",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793506301.A.E76.html",
+   "heat": 94
   },
   {
    "src": "PTT 省錢板",
@@ -38,40 +38,22 @@
    "heat": 89
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] line購物紅包35點",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793506301.A.E76.html",
-   "heat": 85
-  },
-  {
    "src": "PTT 3C板",
    "title": "[討論] LINE又爆炸了(安卓)",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1793421313.A.B56.html",
-   "heat": 83
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 10/25蝦皮優惠整理",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792854285.A.551.html",
-   "heat": 80
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 全台免費送烤雞！共1900隻",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793100301.A.01A.html",
-   "heat": 64
+   "heat": 84
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 蝦皮 原萃日式綠茶 4入50元",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793542858.A.4AE.html",
-   "heat": 60
+   "heat": 79
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 7-11 杜老爺高級甜筒18支150元",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1792771633.A.277.html",
-   "heat": 54
+   "title": "[情報] 熊貓pro專屬 必勝客個人套餐免費招待",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793509580.A.D47.html",
+   "heat": 55
   },
   {
    "src": "PTT 3C板",
@@ -83,19 +65,55 @@
    "src": "PTT 省錢板",
    "title": "[情報] friday影音 2026的雙11方案",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793242974.A.1C8.html",
-   "heat": 50
+   "heat": 51
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] momo 11/1~11簽到打卡送88點",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793462645.A.681.html",
-   "heat": 49
+   "heat": 50
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 7-11早餐大冰奶特價",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793206914.A.769.html",
+   "heat": 47
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[新聞] iPad mini 8都升級OLED了為何還是60Hz？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793562580.A.3F9.html",
+   "heat": 46
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] COCO都可：奶茶三兄弟45元(11/1~11/30)",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793541267.A.EE7.html",
+   "heat": 44
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[討論] 鮮茶道XL瓶裝沒比較划算",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793436419.A.DB9.html",
+   "heat": 42
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[新聞] 萬元出頭黑鯊電競平板11月登台！黑鯊手機2027年第一季重返市",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793605994.A.9CB.html",
+   "heat": 36
   },
   {
    "src": "PTT 3C板",
    "title": "[新聞] OPPO發表Find X10雙旗艦，X10PM送增距鏡",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1793255281.A.FFB.html",
    "heat": 36
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[心得] moto g57 LCD使用心得-低價位的妥協",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793473443.A.14B.html",
+   "heat": 35
   },
   {
    "src": "PTT 網購板",
@@ -110,28 +128,10 @@
    "heat": 33
   },
   {
-   "src": "PTT 3C板",
-   "title": "[心得] moto g57 LCD使用心得-低價位的妥協",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793473443.A.14B.html",
-   "heat": 29
-  },
-  {
    "src": "PTT 網購板",
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
    "heat": 28
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[購機] 家人需換機，猶豫i17 pro / i18 pro",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793357937.A.067.html",
-   "heat": 28
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[新聞] 三星Samsung Wallet可支援全支付！首筆最",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793334346.A.C3A.html",
-   "heat": 27
   },
   {
    "src": "PTT 網購板",
@@ -159,12 +159,6 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[閒聊] ezway說我長期未登入到期提醒通知",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1787790529.A.4B3.html",
-   "heat": 15
-  },
-  {
-   "src": "PTT 網購板",
    "title": "[問題] 拼多多49到台免運詐欺狀況",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1788264962.A.078.html",
    "heat": 14
@@ -177,9 +171,15 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[問題] 酷澎美韓跨境保健品EZWAY免稅額計算",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1786937068.A.CB9.html",
-   "heat": 11
+   "title": "[閒聊] 買Mercari的一些經驗分享",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1792553536.A.C38.html",
+   "heat": 9
+  },
+  {
+   "src": "PTT 網購板",
+   "title": "[問題] 掏寶買藍芽耳機",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1792554773.A.053.html",
+   "heat": 8
   }
  ]
 }
