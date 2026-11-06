@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T02:01:28.454Z",
+ "updated": "2026-11-06T02:01:26.687Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -8,16 +8,16 @@
    "heat": 100
   },
   {
+   "src": "PTT 省錢板",
+   "title": "[討論] 再見了省錢板 立誓再也不發省錢文",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793750934.A.E27.html",
+   "heat": 100
+  },
+  {
    "src": "PTT 3C板",
    "title": "[討論] 極客灣：現在買安卓旗艦有病",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1793708733.A.316.html",
    "heat": 100
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[討論] 再見了省錢板 立誓再也不發省錢文",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793750934.A.E27.html",
-   "heat": 98
   },
   {
    "src": "PTT 省錢板",
@@ -98,6 +98,12 @@
    "heat": 30
   },
   {
+   "src": "PTT 3C板",
+   "title": "[情報] 韓國測試IPHONE DUO IP68 結論:不合格",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793713573.A.4C0.html",
+   "heat": 29
+  },
+  {
    "src": "PTT 網購板",
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
@@ -105,8 +111,8 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[情報] 韓國測試IPHONE DUO IP68 結論:不合格",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793713573.A.4C0.html",
+   "title": "[討論] Android機上盒遭中國植入病毒 台灣8萬台",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793866860.A.316.html",
    "heat": 28
   },
   {
@@ -135,26 +141,20 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[問題]遠傳這個來電提醒是最近才有的功能嗎？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793791828.A.391.html",
+   "heat": 22
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[討論]關於三星fb自救會網軍",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1793758508.A.124.html",
-   "heat": 20
+   "heat": 22
   },
   {
    "src": "PTT 網購板",
    "title": "[問題] 請問可視鏡頭掏耳棒推薦嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1791619729.A.A7C.html",
-   "heat": 19
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[購機] oppo find x9還是vivo x300",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793689082.A.DDE.html",
-   "heat": 19
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] 三星s26u 前鏡頭水霧 最新災情案例",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793594102.A.C23.html",
    "heat": 19
   },
   {
@@ -177,9 +177,9 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[閒聊] 網紅團購是不是越來越少了",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1793643349.A.464.html",
-   "heat": 8
+   "title": "[閒聊] 不推日本轉運樂一番",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1789184344.A.6BE.html",
+   "heat": 9
   }
  ]
 }
