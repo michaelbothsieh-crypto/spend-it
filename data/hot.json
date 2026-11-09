@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T01:09:50.450Z",
+ "updated": "2026-11-09T01:29:37.924Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -21,9 +21,21 @@
   },
   {
    "src": "PTT 省錢板",
+   "title": "[情報] HBO MAX高級1年1490",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794039829.A.0BB.html",
+   "heat": 89
+  },
+  {
+   "src": "PTT 省錢板",
    "title": "[情報] LINE更新功能「逛逛」 9元 7-11中熱美",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793764395.A.786.html",
    "heat": 83
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[問題] Android的災害通知似乎卡在薔琵颱風了",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793855155.A.B84.html",
+   "heat": 81
   },
   {
    "src": "PTT 省錢板",
@@ -32,16 +44,22 @@
    "heat": 80
   },
   {
-   "src": "PTT 3C板",
-   "title": "[問題] Android的災害通知似乎卡在薔琵颱風了",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793855155.A.B84.html",
-   "heat": 76
+   "src": "PTT 省錢板",
+   "title": "[情報] 麥當勞APP優惠碼",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794171797.A.56C.html",
+   "heat": 61
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 11/1蝦皮VIP補償10蝦幣",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793965076.A.9FD.html",
-   "heat": 59
+   "heat": 61
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] 看到網友分享，中華要推出SUCI實體SIM卡",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794046666.A.F85.html",
+   "heat": 60
   },
   {
    "src": "PTT 省錢板",
@@ -56,40 +74,22 @@
    "heat": 54
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 11/7-11/11 統一雲端開心卡 1200元贈80點",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793942455.A.121.html",
-   "heat": 51
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] HBO MAX高級1年1490",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794039829.A.0BB.html",
-   "heat": 47
-  },
-  {
    "src": "PTT 3C板",
    "title": "[討論] Android機上盒遭中國植入病毒 台灣8萬台",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1793866860.A.316.html",
-   "heat": 39
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] s24u 綠線案例",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793927973.A.DFD.html",
-   "heat": 35
+   "heat": 41
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] 用過VIVO才知道 比蘋果更保值 現在換！",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1793979347.A.735.html",
-   "heat": 35
+   "heat": 40
   },
   {
    "src": "PTT 3C板",
-   "title": "[情報] 看到網友分享，中華要推出SUCI實體SIM卡",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794046666.A.F85.html",
-   "heat": 34
+   "title": "[討論] s24u 綠線案例",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793927973.A.DFD.html",
+   "heat": 37
   },
   {
    "src": "PTT 網購板",
@@ -101,6 +101,12 @@
    "src": "PTT 網購板",
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
+   "heat": 29
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[心得] 不到8000元 Moto Edge 70 Fusion",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794026700.A.62E.html",
    "heat": 29
   },
   {
@@ -117,9 +123,9 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[心得] 不到8000元 Moto Edge 70 Fusion",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794026700.A.62E.html",
-   "heat": 25
+   "title": "Re: [心得] 手機拍出富士相機的色彩方法",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793890566.A.0FA.html",
+   "heat": 26
   },
   {
    "src": "PTT 網購板",
@@ -131,12 +137,6 @@
    "src": "PTT 網購板",
    "title": "[問題] 淘寶買去牙結石沖牙器算醫療器材嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1789881425.A.C3F.html",
-   "heat": 24
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [心得] 手機拍出富士相機的色彩方法",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1793890566.A.0FA.html",
    "heat": 24
   },
   {
@@ -179,7 +179,7 @@
    "src": "PTT 網購板",
    "title": "[閒聊] 網紅團購是不是越來越少了",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1793643349.A.464.html",
-   "heat": 9
+   "heat": 11
   }
  ]
 }
