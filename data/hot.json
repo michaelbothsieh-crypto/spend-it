@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T02:27:29.685Z",
+ "updated": "2026-11-14T02:00:01.460Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -11,6 +11,12 @@
    "src": "PTT 省錢板",
    "title": "[情報] line 「逛逛」領券7-11熱拿鐵9元",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794193577.A.C45.html",
+   "heat": 100
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮11/11優惠整理",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794297660.A.52E.html",
    "heat": 100
   },
   {
@@ -27,21 +33,15 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 蝦皮11/11優惠整理",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794297660.A.52E.html",
-   "heat": 98
-  },
-  {
-   "src": "PTT 省錢板",
    "title": "[情報] 雅虎購物中心送100元購物金",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794185788.A.E23.html",
    "heat": 90
   },
   {
-   "src": "PTT 3C板",
-   "title": "[情報] 看到網友分享，中華要推出SUCI實體SIM卡",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794046666.A.F85.html",
-   "heat": 75
+   "src": "PTT 省錢板",
+   "title": "[情報] 終身雲端空間pCloud 1111特價",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794237426.A.983.html",
+   "heat": 58
   },
   {
    "src": "PTT 省錢板",
@@ -51,33 +51,21 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 終身雲端空間pCloud 1111特價",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794237426.A.983.html",
-   "heat": 57
+   "title": "Re: [情報] 拿坡里 月月慶 6塊雞$209 大披薩$199",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794491987.A.586.html",
+   "heat": 55
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 全家發熱衣-3件399，4件799",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794413181.A.13F.html",
-   "heat": 51
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] foodpanda雙11半年優惠",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794366660.A.6CE.html",
-   "heat": 51
+   "heat": 54
   },
   {
    "src": "PTT 3C板",
    "title": "[心得]  S26U起霧、S22+綠線 1年二拳痛擊",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794315054.A.430.html",
-   "heat": 42
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[心得] 中華電信 5G SA 不用急著換卡 還連不上",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794194696.A.AE3.html",
-   "heat": 42
+   "heat": 44
   },
   {
    "src": "PTT 3C板",
@@ -89,7 +77,7 @@
    "src": "PTT 3C板",
    "title": "[討論] 中華電信 5G SA 問與答",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794282360.A.E33.html",
-   "heat": 34
+   "heat": 35
   },
   {
    "src": "PTT 網購板",
@@ -99,9 +87,21 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[情報] 台星299方案又持續一年",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794151732.A.611.html",
+   "title": "[情報] vivo X500系列好評(賣不好)早鳥優惠延長",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794475510.A.916.html",
    "heat": 31
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 現在續約，普遍都沒有優惠了嗎?",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794539826.A.E22.html",
+   "heat": 31
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[新聞] 不是只有iPad！台灣人最愛買安卓平板是它",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794500748.A.275.html",
+   "heat": 30
   },
   {
    "src": "PTT 網購板",
@@ -111,27 +111,27 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[問題] 看盤手機需要買頂的嗎？？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794419526.A.204.html",
+   "heat": 28
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[心得] 華為Mate90 Pro Max典藏版開箱",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794308184.A.129.html",
-   "heat": 26
+   "heat": 27
   },
   {
    "src": "PTT 3C板",
    "title": "[討論] 新一代盤子機對決vivo V80/OPPO Reno 17",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794384760.A.58C.html",
+   "heat": 27
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] Pixel 10 系列升級核心版本 6.12",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794400775.A.C7C.html",
    "heat": 26
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題] 看盤手機需要買頂的嗎？？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794419526.A.204.html",
-   "heat": 25
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[情報] vivo X500系列好評(賣不好)早鳥優惠延長",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794475510.A.916.html",
-   "heat": 25
   },
   {
    "src": "PTT 網購板",
