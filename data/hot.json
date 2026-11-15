@@ -1,10 +1,16 @@
 {
- "updated": "2026-11-14T02:00:01.460Z",
+ "updated": "2026-11-15T01:32:41.705Z",
  "items": [
   {
    "src": "PTT 省錢板",
    "title": "[情報] 1111【郭易英文軍團】公益優惠(已滿!)",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794348395.A.708.html",
+   "heat": 100
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 麥當勞APP優惠碼",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794171797.A.56C.html",
    "heat": 100
   },
   {
@@ -27,9 +33,9 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 麥當勞APP優惠碼",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794171797.A.56C.html",
-   "heat": 100
+   "title": "[情報] HBO MAX高級1年1490",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794039829.A.0BB.html",
+   "heat": 92
   },
   {
    "src": "PTT 省錢板",
@@ -39,27 +45,21 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 終身雲端空間pCloud 1111特價",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794237426.A.983.html",
-   "heat": 58
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 全家行動購1111 開app送50",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794372173.A.374.html",
-   "heat": 57
+   "title": "[情報] 11/1蝦皮VIP補償10蝦幣",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1793965076.A.9FD.html",
+   "heat": 64
   },
   {
    "src": "PTT 省錢板",
    "title": "Re: [情報] 拿坡里 月月慶 6塊雞$209 大披薩$199",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794491987.A.586.html",
-   "heat": 55
+   "heat": 61
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 全家發熱衣-3件399，4件799",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794413181.A.13F.html",
-   "heat": 54
+   "title": "[情報]  王品集團TASTy西堤牛排漲價4.3%",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794625097.A.D98.html",
+   "heat": 59
   },
   {
    "src": "PTT 3C板",
@@ -87,21 +87,21 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "[情報] vivo X500系列好評(賣不好)早鳥優惠延長",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794475510.A.916.html",
-   "heat": 31
-  },
-  {
-   "src": "PTT 3C板",
    "title": "[討論] 現在續約，普遍都沒有優惠了嗎?",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794539826.A.E22.html",
-   "heat": 31
+   "heat": 33
   },
   {
    "src": "PTT 3C板",
    "title": "[新聞] 不是只有iPad！台灣人最愛買安卓平板是它",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794500748.A.275.html",
-   "heat": 30
+   "heat": 32
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] vivo X500系列好評(賣不好)早鳥優惠延長",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794475510.A.916.html",
+   "heat": 31
   },
   {
    "src": "PTT 網購板",
@@ -117,6 +117,12 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[購機] Fold 8 Fold 8U S26U 取捨",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794601571.A.0E9.html",
+   "heat": 27
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[心得] 華為Mate90 Pro Max典藏版開箱",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794308184.A.129.html",
    "heat": 27
@@ -126,12 +132,6 @@
    "title": "[討論] 新一代盤子機對決vivo V80/OPPO Reno 17",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794384760.A.58C.html",
    "heat": 27
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] Pixel 10 系列升級核心版本 6.12",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794400775.A.C7C.html",
-   "heat": 26
   },
   {
    "src": "PTT 網購板",
