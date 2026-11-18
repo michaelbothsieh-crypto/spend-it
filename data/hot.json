@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T04:20:54.977Z",
+ "updated": "2026-11-18T03:21:57.387Z",
  "items": [
   {
    "src": "PTT 省錢板",
@@ -38,15 +38,21 @@
    "heat": 77
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報]  王品集團TASTy西堤牛排漲價4.3%",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794625097.A.D98.html",
-   "heat": 67
+   "src": "PTT 3C板",
+   "title": "[參選] Porops",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794802676.A.968.html",
+   "heat": 71
   },
   {
    "src": "PTT 省錢板",
    "title": "[討論] 眼鏡自備框券",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794663943.A.F6E.html",
+   "heat": 69
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報]  王品集團TASTy西堤牛排漲價4.3%",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794625097.A.D98.html",
    "heat": 67
   },
   {
@@ -56,10 +62,10 @@
    "heat": 67
   },
   {
-   "src": "PTT 3C板",
-   "title": "[參選] Porops",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794802676.A.968.html",
-   "heat": 62
+   "src": "PTT 省錢板",
+   "title": "[情報] 蝦皮直營5折 最高折抵$500",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794921903.A.948.html",
+   "heat": 60
   },
   {
    "src": "PTT 省錢板",
@@ -68,16 +74,16 @@
    "heat": 58
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 終身雲端空間pCloud 1111特價",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794237426.A.983.html",
-   "heat": 58
+   "src": "PTT 3C板",
+   "title": "[情報] 夏普發表Aquos Sense 11",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794879550.A.D4E.html",
+   "heat": 41
   },
   {
    "src": "PTT 3C板",
    "title": "[購機] 20K以內日常用機選擇求教",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794674371.A.278.html",
-   "heat": 35
+   "heat": 37
   },
   {
    "src": "PTT 3C板",
@@ -113,6 +119,12 @@
    "src": "PTT 3C板",
    "title": "[問題] 三星舊換新 背板殘膠+脫落 申訴詢問",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794736004.A.F3D.html",
+   "heat": 31
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[討論] 恭喜3c達人Tim哥獲開箱小米18 pro",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794826970.A.56C.html",
    "heat": 30
   },
   {
@@ -120,18 +132,6 @@
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
    "heat": 29
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] 恭喜3c達人Tim哥獲開箱小米18 pro",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794826970.A.56C.html",
-   "heat": 28
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[問題] 看盤手機需要買頂的嗎？？",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794419526.A.204.html",
-   "heat": 28
   },
   {
    "src": "PTT 網購板",
@@ -159,15 +159,15 @@
   },
   {
    "src": "PTT 網購板",
-   "title": "[閒聊] ezway說我長期未登入到期提醒通知",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1787790529.A.4B3.html",
+   "title": "[閒聊] 網紅團購是不是越來越少了",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1793643349.A.464.html",
    "heat": 15
   },
   {
    "src": "PTT 網購板",
-   "title": "[閒聊] 網紅團購是不是越來越少了",
-   "url": "https://www.ptt.cc/bbs/e-shopping/M.1793643349.A.464.html",
-   "heat": 14
+   "title": "[閒聊] ezway說我長期未登入到期提醒通知",
+   "url": "https://www.ptt.cc/bbs/e-shopping/M.1787790529.A.4B3.html",
+   "heat": 15
   },
   {
    "src": "PTT 網購板",
