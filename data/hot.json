@@ -1,29 +1,29 @@
 {
- "updated": "2026-11-19T02:57:21.400Z",
+ "updated": "2026-11-20T02:52:31.172Z",
  "items": [
   {
    "src": "PTT 省錢板",
    "title": "[情報] 麥當勞APP領券十塊雞塊買一送一",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795002403.A.E15.html",
-   "heat": 100
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] 1111【郭易英文軍團】公益優惠(已滿!)",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794348395.A.708.html",
-   "heat": 100
+   "heat": 99
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] line 逛逛領券7-11熱拿鐵9元",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794981884.A.A11.html",
-   "heat": 97
+   "heat": 98
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] Klook抽免費Esim流量",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795044211.A.527.html",
+   "heat": 88
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報] 蝦皮直營5折 最高折抵$500",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794921903.A.948.html",
-   "heat": 82
+   "heat": 84
   },
   {
    "src": "PTT 省錢板",
@@ -35,18 +35,24 @@
    "src": "PTT 3C板",
    "title": "[參選] Porops",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794802676.A.968.html",
-   "heat": 76
+   "heat": 77
   },
   {
    "src": "PTT 省錢板",
    "title": "[討論] 眼鏡自備框券",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794663943.A.F6E.html",
-   "heat": 72
+   "heat": 74
   },
   {
    "src": "PTT 省錢板",
    "title": "[情報]  王品集團TASTy西堤牛排漲價4.3%",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794625097.A.D98.html",
+   "heat": 69
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[新聞] 運動幣將加碼5.3億！李洋預告「改任務制",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795063993.A.2BA.html",
    "heat": 68
   },
   {
@@ -57,27 +63,33 @@
   },
   {
    "src": "PTT 省錢板",
+   "title": "[新聞] 健康幣下月開放兌換",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794699473.A.4FB.html",
+   "heat": 59
+  },
+  {
+   "src": "PTT 省錢板",
    "title": "[情報] 全家發熱衣-3件399，4件799",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794413181.A.13F.html",
    "heat": 58
   },
   {
-   "src": "PTT 省錢板",
-   "title": "[情報] 全家行動購1111 開app送50",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794372173.A.374.html",
-   "heat": 57
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報] foodpanda雙11半年優惠",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794366660.A.6CE.html",
-   "heat": 54
-  },
-  {
    "src": "PTT 3C板",
    "title": "[情報] 夏普發表Aquos Sense 11",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794879550.A.D4E.html",
-   "heat": 44
+   "heat": 45
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[情報] 台灣小米 Xiaomi 18 Pro 系列 44,999元起",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1795083793.A.03F.html",
+   "heat": 43
+  },
+  {
+   "src": "PTT 3C板",
+   "title": "[問題] A52S的下一支目前有好的選擇嗎？",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1795019421.A.E82.html",
+   "heat": 40
   },
   {
    "src": "PTT 3C板",
@@ -93,6 +105,12 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[討論] 恭喜3c達人Tim哥獲開箱小米18 pro",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794826970.A.56C.html",
+   "heat": 31
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[問題] eSIM用的是第三方機房非本地安全嗎",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794905615.A.E02.html",
    "heat": 31
@@ -104,12 +122,6 @@
    "heat": 31
   },
   {
-   "src": "PTT 3C板",
-   "title": "[討論] 恭喜3c達人Tim哥獲開箱小米18 pro",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794826970.A.56C.html",
-   "heat": 30
-  },
-  {
    "src": "PTT 網購板",
    "title": "[問題] 淘寶配近視眼鏡度數和台灣相同嗎？",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1790978646.A.DAD.html",
@@ -117,15 +129,9 @@
   },
   {
    "src": "PTT 3C板",
-   "title": "Re: [討論] 一加15可以更新coloros17了",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794659588.A.6E4.html",
-   "heat": 25
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[討論] s25系列 綠線/白線/粉線/黑線災情",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794720007.A.F74.html",
-   "heat": 25
+   "title": "[心得] 盤子駕到！Lenovo Legion gen5 平板 國際",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794932559.A.98F.html",
+   "heat": 27
   },
   {
    "src": "PTT 網購板",
@@ -143,12 +149,6 @@
    "src": "PTT 網購板",
    "title": "[請益] 萬元左右人體工學椅推薦",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1788839467.A.6BD.html",
-   "heat": 23
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "[新聞] 首代才剛開賣就急補遺憾！蘋果iPhone Duo 2代號「V78」衝刺F",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1794816076.A.615.html",
    "heat": 23
   },
   {
