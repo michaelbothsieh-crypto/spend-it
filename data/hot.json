@@ -1,10 +1,16 @@
 {
- "updated": "2026-11-23T02:21:09.971Z",
+ "updated": "2026-11-24T05:45:58.716Z",
  "items": [
   {
    "src": "PTT 省錢板",
    "title": "[情報] google ai pro 黑五半價",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795262534.A.764.html",
+   "heat": 100
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] 樂天旅遊 日本訂房 每單都折1200元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795356947.A.A39.html",
    "heat": 100
   },
   {
@@ -23,7 +29,7 @@
    "src": "PTT 省錢板",
    "title": "[情報] Klook抽免費Esim流量",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795044211.A.527.html",
-   "heat": 95
+   "heat": 94
   },
   {
    "src": "PTT 省錢板",
@@ -39,24 +45,6 @@
   },
   {
    "src": "PTT 省錢板",
-   "title": "[情報] 台新點1點 16號會員日",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794758463.A.67B.html",
-   "heat": 77
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[討論] 眼鏡自備框券",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794663943.A.F6E.html",
-   "heat": 75
-  },
-  {
-   "src": "PTT 省錢板",
-   "title": "[情報]  王品集團TASTy西堤牛排漲價4.3%",
-   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794625097.A.D98.html",
-   "heat": 70
-  },
-  {
-   "src": "PTT 省錢板",
    "title": "[情報]line 「逛逛」領券7-11熱美式9元",
    "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1794809722.A.1E9.html",
    "heat": 67
@@ -65,13 +53,25 @@
    "src": "PTT 3C板",
    "title": "[情報] 台灣小米 Xiaomi 18 Pro 系列 44,999元起",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1795083793.A.03F.html",
-   "heat": 63
+   "heat": 65
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "Line逛逛領卷買美式咖啡$9",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795493188.A.586.html",
+   "heat": 58
+  },
+  {
+   "src": "PTT 省錢板",
+   "title": "[情報] line 「逛逛」領券7-11熱美式9元",
+   "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1795148379.A.C95.html",
+   "heat": 53
   },
   {
    "src": "PTT 3C板",
    "title": "[心得] 陸版手機開啟google時間軸",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1795107689.A.EC9.html",
-   "heat": 51
+   "heat": 52
   },
   {
    "src": "PTT 3C板",
@@ -83,7 +83,7 @@
    "src": "PTT 3C板",
    "title": "[新聞] iPhone相機靈魂人物走了！曾強烈反對AI",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1795182925.A.D01.html",
-   "heat": 42
+   "heat": 44
   },
   {
    "src": "PTT 3C板",
@@ -111,6 +111,12 @@
   },
   {
    "src": "PTT 3C板",
+   "title": "[問題] 這個電話即將開始錄音",
+   "url": "https://www.ptt.cc/bbs/MobileComm/M.1795178401.A.667.html",
+   "heat": 27
+  },
+  {
+   "src": "PTT 3C板",
    "title": "[心得] 盤子駕到！Lenovo Legion gen5 平板 國際",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1794932559.A.98F.html",
    "heat": 27
@@ -126,12 +132,6 @@
    "title": "[討論] 關於三星跳去用18 pro 請益",
    "url": "https://www.ptt.cc/bbs/MobileComm/M.1795005313.A.582.html",
    "heat": 26
-  },
-  {
-   "src": "PTT 3C板",
-   "title": "Re: [問題] 網銀頻傳盜轉 iPhone手機會比較安全",
-   "url": "https://www.ptt.cc/bbs/MobileComm/M.1795086351.A.26B.html",
-   "heat": 25
   },
   {
    "src": "PTT 網購板",
@@ -161,7 +161,7 @@
    "src": "PTT 網購板",
    "title": "[閒聊] 網紅團購是不是越來越少了",
    "url": "https://www.ptt.cc/bbs/e-shopping/M.1793643349.A.464.html",
-   "heat": 16
+   "heat": 17
   },
   {
    "src": "PTT 網購板",
